@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            display: flex;
         }
 
         header {
@@ -18,20 +19,34 @@
             color: #fff;
             padding: 2rem 0;
             text-align: center;
+            width: 100%;
+        }
+
+        #sidebar {
+            width: 250px;
+            background-color: #34495e;
+            color: #fff;
+            padding: 1rem;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+        #sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        #sidebar a:hover {
+            background-color: #2c3e50;
         }
 
         main {
+            margin-left: 250px;
             padding: 2rem;
-        }
-
-        footer {
-            background-color: #2c3e50;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            flex-grow: 1;
         }
 
         .container {
@@ -49,11 +64,12 @@
             line-height: 1.6;
         }
 
-        .profile-image {
-            max-width: 150px;
-            border-radius: 50%;
+        .hidden {
+            display: none;
+        }
+
+        .active {
             display: block;
-            margin: 0 auto 1rem;
         }
 
         ul {
@@ -88,6 +104,15 @@
             text-decoration: underline;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.add('hidden');
+            }
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -95,40 +120,25 @@
         <p>Postdoctoral Fellow at The Chinese University of Hong Kong</p>
     </header>
 
+    <div id="sidebar">
+        <a href="javascript:void(0)" onclick="showSection('about')">About Me</a>
+        <a href="javascript:void(0)" onclick="showSection('education')">Education</a>
+        <a href="javascript:void(0)" onclick="showSection('current-position')">Current Position</a>
+        <a href="javascript:void(0)" onclick="showSection('employment-history')">Employment History</a>
+        <a href="javascript:void(0)" onclick="showSection('papers')">Research and Publications</a>
+        <a href="javascript:void(0)" onclick="showSection('scholarships')">Scholarships and Grants</a>
+        <a href="javascript:void(0)" onclick="showSection('skills')">Skills</a>
+        <a href="javascript:void(0)" onclick="showSection('projects')">Projects</a>
+        <a href="javascript:void(0)" onclick="showSection('contact')">Contact</a>
+    </div>
+
     <main>
         <div class="container">
-            <img src="images/profile2.JPEG" alt="Dr. Dipankar Bhattacharya" class="profile-image">
-
-            <div class="section">
+            <div id="about" class="section active">
                 <h2 class="section-title">About Me</h2>
                 <p>Hello! I am Dr. Dipankar Bhattacharya, a dedicated researcher with a strong academic background in Mechatronics and Mechanical Engineering. My current research focuses on advanced automation systems and robotics.</p>
             </div>
 
-            <div class="section">
+            <div id="education" class="section hidden">
                 <h2 class="section-title">Education</h2>
                 <ul>
-                    <li><strong>Bachelor of Engineering</strong> in Mechanical Engineering, [Your University], [Year]</li>
-                    <li><strong>Master of Engineering</strong> in Mechanical Engineering, [Your University], [Year]</li>
-                    <li><strong>Ph.D.</strong> in Mechatronics, The University of Auckland, New Zealand (08/2016 to 04/2021)</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Current Position</h2>
-                <p><strong>Postdoctoral Fellow</strong>, Department of Mechanical and Automation Engineering, The Chinese University of Hong Kong, Hong Kong (February 2024 to Current)</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Employment History</h2>
-                <ul>
-                    <li><strong>Postdoctoral Fellow</strong>, Department of Mechanical and Automation Engineering, The Chinese University of Hong Kong, Hong Kong (February 2024 to Current)</li>
-                    <li><strong>Research Assistant</strong>, [Previous Institution], [Year] to [Year]</li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Papers</h2>
-                <ul>
-                    <li><a href="#" class="paper-link">Paper 1 Title</a> - Journal/Conference, Year</li>
-                    <li><a href="#" class="paper-link">Paper 2 Title</a> - Journal/Conference, Year</li>
-                </
