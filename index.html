@@ -288,6 +288,45 @@
             .job-card img {
                 min-width: 100%;
             }
+
+            /* Specific styles for Grants and Scholarships section */
+            .grants-scholarships {
+                background-color: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin: 20px auto;
+                padding: 20px;
+                max-width: 1600px;
+            }
+
+            .grants-scholarships h2 {
+                font-size: 2rem;
+                color: #333;
+                border-bottom: 2px solid #8B0000;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+
+            .grants-scholarships .section-title {
+                color: #007BFF;
+                margin-bottom: 15px;
+                font-size: 1.4em;
+            }
+
+            .grants-scholarships .entry {
+                margin-bottom: 10px;
+            }
+
+            .grants-scholarships .entry span {
+                font-weight: bold;
+                color: #555;
+            }
+
+            .grants-scholarships .highlight {
+                background-color: #e7f3fe;
+                padding: 5px 10px;
+                border-radius: 4px;
+            }
         }
     </style>
     <script>
@@ -322,7 +361,8 @@
             <li><a href="#" onclick="toggleSection('employment-history')">Employment History</a></li>
             <li><a href="#" onclick="toggleSection('projects')">Projects</a></li>
             <!-- Menu item to toggle the Research and Publications section -->
-            <li><a href="#" onclick="toggleSection('papers')">Research and Publications</a></li>
+            <li><a href="#" onclick="toggleSection('papers')">Research Publications</a></li>
+            <li><a href="#" onclick="toggleSection('grants')">Grants and Scholarships</a></li>
             <li><a href="#" onclick="toggleSection('teachings')">Teaching</a></li>
             <!-- Menu item to toggle the Awards and Achievements section -->
             <li><a href="#" onclick="toggleSection('awards')">Awards and Achievements</a></li>
@@ -345,7 +385,13 @@
                 <h2>Personal Information</h2>
                 <div class="job-card">
                 <h3>About Me</h3>
-                <p>Dr. Dipankar Bhattacharya is an accomplished researcher and academic with a Ph.D. in Mechatronics Engineering from The University of Auckland. With a robust background in mechanical and automation engineering, my work primarily focuses on the design, modeling, and control of advanced robotic systems, including cable-driven robots and soft robotic esophagus models. I am passionate about transforming knowledge into innovative technologies that drive progress and improve human life. My postdoctoral research at The Chinese University of Hong Kong and visiting fellowship at École Centrale de Nantes have further honed my expertise in iterative-learning control and cable-driven parallel robots. I have a proven track record of publishing high-impact research in prestigious journals and contributing to significant advancements in robotics and automation. My commitment to mentorship, collaborative research, and academic excellence underscores my dedication to fostering the next generation of engineers and researchers.</p>
+                <p>I am a researcher specializing in the modeling, control, and optimization of robotic systems. Recently, I have focused on geometric modeling, specifically the wrapping of cables on complex objects for cable-driven robots, and am currently exploring SOFA for cable wrapping on soft surfaces.</p>
+
+                <p>As a Postdoctoral Fellow at the Chinese University of Hong Kong, under Prof. Darwin Lau, I am working on the "Modelling and Control of Soft Cable Driven Robots". My research interests include cable-driven bionic arms, superlimbs, inflatable growing robots, and bio-inspired soft robotics, with applications in biomechanics, rehabilitation, medical mechatronics, and human-like robots. Recently, I taught the soft robotics part in the Topic of Robotics at CUHK for postgraduate students (masters and PhD).</p>
+
+                <p>I hold a PhD in Mechatronics from The University of Auckland, New Zealand, a Master of Technology in Control Engineering from IIT Roorkee, India, and a Bachelor of Technology in Electronics and Communication Engineering from NERIST, India. My PhD thesis involved developing a robotic soft esophagus for in vitro testing of endoprosthetic stents, which was published in "Soft Robotics". I also contributed to a soft robotic gastric simulator (SoGut) for advancing digestion research.</p>
+
+                <p>I have extensive teaching experience, having tutored courses at the University of Auckland and taught various electronics and electrical engineering courses during my tenure as an Assistant Professor at Galgotias University. Recently, I taught the soft robotics part in the Topic of Robotics at CUHK for postgraduate students (masters and PhD).</p>
                 </div>
                 <div class="job-card">
                     <h3>Reach Me</h3>
@@ -613,6 +659,27 @@
                 </div>
                 </section>
                     <!-- Add more job cards as needed -->
+
+                 <!-- Awards and Achievements section -->
+                <section id="grants" class="section hidden">
+                    <div class="job-card">
+                        <h2>Grants and Scholarships</h2>
+                    <ul>
+                        <h3>Grants</h3>
+                        <ul>
+                            <li><div class="entry"><span>2023:</span> Co-authored Innovation and Technology Fund (ITF), Partnership Research Program (PRP) grant.</div></li>
+                            <li><div class="entry"><span>2022:</span> Co-authored Research Talent Hub for ITF project (RTH-ITF) grant.</div></li>
+                            <li><div class="entry"><span>2022:</span> Recipient, Riddet Travel grant, Riddet Institute Centre of Research Excellence (<span class="highlight">3,000 NZD</span>).</div></li>
+                        </ul>
+                        <h3>Scholarships</h3>
+                        <ul>
+                            <li><div class="entry"><span>2019–2020:</span> Recipient, Doctor of Philosophy Scholarship, University of Auckland.</div>
+                            <li><div class="entry"><span>2016–2019:</span> Recipient, Doctor of Philosophy Scholarship, Riddet Institute Centre of Research Excellence.</div></li>
+                            <li><div class="entry"><span>2011–2013:</span> Recipient, Masters of Technology Scholarship, Ministry of Human Resource Development (MHRD) GATE scholarship.</div></li>
+                        </ul>
+                    </ul>
+                    </div>
+                </section>
 
                 <section id="teachings" class="section hidden">
                 <h2>Teaching</h2>
