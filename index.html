@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    /* Basic styles for body and layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            font-size: 1.5rem;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .header span {
+            flex: 1;
+            padding-right: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+        }
+
+        .header img {
+            height: 100px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #8B0000;
+            color: #fff;
+            padding: 1rem;
+            position: fixed;
+            top: 140px;
+            height: 80%;
+            overflow: auto;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #B22222;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 1rem;
+        }
+
+        .main-content {
+            margin-left: 0px;
+            padding: 1rem;
+            flex: 1;
+        }
+
+        .container {
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 1rem;
+            margin-left: 300px;
+        }
+
+        .section {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            padding: 140px;
+            max-width: 1800px;
+            text-align: justify;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            color: #333;
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .section strong {
+            color: #8B0000;
+        }
+
+        .section ul ul {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+
+        .section ul ul li {
+            margin-bottom: 10px;
+            padding-left: 15px;
+        }
+
+        .section ul li:before {
+            content: '•';
+            color: #8B0000;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .paper-link {
+            text-decoration: none;
+            color: #0073e6;
+        }
+
+        .paper-link:hover {
+            text-decoration: underline;
+        }
+
+        .link {
+            text-decoration: none;
+            color: #0073e6;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .job-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .job-card p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .job-card ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .job-card ul li {
+            margin-bottom: 10px;
+        }
+
+        .job-card img {
+            display: block;
+            margin: 20px auto 0;
+            max-width: 100%;
+            min-width: 85%;
+            height: auto;
+            border: 2px solid #8B0000;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .background-problem {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .background-problem img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-left: 20px;
+        }
+
+        .background-problem p {
+            flex: 1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        th, td {
+            border: 1px solid #000080;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #000080;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #e6e6fa;
+        }
+
+        .teaching-section {
+            margin-bottom: 40px;
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .header {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            .header img {
+                height: 50px;
+            }
+
+            .sidebar {
+                width: 100%;
+                top: 70px;
+                height: auto;
+                position: relative;
+                padding: 0.5rem;
+            }
+
+            .container {
+                margin-left: 0;
+                padding: 0.5rem;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .job-card img {
+                min-width: 100%;
+            }
+
+            /* Specific styles for Grants and Scholarships section */
+            .grants-scholarships {
+                background-color: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin: 20px auto;
+                padding: 20px;
+                max-width: 1600px;
+            }
+
+            .grants-scholarships h2 {
+                font-size: 2rem;
+                color: #333;
+                border-bottom: 2px solid #8B0000;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+
+            .grants-scholarships .section-title {
+                color: #007BFF;
+                margin-bottom: 15px;
+                font-size: 1.4em;
+            }
+
+            .grants-scholarships .entry {
+                margin-bottom: 10px;
+            }
+
+            .grants-scholarships .entry span {
+                font-weight: bold;
+                color: #555;
+            }
+
+            .grants-scholarships .highlight {
+                background-color: #e7f3fe;
+                padding: 5px 10px;
+                border-radius: 4px;
+            }
+        }
+    </style>
+    <script>
+        // Function to toggle the visibility of sections
+        function toggleSection(sectionId) {
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.add('hidden');
+            }
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Header with the university name -->
+    <div class="header">
+        <img src="images/CU60_RGB_withCUHKlogo.png" alt="University Logo">
+        The Chinese University of Hong Kong
+    </div>
+
+    <!-- Sidebar menu -->
+    <div class="sidebar">
+        <img src="images/profile4.jpeg" alt="Sidebar Image">
+        <h3>Menu</h3>
+        <ul>
+            <!-- Menu item to toggle the About Me section -->
+            <!--<li><a href="#" onclick="toggleSection('about')">About Me</a></li>-->
+            <!-- Menu item to toggle the Personal Information section -->
+            <li><a href="#" onclick="toggleSection('personal-info')">Personal Information</a></li>
+            <!-- Menu item to toggle the Employment History section -->
+            <li><a href="#" onclick="toggleSection('employment-history')">Employment History</a></li>
+            <li><a href="#" onclick="toggleSection('projects')">Projects</a></li>
+            <!-- Menu item to toggle the Research and Publications section -->
+            <li><a href="#" onclick="toggleSection('papers')">Research Publications</a></li>
+            <li><a href="#" onclick="toggleSection('grants')">Grants and Scholarships</a></li>
+            <li><a href="#" onclick="toggleSection('teachings')">Teaching</a></li>
+            <!-- Menu item to toggle the Awards and Achievements section -->
+            <li><a href="#" onclick="toggleSection('awards')">Awards and Achievements</a></li>
+            <!-- Menu item to toggle the Professional Activities section -->
+            <li><a href="#" onclick="toggleSection('professional-activities')">Professional Activities</a></li>
+        </ul>
+    </div>
+    
+    <!-- Main content area -->
+    <div class="main-content">
+        <div class="container">
+            <!-- About Me section -->
+            <section id="about" class="section hidden">
+                <h2>About Me</h2>
+                <p>Dr. Dipankar Bhattacharya is an accomplished researcher and academic with a Ph.D. in Mechatronics Engineering from The University of Auckland. With a robust background in mechanical and automation engineering, my work primarily focuses on the design, modeling, and control of advanced robotic systems, including cable-driven robots and soft robotic esophagus models. I am passionate about transforming knowledge into innovative technologies that drive progress and improve human life. My postdoctoral research at The Chinese University of Hong Kong and visiting fellowship at École Centrale de Nantes have further honed my expertise in iterative-learning control and cable-driven parallel robots. I have a proven track record of publishing high-impact research in prestigious journals and contributing to significant advancements in robotics and automation. My commitment to mentorship, collaborative research, and academic excellence underscores my dedication to fostering the next generation of engineers and researchers.</p>
+            </section>
+
+            <!-- Personal Information section -->
+            <section id="personal-info" class="section hidden">
+                <h2>Personal Information</h2>
+                <div class="job-card">
+                <h3>About Me</h3>
+                <p>I am a researcher specializing in the modeling, control, and optimization of robotic systems. Recently, I have focused on geometric modeling, specifically the wrapping of cables on complex objects for cable-driven robots, and am currently exploring SOFA for cable wrapping on soft surfaces.</p>
+
+                <p>As a Postdoctoral Fellow at the Chinese University of Hong Kong, under Prof. Darwin Lau, I am working on the "Modelling and Control of Soft Cable Driven Robots". My research interests include cable-driven bionic arms, superlimbs, inflatable growing robots, and bio-inspired soft robotics, with applications in biomechanics, rehabilitation, medical mechatronics, and human-like robots. Recently, I taught the soft robotics part in the Topic of Robotics at CUHK for postgraduate students (masters and PhD).</p>
+
+                <p>I hold a PhD in Mechatronics from The University of Auckland, New Zealand, a Master of Technology in Control Engineering from IIT Roorkee, India, and a Bachelor of Technology in Electronics and Communication Engineering from NERIST, India. My PhD thesis involved developing a robotic soft esophagus for in vitro testing of endoprosthetic stents, which was published in "Soft Robotics". I also contributed to a soft robotic gastric simulator (SoGut) for advancing digestion research.</p>
+
+                <p>I have extensive teaching experience, having tutored courses at the University of Auckland and taught various electronics and electrical engineering courses during my tenure as an Assistant Professor at Galgotias University. Recently, I taught the soft robotics part in the Topic of Robotics at CUHK for postgraduate students (masters and PhD).</p>
+                </div>
+                <div class="job-card">
+                    <h3>Reach Me</h3>
+                    <p><strong>Email:</strong> dipankarbhattacharya@cuhk.edu.hk / dipankar22041988@gmail.com</p>
+                    <p><strong>Profiles:</strong></p>
+                    <ul>
+                        <li><a class="link" href="https://unidirectory.auckland.ac.nz/profile/dbha483" target="_blank">University Profile</a></li>
+                        <li><a class="link" href="http://www.linkedin.com/in/dipankar-bhattacharya-7132497b" target="_blank">LinkedIn</a></li>
+                        <li><a class="link" href="https://scholar.google.com/citations?user=4BBRfsMAAAAJ&hl=en&oi=sra" target="_blank">Google Scholar</a></li>
+                        <li><a class="link" href="https://www.researchgate.net/profile/Dipankar-Bhattacharya" target="_blank">ResearchGate</a></li>
+                    </ul>
+                    <p><strong>Address:</strong> Academic Building No 1, The Chinese University of Hong Kong, New Territories, Hong Kong</p>
+                    <p><strong>Phone:</strong> +852 9428 8564</p>
+                </div>
+            </section>
+
+            <!-- Employment History section -->
+            <!-- Employment History section -->
+            <section id="employment-history" class="section">
+                <h2>Employment History</h2>
+
+                <!-- Job Card 1 -->
+                <div class="job-card">
+                    <h3>Postdoctoral Fellow</h3>
+                    <p><strong>Department:</strong> Mechanical and Automation Engineering</p>
+                    <p><strong>Institution:</strong> The Chinese University of Hong Kong</p>
+                    <p><strong>Dates:</strong> 01/03/2021 – 30/06/2024</p>
+                    <p><strong>Supervisor:</strong> Prof. Darwin Lau</p>
+                    <p><strong>Projects:</strong></p>
+                    <ul>
+                        <li>Design, modeling, and control of cable-driven robots with cable wrapping around obstacles.</li>
+                        <li>Design and modeling of a cable-driven growing vine robot for accurate and safer false ceiling inspections.</li>
+                    </ul>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Performing both independent and collaborative research.</li>
+                        <li>Contributing discrete components of a larger project under the general direction of the principal researcher.</li>
+                        <li>Writing articles, proposals, and reports.</li>
+                        <li>Mentorship and supervision of undergraduate final year projects and postgraduate research students.</li>
+                        <li>Delivered lectures for the course MAEG5090 Topics in Robotics to postgraduate students.</li>
+                    </ul>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="job-card">
+                    <h3>Visiting Postdoctoral Fellow</h3>
+                    <p><strong>Institution:</strong> Laboratoire des Sciences du Numérique de Nantes (LS2N), École Centrale de Nantes (ECN)</p>
+                    <p><strong>Dates:</strong> 26/10/2021 – 05/01/2022</p>
+                    <p><strong>Supervisors:</strong> Prof. Stephane Caro and Prof. Darwin Lau</p>
+                    <p><strong>Project:</strong> Iterative-learning control of cable-driven parallel robot.</p>
+                </div>
+
+                <!-- Job Card 1 -->
+                <div class="job-card">
+                    <h3>Graduate Teaching Assistant</h3>
+                    <p><strong>Department:</strong> Mechatronics Engineering</p>
+                    <p><strong>Institution:</strong> The University of Auckland, New Zealand</p>
+                    <p><strong>Dates:</strong> 24/07/2027 – 27/11/2020</p>
+                    <p><strong>Projects:</strong></p>
+                    <ul>
+                        <li>Courses taken: MECHENG 706: Mechatronics Design Projects, MECHENG 306: Design of Sensing and Actuating Systems, ENGGEN 115: Principles of Engineering Design, ENGGEN 131: Introduction to Engineering Computation and Software Development.</li>
+                    </ul>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Supervising undergraduates tudents for problem solving and negotiating practical solutions in various design projects.</li>
+                        <li>Tutoring includes preparing and delivering tutorial sessions, work- shops, drop-in clinics, monitoring and answering questions on online forums such as Piazza, CANVAS etc.</li>
+                        <li>Responsible for the laboratory to assist students in completing laboratory work in a course.</li>
+                        <li>Arranging briefing sessions for TAs, identifying the key concepts, equipment usage, health and safety and recording whether students have attended and are at a satisfactory level.</li>
+                        <li>Responsible for conducting weekly interviews to monitor the students’ progress in design projects.</li>
+                    </ul>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card">
+                    <h3>Research Assistant</h3>
+                    <p><strong>Department:</strong> Mechatronics Engineering</p>
+                    <p><strong>Institution:</strong> The University of Auckland, New Zealand</p>
+                    <p><strong>Dates:</strong> 01/01/2020 – 01/02/2021</p>
+                    <p><strong>Supervisor:</strong> Prof. Peter Xu</p>
+                    <p><strong>Projects:</strong></p>
+                    <ul>
+                        <li><em>In vitro</em> stent testing on a robotic soft esophagus (RoSE).</li>
+                    </ul>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Preparing experimental set up.</li>
+                        <li>Conducting experiments and collecting real-time data.</li>
+                        <li>Preparing report on monthly basis.</li>
+                    </ul>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card">
+                    <h3>Lecturer</h3>
+                    <p><strong>Department:</strong> School of Electrical, Electronics and Communication Engineering</p>
+                    <p><strong>Institution:</strong> Galgotias University, India</p>
+                    <p><strong>Dates:</strong> 19/07/2013 – 18/06/2016</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Delivering lectures for undergraduate and postgraduate courses.</li>
+                        <li>Developing and constructing teaching materials for lectures.</li>
+                        <li>Supporting students in a pastoral/advisory role.</li>
+                        <li>Delivering laboratory sessions, and managing and supervising staff and lab technicians.</li>
+                        <li>Supervision of final year undergraduate projects.</li>
+                    </ul>
+                </div>
+
+                
+
+                <!-- Add more job cards as needed -->
+
+            </section>
+
+
+            <!-- Research and Publications section -->
+            <section id="papers" class="section hidden">
+                <h2>Research Publications</h2>
+                <!-- Job Card 3 -->
+                <div class="job-card">
+                    <h3>Journal Articles</h3>
+                    <ul>
+                        <li>Bhattacharya, D., Chan, Y. P., Shang, S., Chan, Y. S., Tan, Y., & Lau, D. Tri-Space Operational Control of Redundant Multilink and Hybrid Cable-Driven Parallel Robots Using an Iterative-Learning based Reactive Approach. <em>IEEE Transactions on Control Systems and Technology</em>. <a class="link" href="https://doi.org/10.1109/TCST.2023.3263689" target="_blank">Link to article</a></li>
+                        <li>Bhattacharya, D., Cheng, L. K., & Xu, W. Nonlinear Model Predictive Control of a Robotic Soft Esophagus for Endoprosthetic Stent Testing. <em>IEEE Transactions on Industrial Electronics</em>. <a class="link" href="https://doi.org/10.1109/TIE.2021.3121755" target="_blank">Link to article</a></li>
+                        <li>Bhattacharya, D., Jesna, S., Cheng, L. K., & Xu, W. RoSE: A Robotic Soft Esophagus for Endoprosthetic Stent Testing. <em>Soft Robotics</em>. <a class="link" href="https://doi.org/10.1089/soro.2019.0205" target="_blank">Link to article</a></li>
+                        <li>Dang, Y., Liu, Y., Hashem, R., Bhattacharya, D., Allen, J., Stommel, M., Cheng, L. K., & Xu, W. SoGut: A Soft Robotic Gastric Simulator. <em>Soft Robotics</em>. <a class="link" href="https://doi.org/10.1089/soro.2019.01365" target="_blank">Link to article</a></li>
+                        <li>Bhattacharya, D., Cheng, L. K., & Xu, W. (2020). Sparse Machine Learning Discovery of Dynamic Differential Equation of an Esophageal Swallowing Robot. <em>IEEE Transactions on Industrial Electronics</em>, 67(6), 4711–4720. <a class="link" href="https://doi.org/10.1109/TIE.2019.2928239" target="_blank">Link to article</a></li>
+                        <li>Bhattacharya, D., Nisha, M. G., & Pillai, G. (2015). Relevance vector-machine-based solar cell model. <em>International Journal of Sustainable Energy</em>, 34(10), 685–692. <a class="link" href="https://doi.org/10.1080/14786451.2014.885030" target="_blank">Link to article</a></li>
+                    </ul>
+                </div>
+
+                <div class="job-card">
+                    <h3>Books and Chapters</h3>
+                        <ul>
+                            <li>Bhattacharya, D., Cheng, L. K., Dirven, S., & Xu, W. (2019). Artificial intelligence approach to the trajectory generation and dynamics of a soft robotic swallowing simulator. Cham, Springer International Publishing. <a class="link" href="https://doi.org/10.1007/978-3-319-78452-6_1" target="_blank">Link to book</a></li>
+                        </ul>
+                </div>
+
+
+                <div class="job-card">
+                    <h3>Conference Proceedings</h3>
+                    <ul>
+                        <li>Bhattacharya, D., Cheng, L. K., & Xu, W. (2018). Testing and analysis of migration displacement of a flared stent deployed in an esophageal swallowing robot., In 25th international conference on mechatronics and machine vision in practice (M2VIP). <a class="link" href="https://doi.org/10.1109/M2VIP.2018.8600911" target="_blank">Link to proceedings</a></li>
+                        <li>Bhattacharya, D., Cheng, L. K., Dirven, S., & Xu, W. (2017). Actuation planning and modeling of a soft swallowing robot, In 24th international conference on mechatronics and machine vision in practice (M2VIP). <a class="link" href="https://doi.org/10.1109/M2VIP.2017.8211476" target="_blank">Link to proceedings</a></li>
+                    </ul>
+                </div>
+
+                <div class="job-card">
+                    <h3>In Review/Preparation</h3>
+                    <ul>
+                        <li>Bhattacharya, D., Cheung, T., Wang, Y., & Lau, D. Kinematic and Dynamic Modeling of Cable-Object Interference and Wrapping in Complex Geometrical-Shaped Cable-Driven Parallel Robots, <em>IEEE Transactions on Robotics</em> [in review]. <a class="link" href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.171746934.49156915/v1" target="_blank">Link to article</a></li>
+                        <li>Cheung, T., Bhattacharya, D., & Lau, D. Rapidly Deployable Deformable Frame Cable-Driven Parallel Robots with Small Footprint [in preparation].</li>
+                        <li>Wang, Y., Bhattacharya, D., & Lau, D. Static modelling and workspace analysis with arbitrary cable attachment design in a cable-driven parallel robot with passive backbone [in preparation].</li>
+                    </ul>
+                </div>
+
+                <div class="job-card">
+                    <h3>Thesis</h3>
+                    <ul>
+                        <li>Bhattacharya, Dipankar. "Robotic Soft Esophagus Design, Modeling, and Control for Endoprosthetic Stent Testing and Food Swallow Investigation." Doctoral dissertation, The University of Auckland, 2020. <a class="link" href="https://researchspace.auckland.ac.nz/handle/2292/54792" target="_blank">Link to thesis</a></li>
+                    </ul>
+                </div>
+                
+
+                <!-- Add more job cards as needed -->
+
+            </section>
+
+            <!-- Project description -->
+            <section id="projects" class="section hidden">
+                <!-- Job Card 3 -->
+                <h2>Projects</h2>
+                <div class="job-card">
+                    <h3>Name: Modeling of Cable-Object Interference and Wrapping in Complex Geometrical-Shaped Cable-Driven Parallel Robots</h3>
+                    <p><strong>Designation:</strong> Postdoctoral Fellow</p>
+                    <p><strong>Department:</strong> Mechanical and Automation Engineering</p>
+                    <p><strong>Institution:</strong> The Chinese University of Hong Kong</p>
+                    <p><strong>Dates:</strong> 01/03/2021 – 30/06/2024</p>
+                    <p><strong>Description:</strong></p>
+                    <ul>
+                        <li><p><strong>Background and Problem:</strong></p>Cable-Driven Parallel Robots (CDPRs) utilize cables as actuators to maneuver rigid body links in a parallel mech- anism setup. Typically, CDPR kinematic and dynamic models avoid cable-object (cable-link and cable-obstacle) interferences to prevent sudden changes in cable tension that could deviate the end-effector’s trajectory. However, allowing these interferences can lead to cable wrapping, where cables wrap around complex- shaped surfaces upon contact, enhancing the CDPR’s workspace and reducing its footprint. Despite the potential benefits, there currently exists no kinematic and dynamic model that effectively incorporates cable wrapping around such complex-shaped surfaces.</li> 
+
+                        <li><p><strong>Contribution:</strong></p>This project introduces a novel numerical-based kinematic and dynamic modeling framework for CDPRs that detects and then manages cable wrapping around multiple links and obstacles with the assumption that the cables remain taut and maintain contact from the initial cable entry point to the final exit point on the surfaces. Through simulations and hardware tests on various shaped links and obstacles, it has been demonstrated that this framework can be efficiently and effectively used for modeling of cable wrapping, significantly enhancing CDPR functionality in complex environments.</li>
+                    </ul>
+                    <img src="images/bmaerm_human_arm_comp.svg" alt="Description Image">                   
+                </div>
+
+                <div class="job-card">
+                <h3>Name: Tri-Space Operational Control of Redundant Cable-Driven Parallel Robots Using an Iterative-Learning based Reactive Approach</h3>
+                <p><strong>Designation:</strong> Postdoctoral Fellow</p>
+                <p><strong>Department:</strong> Mechanical and Automation Engineering</p>
+                <p><strong>Institution:</strong> The Chinese University of Hong Kong</p>
+                <p><strong>Dates:</strong> 01/03/2021 – 30/06/2024</p>
+                <p><strong>Description:</strong></p>
+                <ul>
+                    <li>
+                        <div class="background-problem">
+                            <p><strong>Background and Problem:</strong> Due to the two levels of redundancy and numerous constraints within the CDPR actuation, joint and operational spaces (together known as the tri-space), tracking a given trajectory in the operational space while satisfying constraints in tri-space simultaneously is challenging. There does not exist any tri-space control framework, which is robust, effective, and directly applicable to several architectures of redundantly actuated CDPRs.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <p><strong>Contribution:</strong> This project proposes a tri-space control framework that combines reactive control (RC) and iterative-learning control (ILC) to perform repetitive tasks in the operational space. The framework allows the tracking of operational space trajectories online with feasible cable forces while avoiding undesirable situations such as cable-link interference, joint interference, and loss of manipulability. On the other hand, by finding an optimal parameter in the null space using a novel parameterization of a null-space vector, the performance can be improved through ILC when the task is repeatedly executed. Simulation and hardware results on various multilink cable-driven robots (MCDRs) and hybrid cable-driven robots (HCDRs) show that the proposed tri-space control framework can be conveniently and effectively applied to the real-time control of different CDPRs.</p>
+                    </li>
+                </ul>
+                <img src="images/tcst_controller.svg" alt="Description Image">
+            </div>
+
+            <div class="job-card">
+                <h3>Name: Nonlinear Model Predictive Control of a Robotic Soft Esophagus (RoSE)</h3>
+                <p><strong>Designation:</strong> Doctoral fellow</p>
+                <p><strong>Department:</strong> Mechatronics Engineering</p>
+                <p><strong>Institution:</strong> The University of Auckland, New Zealand</p>
+                <p><strong>Dates:</strong> 2020 – 2021</p>
+                <p><strong>Description:</strong></p>
+                <ul>
+                    <li>
+                        <div class="background-problem">
+                            <p><strong>Background and Problem:</strong>Strictures caused by esophageal cancer can narrow down the esophageal lumen, leading to dysphagia. Palliation of dysphagia has driven the development of a robotic soft esophagus (RoSE), which provides a novel in vitro platform for esophageal stent testing and food viscos- ity studies. However, peristaltic wave generation and control were done in an open-loop manner since the conduit lacked visibility and embedded sensing capability. </p>
+                        </div>
+                    </li>
+                    <li>
+                        <p><strong>Contribution:</strong> In this project, a novel version of robotic soft esophagus (RoSE) is proposed and its model predictive control (MPC) is implemented to govern the peristalsis and air pressure profile autonomously. The implemented MPC used sparse identification of nonlinear dynamics with control (SINDYC) models to estimate the future states of ROSE. The dynamic models are discovered from the embedded TOF and pressure sensor data.</p>
+                    </li>
+                </ul>
+                <img src="images/tie_rose_fab_mpc.svg" alt="Description Image">
+            </div>
+
+            <div class="job-card">
+                <h3>Name: RoSE: A Robotic Soft Esophagus for Endoprosthetic Stent Testing</h3>
+                <p><strong>Designation:</strong> Doctoral fellow</p>
+                <p><strong>Department:</strong> Mechatronics Engineering</p>
+                <p><strong>Institution:</strong> The University of Auckland, New Zealand</p>
+                <p><strong>Dates:</strong> 2020 – 2021</p>
+                <p><strong>Description:</strong></p>
+                <ul>
+                    <li>
+                        <div class="background-problem">
+                            <p><strong>Background and Problem:</strong>Endoprosthetic stent placement is an immediate and cost-effective therapy for dysphagia caused by malignant esophageal strictures from esophageal cancer. However, later stage complications, such as stent migration, could weaken the swallow efficacy in the esophagus. The stent radial force (RF) on the esophageal wall is pivotal in avoiding stent migration. Due to limited randomized controlled trials in patients, the stent design and stenting guidelines are still unconstructive. </p>
+                        </div>
+                    </li>
+                    <li>
+                        <p><strong>Contribution:</strong> To address the knowledge deficit, we have developed a bio-mimicking robotic soft esophagus (RoSE) as an in vitro testing device of endoprosthetic stents for dysphagia management. We investigated the capabilities of the RoSE by implanting two stents (stent A and B) of different radial stiffness characteristics, to measure the stent RF and its effect on the stent migration. Also, endoscopic manometry on the RoSE under peristalsis has been performed to study the impact of stenting and stent dysfunctionality on the intrabolus pressure signatures (IBPSs) in the RoSE, and further its effects on the swallowing efficacy.</p>
+                    </li>
+                </ul>
+                <img src="images/soro_rose_fab_stent_test2.svg" alt="Description Image">
+                </div>
+
+                <div class="job-card">
+                    <h3>Name: SoGut: A Soft Robotic Gastric Simulator</h3>
+                    <p><strong>Designation:</strong> Doctoral fellow</p>
+                    <p><strong>Department:</strong> Mechatronics Engineering</p>
+                    <p><strong>Institution:</strong> The University of Auckland, New Zealand</p>
+                    <p><strong>Dates:</strong> 2020 – 2021</p>
+                    <p><strong>Description:</strong></p>
+                    <ul>
+                        <li>
+                            <div class="background-problem">
+                                <p><strong>Background and Problem:</strong>The human stomach breaks down and transports food by coordinated radial contractions of the gastric walls. The radial contractions periodically propagate through the stomach and constitute the peristaltic contractions, also called the gastric motility. The force, amplitude, and frequency of peristaltic contractions are relevant to massaging and transporting the food contents in the gastric lumen. However, existing gastric simulators have not faithfully replicated gastric motility.  </p>
+                            </div>
+                        </li>
+                        <li>
+                            <p><strong>Contribution:</strong> To address the research gap, we report a soft robotic gastric simulator (SoGut) that emulates peristaltic contractions in an anatomically realistic way. SoGut incorporates an array of circular air chambers that generate radial contractions. The design and fabrication of SoGut leverages principles from the soft robotics field, which features compliance and adaptability. We studied the force and amplitude of the contractions when the lumen of SoGut was empty or filled with contents of different viscosity. We examined the contracting force using manometry. SoGut exhibited a similar range of contracting force as the human stomach reported in the literature. Besides, we investigated the amplitude of the contractions through videofluoroscopy where the contraction ratio was derived. </p>
+                        </li>
+                    </ul>
+                    <img src="images/soro_sogut.svg" alt="Description Image">
+                </div>
+                </section>
+                    <!-- Add more job cards as needed -->
+
+                 <!-- Awards and Achievements section -->
+                <section id="grants" class="section hidden">
+                    <div class="job-card">
+                        <h2>Grants and Scholarships</h2>
+                    <ul>
+                        <h3>Grants</h3>
+                        <ul>
+                            <li><div class="entry"><span>2023:</span> Co-authored Innovation and Technology Fund (ITF), Partnership Research Program (PRP) grant.</div></li>
+                            <li><div class="entry"><span>2022:</span> Co-authored Research Talent Hub for ITF project (RTH-ITF) grant.</div></li>
+                            <li><div class="entry"><span>2018:</span> Recipient, Dynamic testing of implant stents using Robotic Soft Esophagus (RoSE), BvW Holding, Cham, Switzerland (39,000 NZD, 1 year).</div></li> 
+                            <li><div class="entry"><span>2018,1029:</span> Recipient, Riddet Travel grant, Riddet Institute Centre of Research Excellence (<span class="highlight">3,000 NZD</span>).</div></li>
+                        </ul>
+                        <h3>Scholarships</h3>
+                        <ul>
+                            <li><div class="entry"><span>2019–2020:</span> Recipient, Doctor of Philosophy Scholarship, University of Auckland.</div>
+                            <li><div class="entry"><span>2016–2019:</span> Recipient, Doctor of Philosophy Scholarship, Riddet Institute Centre of Research Excellence.</div></li>
+                            <li><div class="entry"><span>2011–2013:</span> Recipient, Masters of Technology Scholarship, Ministry of Human Resource Development (MHRD) GATE scholarship.</div></li>
+                        </ul>
+                    </ul>
+                    </div>
+                </section>
+
+                <section id="teachings" class="section hidden">
+                <h2>Teaching</h2>
+
+                <div class="teaching-section">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject Name</th>
+                                <th>Year</th>
+                                <th>Level</th>
+                                <th>Class strength</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MAEG5090 Topics in Robotics</td>
+                                <td>2023</td>
+                                <td>Postgraduate students</td>
+                                <td>50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="teaching-section">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject Name</th>
+                                <th>Year</th>
+                                <th>Level</th>
+                                <th>Class strength</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MECHCHENG706: Mechatronics Design Project</td>
+                                <td>2017-2019</td>
+                                <td>4th year, undergraduate</td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>MECHENG306: Design of Sensing and Actuating Systems</td>
+                                <td>2018</td>
+                                <td>3rd year, undergraduate</td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>ENGGEN 115: Principles of Engineering Design</td>
+                                <td>2017-2019</td>
+                                <td>1st year, undergraduate</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>ENGGEN 131: Introduction to Engineering Computation</td>
+                                <td>2018-2019</td>
+                                <td>1st year, undergraduate</td>
+                                <td>60</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="teaching-section">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject Name</th>
+                                <th>Year</th>
+                                <th>Level</th>
+                                <th>Class strength</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BECE2010: Digital Electronics</td>
+                                <td>-</td>
+                                <td>2nd year, undergraduate</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>BECE2016: Signals and Systems</td>
+                                <td>-</td>
+                                <td>2nd year, undergraduate</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>BTEE2002: Network Analysis and Synthesis</td>
+                                <td>-</td>
+                                <td>2nd year, undergraduate</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>BEEE3002: Control Systems</td>
+                                <td>-</td>
+                                <td>3rd year, undergraduate</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>BEEE2001: Electrical Measurement and Instrumentation</td>
+                                <td>-</td>
+                                <td>2nd year, undergraduate</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>BECE3020: Digital Signal Processing</td>
+                                <td>-</td>
+                                <td>3rd year, undergraduate</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>BTEE3019: Advanced Control System</td>
+                                <td>-</td>
+                                <td>3rd year, undergraduate</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>BEEE5004: Digital Control</td>
+                                <td>-</td>
+                                <td>1st year, postgraduate</td>
+                                <td>20</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+            <!-- Awards and Achievements section -->
+            <section id="awards" class="section hidden">
+                <div class="job-card">
+                    <h2>Awards and Achievements</h2>
+                <ul>
+                    <h3>Academic Awards</h3>
+                    <ul>
+                        <li>2017: Recipient, Best Conference paper award, 5th International Conference on Robotic Intelligence Technology and Applications (RiTA), Daejeon, Korea.</li>
+                        <li>Ranked 2nd in poster presentation in Delivery of Functionality in Complex Food Systems (DoF 2017) Conference.</li>
+                    </ul>
+                    <h3>Competitive Examinations</h3>
+                    <ul>
+                        <li>2011: Percentile: 99.12% (Rank 1,211/1,37,853) in Graduate Aptitude Test of Engineering (GATE).</li>
+                        <li>2010: Percentile: 96.00% in Graduate Aptitude Test of Engineering (GATE).</li>
+                        <li>2004: Ranked 31st in All India Junior Mathematics Olympiad.</li>
+                    </ul>
+                </ul>
+                </div>
+            </section>
+
+            <!-- Professional Activities section -->
+            <section id="professional-activities" class="section hidden">
+                <div class="job-card">
+                <h2>Professional Activities</h2>
+                <ul>
+                    <li>2024 - Current: Reviewer of ASME Journal of Mechanisms and Robotics (JMR).</li>
+                    <li>2024 - Current: Reviewer of IEEE Robotics and Automation Letters.</li>
+                    <li>2017 - Current: Member of the Institute of Electrical and Electronics Engineers (IEEE).</li>
+                    <li>2014: Former member of the Electrical Engineering Society (EES), IIT Roorkee, and NERIST Electronics Society (NES), NERIST.</li>
+                    <li>2006: Have an 'Outstanding Certificate' in National Service Scheme (NSS) for contributing in activities like blood donation camps, village cleanliness programmes and children's education.</li>
+                </ul>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</body>
+</html>

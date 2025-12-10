@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Roadmap - Dipankar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 1.2em;
+            margin-bottom: 50px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+        
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            padding: 30px;
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+            z-index: 10;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .education { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .research { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .postdoc { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .senior { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .fellow { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        
+        .date {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .position {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .institution {
+            font-size: 1.1em;
+            color: #4a5568;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .project {
+            background: #edf2f7;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .project-title {
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .skills-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .skills-title {
+            font-size: 2em;
+            color: #2d3748;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .skill-category p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .icon-svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: column !important;
+                padding-left: 70px;
+            }
+            
+            .timeline-content {
+                width: 100% !important;
+                margin: 0 !important;
+            }
+            
+            .timeline-icon {
+                left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Career Roadmap</h1>
+        <p class="subtitle">A Journey Through Academia, Research & Innovation</p>
+        
+        <!-- Career Overview Poster -->
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; padding: 50px; margin-bottom: 50px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center;">
+                <div style="text-align: center;">
+                    <div style="width: 200px; height: 200px; margin: 0 auto; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden;">
+                        <img src="photo2.jpg" alt="Dr. Dipankar Bhattacharya" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h2 style="color: white; margin-top: 20px; font-size: 1.8em;">Dr. Dipankar Bhattacharya</h2>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1.2em; margin-top: 10px;">Robotics & Control Systems Expert</p>
+                </div>
+                <div>
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 15px; padding: 30px; border: 2px solid rgba(255,255,255,0.2);">
+                        <h3 style="color: white; font-size: 2em; margin-bottom: 20px;">🏆 Current Position</h3>
+                        <div style="color: white; font-size: 1.3em; line-height: 1.8;">
+                            <strong style="font-size: 1.4em; display: block; margin-bottom: 10px;">Marie Skłodowska-Curie Postdoctoral Fellow</strong>
+                            <div style="color: rgba(255,255,255,0.95); margin-top: 15px;">
+                                📍 Imperial College London<br>
+                                🔬 Dyson School of Engineering<br>
+                                🎯 Cable-driven Soft Exoskeletons for Rehabilitation
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 25px;">
+                        <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px);">
+                            <div style="color: white; font-size: 2.5em; font-weight: bold;">15+</div>
+                            <div style="color: rgba(255,255,255,0.9); margin-top: 5px;">Publications</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px);">
+                            <div style="color: white; font-size: 2.5em; font-weight: bold;">5+</div>
+                            <div style="color: rgba(255,255,255,0.9); margin-top: 5px;">Countries</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 12px; text-align: center; backdrop-filter: blur(10px);">
+                            <div style="color: white; font-size: 2.5em; font-weight: bold;">10+</div>
+                            <div style="color: rgba(255,255,255,0.9); margin-top: 5px;">Projects</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Research Domains -->
+            <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 12px; text-align: center; border: 2px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+                    <div style="font-size: 3em; margin-bottom: 10px;">🏥</div>
+                    <div style="color: white; font-weight: bold; font-size: 1.1em;">Medical<br>Robotics</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 12px; text-align: center; border: 2px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+                    <div style="font-size: 3em; margin-bottom: 10px;">🤖</div>
+                    <div style="color: white; font-weight: bold; font-size: 1.1em;">Cable-Driven<br>Robotics</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 12px; text-align: center; border: 2px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+                    <div style="font-size: 3em; margin-bottom: 10px;">🏭</div>
+                    <div style="color: white; font-weight: bold; font-size: 1.1em;">Industrial<br>Automation</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 25px; border-radius: 12px; text-align: center; border: 2px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+                    <div style="font-size: 3em; margin-bottom: 10px;">🧠</div>
+                    <div style="color: white; font-weight: bold; font-size: 1.1em;">AI & Machine<br>Learning</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Statistics -->
+        <!--
+        <div class="stats">
+            <div class="stat-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); transform: scale(1.05); box-shadow: 0 15px 40px rgba(250, 112, 154, 0.4);">
+            <div class="stat-number">🏆</div>
+            <div class="stat-label">Marie Curie Fellow</div>
+            </div>
+            <div class="stat-card">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Positions</div>
+            </div>
+            <div class="stat-card">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Journal Publications</div>
+            </div>
+            <div class="stat-card">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Research Projects</div>
+            </div>
+        </div>
+        -->
+        
+        <!-- Timeline -->
+        <div class="timeline">
+            <!-- 2025 - Current: Marie Curie Fellow -->
+            <div class="timeline-item">
+                <div class="timeline-icon fellow">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                </div>
+                <div class="timeline-content">
+                    <span class="date">Nov 2025 - Current</span>
+                    <div class="position">🏆 Marie Skłodowska-Curie Postdoctoral Fellow</div>
+                    <div class="institution">Dyson School of Engineering, Imperial College London</div>
+                    <div class="project">
+                        <div class="project-title">CASREx Project</div>
+                        Cable-driven Arm Soft Re-configurable Exoskeleton for Muscle Impairment Rehabilitation
+                    </div>
+                    <p style="margin-top: 15px; color: #4a5568;">Supervisor: Prof. Thrishantha Nanayakkara</p>
+                </div>
+            </div>
+            
+            <!-- 2025: Senior Research Engineer -->
+            <div class="timeline-item">
+                <div class="timeline-icon senior">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 6H12L10 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6M14 16H6V14H14V16M18 12H6V10H18V12Z"/>
+                    </svg>
+                </div>
+                <div class="timeline-content">
+                    <span class="date">May 2025 - Oct 2025</span>
+                    <div class="position">⚙️ Senior Research Engineer - Control Systems</div>
+                    <div class="institution">Center for Transformative Garment Production (TransGP)</div>
+                    <div class="project">
+                        <div class="project-title">Key Achievements:</div>
+                        • Led multidisciplinary team for fabric manipulation<br>
+                        • Physics-based cloth manipulation with imitation learning<br>
+                        • Mentored 3 PhD students<br>
+                        • Developed robotic systems for fabric handling
+                    </div>
+                    <p style="margin-top: 15px; color: #4a5568;">Supervisor: Prof. Kazuhiro Kosuge</p>
+                </div>
+            </div>
+            
+            <!-- 2024-2025: Postdoc at TransGP -->
+            <div class="timeline-item">
+                <div class="timeline-icon postdoc">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9.4 16.6L4.8 12L3.4 13.4L9.4 19.4L21 7.8L19.6 6.4L9.4 16.6Z"/>
+                    </svg>
+                </div>
+                <div class="timeline-content">
+                    <span class="date">Jul 2024 - Apr 2025</span>
+                    <div class="position">🔬 Postdoctoral Fellow</div>
+                    <div class="institution">Center for Transformative Garment Production (TransGP)</div>
+                    <div class="project">
+                        <div class="project-title">Research Focus:</div>
+                        Advanced robotics for textile industry transformation
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2024-2025: Visiting Research Associate -->
+            <div class="timeline-item">
+                <div class="timeline-icon postdoc">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2M12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5Z"/>
+                    </svg>
+                </div>
+                <div class="timeline-content">
+                    <span class="date">Jul 2024 - Oct 2025</span>
+                    <div class="position">🌏 Visiting Research Associate</div>
+                    <div class="institution">Dept. of Electrical & Electronic Engineering, Hong Kong University (HKU)</div>
+                </div>
+            </div>
+            
+            <!-- 2021-2024: Postdoc at CUHK -->
+            <div class="timeline-item">
+                <div class="timeline-icon postdoc">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 15.99L12 18.72L7 15.99V12.27L12 15L17 12.27V15.99Z"/>
+                    </svg>
+                </div>
+                <div class="timeline-content">
+                    <span class="date">Mar 2021 - Jun 2024</span>
+                    <div class="position">🔬 Postdoctoral Fellow</div>
+                    <div class="institution">Dept. of Mechanical & Automation, Chinese University of Hong Kong</div>
+                    <div class="project">
+                        <div class="project-title">Research Projects:</div>
+                        1. Modeling and control of cable-driven robots with cable wrapping<br>
+                        2. Design of cable-driven growing vine robot for ceiling inspections<br><br>
+                        • Published 5+ journal articles<br>
+                        • Lectured MAEG5090 Topics in Robotics
+                    </div>
+                    <p style="margin-top: 15px; color: #4a5568;">Supervisor: Prof. Darwin Lau</p>
+                </div>
+            </div>
+            
+            <!-- 2021-2022: Visiting Fellow -->
+            <div class="timeline-item">
+                <div class="timeline-icon postdoc">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 15H16V17H18M18 11H16V13H18M20 19H12V17H14V15H12V13H14V11H12V9H20M10 7H8V5H10M10 11H8V9H10M10 15H8V13H10M10 19H8V17H10M6 7H4V5H6M6 11H4V9H6M6 15H4V13H6M6 19H4V17H6M12 7V3H2V21H22V7H12Z"/>
+                    </svg>
+                </div>
+                <div class="timeline-content">
+                    <span class="date">Oct 2021 - Jan 2022</span>
+                    <div class="position">🇫🇷 Visiting Postdoctoral Fellow</div>
+                    <div class="institution">LS2N, École Centrale de Nantes</div>
+                    <div class="project">
+                        <div class="project-title">Project:</div>
+                        Iterative-learning control of cable-driven parallel robot
+                    </div>
+                    <p style="margin-top: 15px; color: #4a5568;">Supervisors: Prof. Stephane Caro & Prof. Darwin Lau</p>
+                </div>
+            </div>
+            
+            <!-- 2016-2021: PhD -->
+            <div class="timeline-item">
+                <div class="timeline-icon education">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"/>
+                    </svg>
+                </div>
+                <div class="timeline-content">
+                    <span class="date">Aug 2016 - Apr 2021</span>
+                    <div class="position">🎓 Ph.D. in Mechatronics Engineering</div>
+                    <div class="institution">The University of Auckland, New Zealand</div>
+                    <div class="project">
+                        <div class="project-title">Thesis:</div>
+                        Robotic Soft Esophagus Design, Modelling, and Control for Endoprosthetic Stent Testing and Food Swallow Investigation
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2017-2020: Teaching Assistant -->
+            <div class="timeline-item">
+                <div class="timeline-icon research">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z"/>
+                    </svg>
+                </div>
+                <div class="timeline-content">
+                    <span class="date">2017 - 2020</span>
+                    <div class="position">👨‍🏫 Graduate Teaching Assistant</div>
+                    <div class="institution">The University of Auckland</div>
+                    <div class="project">
+                        <div class="project-title">Courses:</div>
+                        • MECHENG 706: Mechatronics Design<br>
+                        • MECHENG 306: Sensing & Actuating Systems<br>
+                        • ENGGEN 115: Engineering Design<br>
+                        • ENGGEN 131: Engineering Computation
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2018-2019: Research Assistant -->
+            <div class="timeline-item">
+                <div class="timeline-icon research">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M13 13V19H11V13H13M13 5V11H11V5H13M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20Z"/>
+                    </svg>
+                </div>
+                <div class="timeline-content">
+                    <span class="date">Jan 2018 - Jan 2019</span>
+                    <div class="position">🔬 Research Assistant</div>
+                    <div class="institution">The University of Auckland</div>
+                    <div class="project">
+                        <div class="project-title">Project:</div>
+                        Medical device research on esophageal stents and soft robotics
+                    </div>
+                    <p style="margin-top: 15px; color: #4a5568;">Supervisor: Prof. Peter Xu</p>
+                </div>
+            </div>
+            
+            <!-- 2013-2016: Lecturer -->
+            <div class="timeline-item">
+                <div class="timeline-icon research">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.5 12C19.43 12 21 13.57 21 15.5C21 16.38 20.75 17.21 20.31 17.9L23.39 21L22 22.39L18.88 19.32C18.19 19.75 17.37 20 16.5 20C14.57 20 13 18.43 13 16.5C13 14.57 14.57 13 16.5 13C16.83 13 17.15 13.05 17.45 13.13L19.59 10.98L21 12.39L18.87 14.54C19.25 15 19.5 15.73 19.5 16.5C19.5 17.88 18.38 19 17 19C15.62 19 14.5 17.88 14.5 16.5C14.5 15.12 15.62 14 17 14C17.28 14 17.54 14.06 17.78 14.15L19 12.93L17.5 12M10 2C10 2 4 4.25 4 8.5V14.5C4 16.43 5.57 18 7.5 18H8V21L12 19L16 21V18H16.5C17.7 18 18.74 17.34 19.32 16.39L17.5 14.57C17.37 14.85 17.07 15 16.75 15H7.5C7.22 15 7 14.78 7 14.5V8.5C7 5.82 9.86 4.26 10 4.18V2Z"/>
+                    </svg>
+                </div>
+                <div class="timeline-content">
+                    <span class="date">Jul 2013 - Jun 2016</span>
+                    <div class="position">👨‍🏫 Lecturer (Assistant Professor Grade-1)</div>
+                    <div class="institution">Galgotia's University, School of EEECE</div>
+                    <p style="margin-top: 15px; color: #4a5568;">Teaching and curriculum development in electrical engineering</p>
+                </div>
+            </div>
+            
+            <!-- 2011-2013: M.Tech -->
+            <div class="timeline-item">
+                <div class="timeline-icon education">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"/>
+                    </svg>
+                </div>
+                <div class="timeline-content">
+                    <span class="date">Jul 2011 - Jul 2013</span>
+                    <div class="position">🎓 M.Tech in Systems and Control</div>
+                    <div class="institution">Indian Institute of Technology (IIT)</div>
+                    <div class="project">
+                        <div class="project-title">Dissertation:</div>
+                        Non-Linear Predictive Control Model using Relevance Vector Machine<br>
+                        <strong>GPA: 8.4/10.0</strong>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 2004-2010: B.Tech -->
+            <div class="timeline-item">
+                <div class="timeline-icon education">
+                    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"/>
+                    </svg>
+                </div>
+                <div class="timeline-content">
+                    <span class="date">Jul 2004 - Jun 2010</span>
+                    <div class="position">🎓 B.Tech in Electronics and Communication Engineering</div>
+                    <div class="institution">North Eastern Regional Institute of Science and Technology (NERIST)</div>
+                    <div class="project">
+                        <div class="project-title">Project:</div>
+                        Design and Synthesis of a Sixth Order Tow Thomas Bi-quad filter<br>
+                        <strong>GPA: 9.1/10.0</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <h2 class="skills-title">🛠️ Technical Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🤖 Robotics & Control</h3>
+                    <p>Cable-driven robots, Soft robotics, Mechatronics systems, Control systems design, Robotic manipulation</p>
+                </div>
+                <div class="skill-category">
+                    <h3>💻 Programming</h3>
+                    <p>PyTorch, Python, MATLAB, ROS, LabVIEW, Gym framework, Assembly languages, C programming</p>
+                </div>
+                <div class="skill-category">
+                    <h3>🎨 Design & Modeling</h3>
+                    <p>Blender, SOLIDWORKS, Inventor, Inkscape, 3D modeling, CAD design</p>
+                </div>
+                <div class="skill-category">
+                    <h3>🔧 Hardware</h3>
+                    <p>Raspberry Pi, myRIO, Arduino, Microprocessors (8085, 8086, 8051), Embedded systems</p>
+                </div>
+                <div class="skill-category">
+                    <h3>🧠 Machine Learning</h3>
+                    <p>Deep learning, Imitation learning, Physics-based modeling, Predictive control, Neural networks</p>
+                </div>
+                <div class="skill-category">
+                    <h3>📝 Research & Communication</h3>
+                    <p>Academic research, Scientific writing, LaTeX typesetting, Grant proposals, Mentorship</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Research Themes -->
+        <div class="skills-section" style="margin-top: 40px;">
+            <h2 class="skills-title">🔬 Research Themes</h2>
+            <div class="skills-grid">
+                <div class="skill-category" style="border-top-color: #4facfe;">
+                    <h3>Medical Robotics</h3>
+                    <p>Soft esophagus modeling, Endoprosthetic stent testing, Rehabilitation robotics, Muscle impairment therapy</p>
+                </div>
+                <div class="skill-category" style="border-top-color: #f093fb;">
+                    <h3>Cable-Driven Robotics</h3>
+                    <p>Parallel robots, Cable wrapping dynamics, Growing vine robots, Soft exoskeletons</p>
+                </div>
+                <div class="skill-category" style="border-top-color: #43e97b;">
+                    <h3>Industrial Automation</h3>
+                    <p>Fabric manipulation, Garment production, Physics-based control, Robotic handling systems</p>
+                </div>
+                <div class="skill-category" style="border-top-color: #fa709a;">
+                    <h3>AI & Learning</h3>
+                    <p>Imitation learning, Iterative learning control, Non-linear predictive control, Machine learning models</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add smooth scroll animation on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            items.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

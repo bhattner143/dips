@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Journey - Zigzag Road</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            overflow: auto;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            background: white;
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 30px 90px rgba(0,0,0,0.4);
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 60px;
+        }
+        
+        .road-container {
+            position: relative;
+            width: 100%;
+            height: 800px;
+            background: linear-gradient(to bottom, #87ceeb 0%, #f0f8ff 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: inset 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .road-segment {
+            fill: none;
+            stroke: #2c3e50;
+            stroke-width: 100;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .road-edge {
+            fill: none;
+            stroke: #d3d3d3;
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .center-line {
+            fill: none;
+            stroke: #ffd700;
+            stroke-width: 6;
+            stroke-dasharray: 40, 30;
+            stroke-linecap: round;
+        }
+        
+        .milestone-pin {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .milestone-pin:hover {
+            transform: scale(1.2);
+        }
+        
+        .pin-shadow {
+            filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
+        }
+        
+        /* Map pin style - teardrop shape */
+        .location-pin {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .location-pin:hover {
+            transform: scale(1.15);
+        }
+        
+        .pin-outer {
+            fill: #ffd700;
+            stroke: #2c3e50;
+            stroke-width: 3;
+        }
+        
+        .pin-inner-circle {
+            fill: white;
+            stroke: none;
+        }
+        
+        .pin-inner {
+            fill: #667eea;
+        }
+        
+        .pin-tip {
+            fill: #2c3e50;
+        }
+        
+        .milestone-label {
+            font-size: 16px;
+            font-weight: bold;
+            fill: #2c3e50;
+            text-anchor: middle;
+            pointer-events: none;
+        }
+        
+        .milestone-year {
+            font-size: 14px;
+            font-weight: 600;
+            fill: #667eea;
+            text-anchor: middle;
+            pointer-events: none;
+        }
+        
+        /* Different colors for different milestones */
+        .milestone-pin:nth-child(1) .pin-inner { fill: #43e97b; }
+        .milestone-pin:nth-child(2) .pin-inner { fill: #38f9d7; }
+        .milestone-pin:nth-child(3) .pin-inner { fill: #fa709a; }
+        .milestone-pin:nth-child(4) .pin-inner { fill: #fee140; }
+        .milestone-pin:nth-child(5) .pin-inner { fill: #f093fb; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .milestone-pin {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .milestone-pin:nth-child(2) { animation-delay: 0.5s; }
+        .milestone-pin:nth-child(3) { animation-delay: 1s; }
+        .milestone-pin:nth-child(4) { animation-delay: 1.5s; }
+        .milestone-pin:nth-child(5) { animation-delay: 2s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with name and title -->
+        <div style="text-align: center; margin-bottom: 40px;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 20px;">
+                <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(0,0,0,0.3); overflow: hidden;">
+                    <img src="photo2.jpg" alt="Dr. Dipankar Bhattacharya" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="text-align: left;">
+                    <h2 style="font-size: 2.5em; color: #2d3748; margin-bottom: 5px;">Dr. Dipankar Bhattacharya</h2>
+                    <p style="font-size: 1.2em; color: #667eea; font-weight: 600;">🏆 Marie Curie Fellow | Robotics, Control Systems and AI</p>
+                    <p style="font-size: 1em; color: #4a5568; margin-top: 5px;">Imperial College London | Dyson School of Engineering</p>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
+                    📚 15+ Publications
+                </div>
+                <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; box-shadow: 0 4px 15px rgba(67, 233, 123, 0.3);">
+                    🌏 5+ Countries
+                </div>
+                <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; box-shadow: 0 4px 15px rgba(250, 112, 154, 0.3);">
+                    🎯 10+ Projects
+                </div>
+            </div>
+        </div>
+        
+        <h1>🛣️ Career Journey Road</h1>
+        
+        <div class="road-container">
+            <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
+                <!-- Define gradient for road -->
+                <defs>
+                    <linearGradient id="roadGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#34495e;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#2c3e50;stop-opacity:1" />
+                    </linearGradient>
+                    
+                    <filter id="roadShadow">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+                        <feOffset dx="0" dy="8" result="offsetblur"/>
+                        <feComponentTransfer>
+                            <feFuncA type="linear" slope="0.5"/>
+                        </feComponentTransfer>
+                        <feMerge>
+                            <feMergeNode/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                
+                <!-- Road shadow -->
+                <path class="road-segment" 
+                      d="M 150,700 L 300,550 L 500,600 L 700,400 L 900,450 L 1050,200" 
+                      stroke="#000" 
+                      opacity="0.2" 
+                      transform="translate(5, 10)" />
+                
+                <!-- Main road -->
+                <path class="road-segment" 
+                      d="M 150,700 L 300,550 L 500,600 L 700,400 L 900,450 L 1050,200" 
+                      stroke="url(#roadGradient)" 
+                      filter="url(#roadShadow)" />
+                
+                
+                
+                <!-- Center yellow dashed line -->
+                <path class="center-line" 
+                      d="M 150,700 L 300,550 L 500,600 L 700,400 L 900,450 L 1050,200" />
+                
+                <!-- Location Pin 1: Start (Yellow) -->
+                <g class="location-pin pin-shadow" transform="translate(150, 710)">
+                    <path class="pin-outer" d="M 0,-50 C -20,-50 -35,-35 -35,-15 C -35,5 0,30 0,30 C 0,30 35,5 35,-15 C 35,-35 20,-50 0,-50 Z"/>
+                    <circle class="pin-inner-circle" cx="0" cy="-15" r="18"/>
+                    <text class="milestone-year" x="0" y="-11" style="font-size: 12px; fill: #2c3e50;">2004</text>
+                </g>
+                <text class="milestone-label" x="80" y="710" style="text-anchor: end; font-size: 14px;">B.Tech</text>
+                <text class="milestone-label" x="78" y="728" style="text-anchor: end; font-size: 11px; fill: #4a5568;">NERIST</text>
+                
+                <!-- Location Pin 2: First Turn (Orange) -->
+                <g class="location-pin pin-shadow" transform="translate(300, 560)">
+                    <path class="pin-outer" d="M 0,-50 C -20,-50 -35,-35 -35,-15 C -35,5 0,30 0,30 C 0,30 35,5 35,-15 C 35,-35 20,-50 0,-50 Z" style="fill: #ff9800;"/>
+                    <circle class="pin-inner-circle" cx="0" cy="-15" r="18"/>
+                    <text class="milestone-year" x="0" y="-11" style="font-size: 12px; fill: #2c3e50;">2011</text>
+                </g>
+                <text class="milestone-label" x="320" y="475" style="text-anchor: end; font-size: 14px;">M.Tech</text>
+                <text class="milestone-label" x="305" y="493" style="text-anchor: end; font-size: 11px; fill: #4a5568;">IIT</text>
+                
+                <!-- Graduation Cap Icon: PhD (Red) -->
+                <g class="location-pin pin-shadow" transform="translate(500, 615)">
+                    <!-- Mortarboard base -->
+                    <rect x="-30" y="-45" width="60" height="8" fill="#e74c3c" rx="2"/>
+                    <!-- Mortarboard top -->
+                    <path d="M -35,-45 L 0,-55 L 35,-45 Z" fill="#c0392b"/>
+                    <!-- Cap body -->
+                    <path d="M -20,-37 L -20,-15 Q -20,-5 0,0 Q 20,-5 20,-15 L 20,-37 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+                    <!-- Tassel -->
+                    <line x1="35" y1="-45" x2="45" y2="-35" stroke="#e74c3c" stroke-width="3"/>
+                    <circle cx="45" cy="-35" r="5" fill="#e74c3c"/>
+                    <!-- Year label -->
+                    <circle cx="0" cy="-20" r="18" fill="white" opacity="0.9"/>
+                    <text x="0" y="-15" text-anchor="middle" font-size="12px" font-weight="bold" fill="#2c3e50">2016</text>
+                </g>
+                <text class="milestone-label" x="505" y="673" style="font-size: 14px;">PhD</text>
+                <text class="milestone-label" x="505" y="689" style="font-size: 11px; fill: #4a5568;">Univ of Auckland</text>
+                
+                <!-- Location Pin 4: Upper Turn (Blue) -->
+                <g class="location-pin pin-shadow" transform="translate(705, 413)">
+                    <path class="pin-outer" d="M 0,-50 C -20,-50 -35,-35 -35,-15 C -35,5 0,30 0,30 C 0,30 35,5 35,-15 C 35,-35 20,-50 0,-50 Z" style="fill: #3498db;"/>
+                    <circle class="pin-inner-circle" cx="0" cy="-15" r="18"/>
+                    <text class="milestone-year" x="0" y="-11" style="font-size: 12px; fill: #2c3e50;">2021</text>
+                </g>
+                <text class="milestone-label" x="765" y="320" style="text-anchor: end; font-size: 14px;">Postdoctoral fellow</text>
+                <text class="milestone-label" x="710" y="340" style="text-anchor: end; font-size: 11px; fill: #4a5568;">CUHK</text>
+                
+                <!-- Factory/Industry Icon: Senior Research Engineer (Turquoise) -->
+                <g class="location-pin pin-shadow" transform="translate(900, 450)">
+                    <!-- Factory building base -->
+                    <rect x="-25" y="-10" width="50" height="30" fill="#1abc9c" stroke="#16a085" stroke-width="2" rx="2"/>
+                    <!-- Factory roof -->
+                    <path d="M -30,-10 L 0,-25 L 30,-10 Z" fill="#16a085"/>
+                    <!-- Smokestacks -->
+                    <rect x="-20" y="-45" width="8" height="20" fill="#16a085" rx="1"/>
+                    <rect x="12" y="-50" width="8" height="25" fill="#16a085" rx="1"/>
+                    <!-- Smoke puffs -->
+                    <circle cx="-16" cy="-48" r="4" fill="#95a5a6" opacity="0.6"/>
+                    <circle cx="-12" cy="-52" r="3" fill="#95a5a6" opacity="0.5"/>
+                    <circle cx="16" cy="-53" r="4" fill="#95a5a6" opacity="0.6"/>
+                    <circle cx="20" cy="-57" r="3" fill="#95a5a6" opacity="0.5"/>
+                    <!-- Windows -->
+                    <rect x="-18" y="-4" width="12" height="12" fill="#fff" opacity="0.8"/>
+                    <rect x="6" y="-4" width="12" height="12" fill="#fff" opacity="0.8"/>
+                    <!-- Year label -->
+                    <circle cx="0" cy="5" r="14" fill="white" opacity="0.9"/>
+                    <text x="0" y="7" text-anchor="middle" font-size="12px" font-weight="bold" fill="#2c3e50">2024</text>
+                </g>
+                <text class="milestone-label" x="910" y="530" style="font-size: 14px;">Senior Research Engineer</text>
+                <text class="milestone-label" x="910" y="548" style="font-size: 11px; fill: #4a5568;">TransGP</text>
+                
+                <!-- Location Pin 6: Visiting Research Associate -->
+                <g class="location-pin pin-shadow" transform="translate(952, 380)">
+                    <path class="pin-outer" d="M 0,-50 C -20,-50 -35,-35 -35,-15 C -35,5 0,30 0,30 C 0,30 35,5 35,-15 C 35,-35 20,-50 0,-50 Z" style="fill: #27ae60;"/>
+                    <circle class="pin-inner-circle" cx="0" cy="-15" r="18"/>
+                    <text class="milestone-year" x="0" y="-11" style="font-size: 12px; fill: #2c3e50; font-weight: bold;">May</text>
+                </g>
+                <text class="milestone-label" x="1030" y="375" style="text-anchor: start; font-size: 13px;">Visiting Research</text>
+                <text class="milestone-label" x="1060" y="390" style="text-anchor: start; font-size: 13px;">Associate</text>
+                <text class="milestone-label" x="1080" y="405" style="text-anchor: start; font-size: 10px; fill: #4a5568;">HKU</text>
+                
+                <!-- Trophy Icon: Marie Curie Fellow (Purple) -->
+                <g class="location-pin pin-shadow" transform="translate(1050, 200)">
+                    <!-- Trophy base -->
+                    <ellipse cx="0" cy="20" rx="25" ry="8" fill="#9b59b6"/>
+                    <!-- Trophy stem -->
+                    <rect x="-8" y="5" width="16" height="15" fill="#9b59b6" rx="2"/>
+                    <!-- Trophy cup -->
+                    <path d="M -20,-35 L -20,-10 Q -20,0 -10,5 L 10,5 Q 20,0 20,-10 L 20,-35 Z" fill="#ffd700" stroke="#9b59b6" stroke-width="3"/>
+                    <!-- Left handle -->
+                    <path d="M -20,-25 Q -35,-25 -35,-15 Q -35,-5 -20,-5" fill="none" stroke="#ffd700" stroke-width="4"/>
+                    <!-- Right handle -->
+                    <path d="M 20,-25 Q 35,-25 35,-15 Q 35,-5 20,-5" fill="none" stroke="#ffd700" stroke-width="4"/>
+                    <!-- Star on trophy -->
+                    <path d="M 0,-25 L -3,-18 L -10,-18 L -5,-13 L -7,-6 L 0,-11 L 7,-6 L 5,-13 L 10,-18 L 3,-18 Z" fill="#fff" opacity="0.9"/>
+                    <!-- Year label -->
+                    <circle cx="0" cy="-25" r="20" fill="white" opacity="0.3"/>
+                    <text x="0" y="-21" text-anchor="middle" font-size="13px" font-weight="bold" fill="#9b59b6">2025</text>
+                </g>
+                <text class="milestone-label" x="1050" y="115" style="font-size: 16px; fill: #9b59b6; font-weight: bold;">Marie Curie Fellow</text>
+                <text class="milestone-label" x="1050" y="133" style="font-size: 12px; fill: #7d3c98;">Imperial College London</text>
+            </svg>
+        </div>
+        
+        <!-- Research Domains Footer -->
+        <div style="margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%); border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+            <h3 style="text-align: center; color: #2d3748; font-size: 1.8em; margin-bottom: 25px;">🔬 Research Domains</h3>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                <div style="background: white; padding: 20px; border-radius: 12px; text-align: center; border-top: 4px solid #4facfe; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🏥</div>
+                    <div style="color: #2d3748; font-weight: bold; font-size: 1.1em; margin-bottom: 8px;">Medical Robotics</div>
+                    <div style="color: #4a5568; font-size: 0.9em;">Soft robotics, Rehabilitation, Exoskeletons</div>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 12px; text-align: center; border-top: 4px solid #f093fb; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🤖</div>
+                    <div style="color: #2d3748; font-weight: bold; font-size: 1.1em; margin-bottom: 8px;">Cable-Driven Robotics</div>
+                    <div style="color: #4a5568; font-size: 0.9em;">Parallel robots, Vine robots, Control</div>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 12px; text-align: center; border-top: 4px solid #43e97b; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🏭</div>
+                    <div style="color: #2d3748; font-weight: bold; font-size: 1.1em; margin-bottom: 8px;">Industrial Automation</div>
+                    <div style="color: #4a5568; font-size: 0.9em;">Fabric manipulation, Garment production</div>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 12px; text-align: center; border-top: 4px solid #fa709a; box-shadow: 0 3px 10px rgba(0,0,0,0.08);">
+                    <div style="font-size: 2.5em; margin-bottom: 10px;">🧠</div>
+                    <div style="color: #2d3748; font-weight: bold; font-size: 1.1em; margin-bottom: 8px;">AI & Learning</div>
+                    <div style="color: #4a5568; font-size: 0.9em;">Deep learning, Imitation learning</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
