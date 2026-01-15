@@ -76,6 +76,26 @@ git push
 
 The website will automatically update within a few minutes.
 
+## Testing Locally with Live Server
+
+To preview your website locally before deploying:
+
+```bash
+cd /Volumes/Data/dips
+python3 -m http.server 8000
+```
+
+Then open your browser and navigate to: http://localhost:8000/index.html
+
+The server will run in the background. Press `Ctrl+C` to stop it when you're done.
+
+### Alternative: Using VS Code Live Server
+
+If you have the Live Server extension installed in VS Code:
+1. Right-click on `index.html`
+2. Select "Open with Live Server"
+3. Your website will open automatically with auto-refresh on file changes
+
 ## Structure
 
 - `index.html` - Main homepage with profile and news feed
