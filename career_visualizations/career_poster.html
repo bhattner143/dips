@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Poster - Dr. Dipankar Bhattacharya</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @page {
+            size: A3 landscape;
+            margin: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0;
+            margin: 0;
+            width: 420mm;
+            height: 297mm;
+            overflow: hidden;
+        }
+        
+        .poster {
+            width: 420mm;
+            height: 297mm;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            gap: 20px;
+            padding: 30px;
+        }
+        
+        /* Header Section */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 40px 60px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            display: grid;
+            grid-template-columns: 200px 1fr 300px;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .profile-circle {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .profile-circle svg {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .header-center {
+            text-align: center;
+        }
+        
+        .name {
+            font-size: 3.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .current-title {
+            font-size: 1.8em;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .fellowship-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(250, 112, 154, 0.4);
+        }
+        
+        .institution-info {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+        
+        .header-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .stat-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.95;
+            margin-top: 5px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            height: 100%;
+            position: relative;
+        }
+        
+        /* Career Road */
+        .career-road {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 80%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .road-path {
+            fill: none;
+            stroke: #4a4a4a;
+            stroke-width: 80;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(0 8px 15px rgba(0,0,0,0.4));
+        }
+        
+        .road-center-line {
+            fill: none;
+            stroke: white;
+            stroke-width: 5;
+            stroke-dasharray: 40, 30;
+            stroke-linecap: round;
+        }
+        
+        .milestone-marker {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .milestone-marker:hover {
+            transform: scale(1.15);
+        }
+        
+        .milestone-pin {
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+        }
+        
+        .pin-circle {
+            fill: white;
+            stroke: #2d3748;
+            stroke-width: 3;
+        }
+        
+        .pin-dot {
+            fill: #667eea;
+        }
+        
+        .milestone-label {
+            font-size: 13px;
+            font-weight: bold;
+            fill: #2d3748;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+        
+        .milestone-title {
+            font-size: 12px;
+            font-weight: 600;
+            fill: #4a5568;
+        }
+        
+        .arrow-marker {
+            fill: #4a4a4a;
+            filter: drop-shadow(0 3px 8px rgba(0,0,0,0.4));
+        }
+        
+        .start-flag {
+            fill: #43e97b;
+            stroke: #2d3748;
+            stroke-width: 2;
+        }
+        
+        .end-flag {
+            fill: #fa709a;
+            stroke: #2d3748;
+            stroke-width: 2;
+            animation: wave 2s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+        }
+        
+        /* Left Column */
+        .left-column {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            gap: 20px;
+        }
+        
+        .research-domains {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .section-title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .domains-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .domain-card {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 3px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .domain-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .domain-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .domain-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .domain-desc {
+            font-size: 0.95em;
+            color: #4a5568;
+            line-height: 1.4;
+        }
+        
+        .career-timeline {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow-y: auto;
+        }
+        
+        .timeline-compact {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .timeline-entry {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-entry.highlight {
+            border-left-color: #fa709a;
+            background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-position {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-institution {
+            font-size: 1em;
+            color: #4a5568;
+            font-style: italic;
+        }
+        
+        /* Right Column */
+        .right-column {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .skills-section {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow-y: auto;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .skill-card {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-top: 4px solid #667eea;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .skill-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .skill-list {
+            font-size: 0.95em;
+            color: #4a5568;
+            line-height: 1.5;
+        }
+        
+        .education-section {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .education-grid {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .education-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .degree-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .degree-institution {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+        
+        .degree-year {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        
+        .degree-gpa {
+            font-size: 1em;
+            margin-top: 8px;
+            font-weight: bold;
+            opacity: 0.95;
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            padding: 20px 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-text {
+            font-size: 1.1em;
+            color: #4a5568;
+            font-weight: 600;
+        }
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Career Road SVG -->
+            <svg class="career-road" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
+                <!-- Dark asphalt road with curves -->
+                <path class="road-path" d="M 100,500 Q 200,480 280,400 Q 360,320 450,350 Q 540,380 620,280 Q 700,180 800,220 Q 900,260 1000,150" />
+                
+                <!-- White dashed center line -->
+                <path class="road-center-line" d="M 100,500 Q 200,480 280,400 Q 360,320 450,350 Q 540,380 620,280 Q 700,180 800,220 Q 900,260 1000,150" />
+                
+                <!-- Arrow at the end -->
+                <polygon class="arrow-marker" points="1000,150 975,135 975,165" transform="rotate(-35 1000 150)" />
+                
+                <!-- START - 2004 B.Tech -->
+                <g class="milestone-marker">
+                    <g class="milestone-pin" transform="translate(100, 500)">
+                        <circle class="pin-circle" cx="0" cy="-20" r="18" />
+                        <circle class="pin-dot" cx="0" cy="-20" r="8" />
+                        <path d="M 0,-2 L -8,8 L 8,8 Z" fill="#667eea" stroke="#2d3748" stroke-width="2" />
+                    </g>
+                    <text x="100" y="540" text-anchor="middle" class="milestone-label">2004</text>
+                    <text x="100" y="555" text-anchor="middle" class="milestone-title">B.Tech</text>
+                </g>
+                
+                <!-- MILESTONE 1 - 2010 B.Tech Complete -->
+                <g class="milestone-marker">
+                    <g class="milestone-pin" transform="translate(220, 440)">
+                        <circle class="pin-circle" cx="0" cy="-20" r="18" style="fill: #e0f7fa;" />
+                        <circle class="pin-dot" cx="0" cy="-20" r="8" />
+                        <path d="M 0,-2 L -8,8 L 8,8 Z" fill="#00bcd4" stroke="#2d3748" stroke-width="2" />
+                    </g>
+                    <text x="220" y="465" text-anchor="middle" class="milestone-label">2010</text>
+                    <text x="220" y="480" text-anchor="middle" class="milestone-title">Graduated</text>
+                </g>
+                
+                <!-- MILESTONE 2 - 2013 M.Tech IIT -->
+                <g class="milestone-marker">
+                    <g class="milestone-pin" transform="translate(340, 350)">
+                        <circle class="pin-circle" cx="0" cy="-20" r="20" style="fill: #fff3e0;" />
+                        <circle class="pin-dot" cx="0" cy="-20" r="9" />
+                        <path d="M 0,-2 L -9,9 L 9,9 Z" fill="#ff9800" stroke="#2d3748" stroke-width="2" />
+                    </g>
+                    <text x="340" y="375" text-anchor="middle" class="milestone-label">2013</text>
+                    <text x="340" y="390" text-anchor="middle" class="milestone-title">M.Tech IIT</text>
+                </g>
+                
+                <!-- MILESTONE 3 - 2016 PhD Start -->
+                <g class="milestone-marker">
+                    <g class="milestone-pin" transform="translate(450, 350)">
+                        <circle class="pin-circle" cx="0" cy="-20" r="20" style="fill: #f3e5f5;" />
+                        <circle class="pin-dot" cx="0" cy="-20" r="9" />
+                        <path d="M 0,-2 L -9,9 L 9,9 Z" fill="#9c27b0" stroke="#2d3748" stroke-width="2" />
+                    </g>
+                    <text x="450" y="375" text-anchor="middle" class="milestone-label">2016</text>
+                    <text x="450" y="390" text-anchor="middle" class="milestone-title">PhD Start</text>
+                </g>
+                
+                <!-- MILESTONE 4 - 2021 PhD Complete -->
+                <g class="milestone-marker">
+                    <g class="milestone-pin" transform="translate(560, 320)">
+                        <circle class="pin-circle" cx="0" cy="-25" r="24" style="fill: #e8f5e9;" />
+                        <circle class="pin-dot" cx="0" cy="-25" r="11" />
+                        <path d="M 0,-2 L -10,10 L 10,10 Z" fill="#4caf50" stroke="#2d3748" stroke-width="2" />
+                        <text x="0" y="-18" text-anchor="middle" style="font-size: 16px;">🎓</text>
+                    </g>
+                    <text x="560" y="345" text-anchor="middle" class="milestone-label" style="font-size: 15px;">2021</text>
+                    <text x="560" y="360" text-anchor="middle" class="milestone-title">PhD</text>
+                </g>
+                
+                <!-- MILESTONE 5 - 2024 Senior Engineer -->
+                <g class="milestone-marker">
+                    <g class="milestone-pin" transform="translate(700, 200)">
+                        <circle class="pin-circle" cx="0" cy="-20" r="20" style="fill: #fff9c4;" />
+                        <circle class="pin-dot" cx="0" cy="-20" r="9" />
+                        <path d="M 0,-2 L -9,9 L 9,9 Z" fill="#fdd835" stroke="#2d3748" stroke-width="2" />
+                    </g>
+                    <text x="700" y="220" text-anchor="middle" class="milestone-label">2024</text>
+                    <text x="700" y="235" text-anchor="middle" class="milestone-title">Sr. Engineer</text>
+                </g>
+                
+                <!-- MILESTONE 6 - 2025 Marie Curie (ARRIVAL) -->
+                <g class="milestone-marker">
+                    <g class="milestone-pin" transform="translate(880, 240)">
+                        <circle class="pin-circle" cx="0" cy="-30" r="28" style="fill: #ffe0ec; stroke: #fa709a; stroke-width: 4;" />
+                        <circle class="pin-dot" cx="0" cy="-30" r="13" style="fill: #fa709a;" />
+                        <path d="M 0,-2 L -12,12 L 12,12 Z" fill="#fa709a" stroke="#2d3748" stroke-width="3" />
+                        <text x="0" y="-20" text-anchor="middle" style="font-size: 20px;">⭐</text>
+                    </g>
+                    <text x="880" y="260" text-anchor="middle" class="milestone-label" style="font-size: 16px; fill: #fa709a;">2025</text>
+                    <text x="880" y="278" text-anchor="middle" class="milestone-title" style="font-weight: bold;">Marie Curie</text>
+                    <text x="880" y="293" text-anchor="middle" class="milestone-title" style="font-size: 11px; fill: #fa709a;">ARRIVAL</text>
+                </g>
+                
+                <!-- Future destination -->
+                <g class="milestone-marker">
+                    <g class="milestone-pin" transform="translate(1000, 150)">
+                        <circle class="pin-circle" cx="0" cy="-20" r="18" style="fill: #f5f5f5; opacity: 0.7; stroke-dasharray: 4,4;" />
+                        <path d="M 0,-2 L -8,8 L 8,8 Z" fill="#999" stroke="#2d3748" stroke-width="2" opacity="0.6" />
+                        <text x="0" y="-12" text-anchor="middle" style="font-size: 16px;">🚀</text>
+                    </g>
+                    <text x="1000" y="170" text-anchor="middle" class="milestone-label" style="opacity: 0.7;">Future</text>
+                </g>
+            </svg>
+            
+            <!-- Left Column -->
+            <div class="left-column" style="z-index: 2; position: relative;">text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+        
+        ::-webkit-scrollbar {
+            <!-- Right Column -->
+            <div class="right-column" style="z-index: 2; position: relative;">
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <!-- Header -->
+        <div class="header">
+            <div class="profile-circle">
+                <svg viewBox="0 0 24 24" fill="white">
+                    <circle cx="12" cy="8" r="4"/>
+                    <path d="M12 14C8.13 14 5 15.57 5 17.5V20H19V17.5C19 15.57 15.87 14 12 14Z"/>
+                </svg>
+            </div>
+            
+            <div class="header-center">
+                <div class="name">Dr. Dipankar Bhattacharya</div>
+                <div class="current-title">Robotics & Control Systems Expert</div>
+                <div class="fellowship-badge">🏆 Marie Skłodowska-Curie Fellow</div>
+                <div class="institution-info">
+                    📍 Imperial College London | 🔬 Dyson School of Engineering<br>
+                    🎯 Cable-driven Soft Exoskeletons for Rehabilitation
+                </div>
+            </div>
+            
+            <div class="header-stats">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Publications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Research Domains -->
+                <div class="research-domains">
+                    <h2 class="section-title">🔬 Research Domains</h2>
+                    <div class="domains-grid">
+                        <div class="domain-card">
+                            <div class="domain-icon">🏥</div>
+                            <div class="domain-title">Medical Robotics</div>
+                            <div class="domain-desc">Soft esophagus modeling, Stent testing, Rehabilitation robotics, Exoskeletons</div>
+                        </div>
+                        <div class="domain-card">
+                            <div class="domain-icon">🤖</div>
+                            <div class="domain-title">Cable-Driven Robotics</div>
+                            <div class="domain-desc">Parallel robots, Cable wrapping, Growing vine robots, Soft mechanisms</div>
+                        </div>
+                        <div class="domain-card">
+                            <div class="domain-icon">🏭</div>
+                            <div class="domain-title">Industrial Automation</div>
+                            <div class="domain-desc">Fabric manipulation, Garment production, Physics-based control</div>
+                        </div>
+                        <div class="domain-card">
+                            <div class="domain-icon">🧠</div>
+                            <div class="domain-title">AI & Learning</div>
+                            <div class="domain-desc">Imitation learning, Iterative control, Predictive models, Deep learning</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Career Timeline -->
+                <div class="career-timeline">
+                    <h2 class="section-title">📅 Career Milestones</h2>
+                    <div class="timeline-compact">
+                        <div class="timeline-entry highlight">
+                            <div class="timeline-date">Nov 2025 - Present</div>
+                            <div class="timeline-position">Marie Skłodowska-Curie Fellow</div>
+                            <div class="timeline-institution">Imperial College London, UK</div>
+                        </div>
+                        <div class="timeline-entry">
+                            <div class="timeline-date">May 2025 - Oct 2025</div>
+                            <div class="timeline-position">Senior Research Engineer - Control Systems</div>
+                            <div class="timeline-institution">Center for Transformative Garment Production</div>
+                        </div>
+                        <div class="timeline-entry">
+                            <div class="timeline-date">Jul 2024 - Oct 2025</div>
+                            <div class="timeline-position">Visiting Research Associate</div>
+                            <div class="timeline-institution">Hong Kong University</div>
+                        </div>
+                        <div class="timeline-entry">
+                            <div class="timeline-date">Mar 2021 - Jun 2024</div>
+                            <div class="timeline-position">Postdoctoral Fellow</div>
+                            <div class="timeline-institution">Chinese University of Hong Kong</div>
+                        </div>
+                        <div class="timeline-entry">
+                            <div class="timeline-date">Oct 2021 - Jan 2022</div>
+                            <div class="timeline-position">Visiting Postdoctoral Fellow</div>
+                            <div class="timeline-institution">École Centrale de Nantes, France</div>
+                        </div>
+                        <div class="timeline-entry">
+                            <div class="timeline-date">Aug 2016 - Apr 2021</div>
+                            <div class="timeline-position">Ph.D. in Mechatronics Engineering</div>
+                            <div class="timeline-institution">University of Auckland, New Zealand</div>
+                        </div>
+                        <div class="timeline-entry">
+                            <div class="timeline-date">2017 - 2020</div>
+                            <div class="timeline-position">Graduate Teaching Assistant</div>
+                            <div class="timeline-institution">University of Auckland</div>
+                        </div>
+                        <div class="timeline-entry">
+                            <div class="timeline-date">Jul 2013 - Jun 2016</div>
+                            <div class="timeline-position">Lecturer (Assistant Professor)</div>
+                            <div class="timeline-institution">Galgotia's University, India</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Skills -->
+                <div class="skills-section">
+                    <h2 class="section-title">🛠️ Technical Expertise</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-title">🤖 Robotics</div>
+                            <div class="skill-list">Cable-driven robots • Soft robotics • Mechatronics • Control systems • Manipulation</div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-title">💻 Programming</div>
+                            <div class="skill-list">PyTorch • Python • MATLAB • ROS • LabVIEW • Gym • Assembly • C</div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-title">🎨 Design</div>
+                            <div class="skill-list">Blender • SOLIDWORKS • Inventor • Inkscape • 3D modeling • CAD</div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-title">🔧 Hardware</div>
+                            <div class="skill-list">Raspberry Pi • Arduino • myRIO • Microprocessors • Embedded systems</div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-title">🧠 Machine Learning</div>
+                            <div class="skill-list">Deep learning • Imitation learning • Physics-based modeling • Neural networks</div>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-title">📝 Research</div>
+                            <div class="skill-list">Scientific writing • LaTeX • Grant proposals • Mentorship • Teaching</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education -->
+                <div class="education-section">
+                    <h2 class="section-title">🎓 Academic Qualifications</h2>
+                    <div class="education-grid">
+                        <div class="education-card">
+                            <div class="degree-title">Ph.D. in Mechatronics Engineering</div>
+                            <div class="degree-institution">The University of Auckland, New Zealand</div>
+                            <div class="degree-year">2016 - 2021</div>
+                        </div>
+                        <div class="education-card">
+                            <div class="degree-title">M.Tech in Systems and Control</div>
+                            <div class="degree-institution">Indian Institute of Technology (IIT)</div>
+                            <div class="degree-year">2011 - 2013</div>
+                            <div class="degree-gpa">GPA: 8.4/10.0</div>
+                        </div>
+                        <div class="education-card">
+                            <div class="degree-title">B.Tech in Electronics and Communication</div>
+                            <div class="degree-institution">NERIST</div>
+                            <div class="degree-year">2004 - 2010</div>
+                            <div class="degree-gpa">GPA: 9.1/10.0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-text">
+                <span class="footer-highlight">Research Focus:</span> Advancing robotics for healthcare and industry through innovative control systems and AI
+            </div>
+            <div class="footer-text">
+                <span class="footer-highlight">Current Project:</span> CASREx - Cable-driven Soft Exoskeletons for Rehabilitation
+            </div>
+        </div>
+    </div>
+</body>
+</html>
