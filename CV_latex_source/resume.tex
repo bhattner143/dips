@@ -1,0 +1,253 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{array}
+
+% Color scheme
+\definecolor{primarycolor}{RGB}{102,126,234}
+\definecolor{secondarycolor}{RGB}{118,75,162}
+\definecolor{textcolor}{RGB}{51,51,51}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primarycolor,
+    urlcolor=primarycolor,
+    citecolor=primarycolor
+}
+
+% Title formatting
+\titleformat{\section}
+  {\Large\bfseries\color{primarycolor}}
+  {}
+  {0em}
+  {}
+  [\color{primarycolor}\titlerule]
+
+\titleformat{\subsection}
+  {\large\bfseries\color{secondarycolor}}
+  {}
+  {0em}
+  {}
+
+% Custom commands
+\newcommand{\cvitem}[4]{
+  \textbf{#1} \hfill \textit{#2}\\
+  \textit{#3}\\
+  #4
+  \vspace{0.3cm}
+}
+
+\newcommand{\cvitemdetailed}[5]{
+  \textbf{#1} \hfill \textit{#2}\\
+  \textit{#3}\\
+  \textbf{#4}\\
+  #5
+  \vspace{0.3cm}
+}
+
+\newcommand{\publication}[3]{
+  \textbf{#1}\\
+  \textit{#2}\\
+  #3
+  \vspace{0.2cm}
+}
+
+% Remove page numbers
+\pagestyle{empty}
+
+\begin{document}
+
+% Header
+\begin{center}
+  {\Huge\bfseries\color{primarycolor} Dr. Dipankar Bhattacharya}\\[0.3cm]
+  {\Large\color{secondarycolor} Marie Curie Fellow | Robotics, Control Systems \& AI}\\[0.2cm]
+  {\large Imperial College London | Dyson School of Engineering}\\[0.5cm]
+  
+  \begin{tabular}{c c c c}
+    \faEnvelope\ \href{mailto:d.bhattacharya@imperial.ac.uk}{d.bhattacharya@imperial.ac.uk} &
+    \faGlobe\ \href{https://bhattner143.github.io/dips/}{Portfolio} &
+    \faLinkedin\ \href{http://www.linkedin.com/in/dipankar-bhattacharya-7132497b}{LinkedIn} &
+    \faMapMarker\ London, UK
+  \end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+% Stats Bar
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{\large 15+} & \textbf{\large 10+} & \textbf{\large 5+} & \textbf{\large 8+} \\
+Publications & Research Projects & Countries & Years Experience \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+%-------------------------------------------
+\section*{Research Domains}
+
+\begin{multicols}{2}
+\subsection*{\faHospital\ Medical Robotics}
+Soft robotics, rehabilitation systems, exoskeletons, and assistive devices for healthcare applications.
+
+\subsection*{\faRobot\ Cable-Driven Robotics}
+Parallel robots, vine robots, modeling and control of cable-driven systems.
+
+\columnbreak
+
+\subsection*{\faIndustry\ Industrial Automation}
+Fabric manipulation, garment production automation, robotic handling systems.
+
+\subsection*{\faBrain\ AI \& Machine Learning}
+Deep learning, imitation learning, reinforcement learning for robotic control.
+\end{multicols}
+
+\vspace{0.3cm}
+
+\subsection*{Current Research}
+\textbf{CASREx: Cable-driven Arm Soft Re-configurable Exoskeleton}\\
+\textit{Marie Skłodowska-Curie Fellowship Project}\\
+\textit{Imperial College London | Nov 2025 - Current}
+
+Developing innovative cable-driven soft exoskeleton systems for muscle impairment rehabilitation, combining advanced control systems with soft robotics principles.
+
+%-------------------------------------------
+\section*{Employment History}
+
+\cvitemdetailed{Marie Skłodowska-Curie Postdoctoral Fellow}{Nov 2025 - Current}{Dyson School of Engineering, Imperial College London}{Supervisor: Prof. Thrishantha Nanayakkara}{
+\textbf{Project:} CASREx - Cable-driven Arm Soft Re-configurable Exoskeleton for Muscle Impairment Rehabilitation
+}
+
+\cvitemdetailed{Senior Research Engineer - Control Systems}{May 2025 - Oct 2025}{Center for Transformative Garment Production (TransGP)}{Supervisor: Prof. Kazuhiro Kosuge}{
+\textbf{Project:} Physics-based Cloth Manipulation with policy generated from imitation learning
+\begin{itemize}[nosep,leftmargin=*]
+  \item Led multidisciplinary team developing high-performance models for fabric handling and folding
+  \item Investigated feasibility and oversaw development of robotic systems for fabric manipulation
+  \item Translated industrial requirements into research deliverables
+  \item Mentored 3 PhD students
+\end{itemize}
+}
+
+\cvitemdetailed{Postdoctoral Fellow}{Jul 2024 - Apr 2025}{Center for Transformative Garment Production (TransGP)}{Supervisor: Prof. Kazuhiro Kosuge}{}
+
+\cvitem{Visiting Research Associate}{Jul 2024 - Oct 2025}{Department of Electrical and Electronic Engineering, Hong Kong University (HKU)}{}
+
+\newpage
+
+\cvitemdetailed{Postdoctoral Fellow}{Mar 2021 - Jun 2024}{Department of Mechanical and Automation, The Chinese University of Hong Kong}{Supervisor: Prof. Darwin Lau}{
+\textbf{Projects:}
+\begin{itemize}[nosep,leftmargin=*]
+  \item Modeling and control of cable-driven robots with cable wrapping around obstacles and links
+  \item Design of a cable-driven growing vine robot for safer false ceiling inspections
+\end{itemize}
+\textbf{Responsibilities:}
+\begin{itemize}[nosep,leftmargin=*]
+  \item Conducted independent and collaborative research
+  \item Wrote research articles, proposals, and technical reports
+  \item Mentored undergraduate and postgraduate students
+  \item Delivered lectures for MAEG5090 Topics in Robotics
+\end{itemize}
+}
+
+\cvitemdetailed{Visiting Postdoctoral Fellow}{Oct 2021 - Jan 2022}{Laboratoire des Sciences du Numérique de Nantes (LS2N), École Centrale de Nantes}{Supervisors: Prof. Stephane Caro and Prof. Darwin Lau}{
+\textbf{Project:} Iterative-learning control of cable-driven parallel robot
+}
+
+\cvitemdetailed{Graduate Teaching Assistant}{2017 - 2020}{The University of Auckland}{}{
+\textbf{Courses:} MECHENG 706, MECHENG 306, ENGGEN 115, ENGGEN 131
+\begin{itemize}[nosep,leftmargin=*]
+  \item Supervised undergraduate students on design projects
+  \item Delivered tutorials, workshops, and drop-in clinics
+  \item Managed laboratory sessions and coordinated TA activities
+\end{itemize}
+}
+
+\cvitemdetailed{Lecturer (Assistant Professor Grade-1)}{2013 - 2016}{School of Electrical, Electronics and Communication Engineering, Galgotia's University}{}{
+\begin{itemize}[nosep,leftmargin=*]
+  \item Delivered lectures for undergraduate and postgraduate courses
+  \item Developed teaching materials and laboratory sessions
+  \item Supervised final year undergraduate projects
+\end{itemize}
+}
+
+%-------------------------------------------
+\section*{Education}
+
+\cvitemdetailed{Ph.D., Mechatronics Engineering}{2016 - 2021}{Department of Mechanical and Mechatronics Engineering, The University of Auckland}{}{
+\textbf{Thesis:} \textit{Robotic Soft Esophagus Design, Modelling, and Control for Endoprosthetic Stent Testing and Food Swallow Investigation}
+}
+
+\cvitemdetailed{M.Tech, Systems and Control}{2011 - 2013}{Department of Electrical Engineering, Indian Institute of Technology (IIT) Roorkee}{}{
+\textbf{Dissertation:} \textit{Non-Linear Predictive Control Model using Relevance Vector Machine}\\
+\textbf{GPA:} 8.4 / 10.0
+}
+
+\cvitem{B.Tech, Electronics and Communication Engineering}{2004 - 2010}{North Eastern Regional Institute of Science and Technology (NERIST)}{
+\textbf{Project:} \textit{Design and Synthesis of a Sixth Order Tow Thomas Bi-quad filter}\\
+\textbf{GPA:} 9.1 / 10.0
+}
+
+\newpage
+
+%-------------------------------------------
+\section*{Technical Skills}
+
+\subsection*{Programming Languages}
+Python, MATLAB, C/C++, LabVIEW, Assembly
+
+\subsection*{AI \& ML Frameworks}
+PyTorch, TensorFlow, Gym, Blender
+
+\subsection*{Robotics \& Control}
+ROS, MATLAB/Simulink, Control Systems, Path Planning
+
+\subsection*{CAD \& Design}
+SOLIDWORKS, Inventor, Blender, Inkscape
+
+\subsection*{Hardware}
+Raspberry Pi, Arduino, myRIO, 8051
+
+\subsection*{Tools \& Others}
+Git, \LaTeX, Lightroom, Linux
+
+\subsection*{Languages}
+English (Fluent), Hindi (Native)
+
+%-------------------------------------------
+\section*{Selected Publications}
+
+\textit{15+ peer-reviewed publications in international journals and conferences}
+
+\vspace{0.3cm}
+
+\publication{Modeling and Control of Cable-Driven Robots with Cable Wrapping}{D. Bhattacharya, D. Lau, et al.}{IEEE Transactions on Robotics}
+
+\publication{Design of Cable-Driven Growing Vine Robot for Ceiling Inspection}{D. Bhattacharya, D. Lau, et al.}{IEEE/ASME International Conference on Advanced Intelligent Mechatronics}
+
+\publication{Robotic Soft Esophagus for Stent Testing Applications}{D. Bhattacharya, P. Xu, et al.}{Journal of Medical Devices}
+
+\publication{Iterative Learning Control for Cable-Driven Parallel Robots}{D. Bhattacharya, S. Caro, D. Lau}{Mechanism and Machine Theory}
+
+\publication{Physics-based Cloth Manipulation with Imitation Learning}{D. Bhattacharya, K. Kosuge, et al.}{IEEE International Conference on Robotics and Automation (ICRA)}
+
+\vspace{0.5cm}
+
+\begin{center}
+\textit{For complete list of publications, please visit my \href{https://bhattner143.github.io/dips/}{portfolio website}}
+\end{center}
+
+\end{document}

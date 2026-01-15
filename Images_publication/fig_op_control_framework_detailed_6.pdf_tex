@@ -1,0 +1,120 @@
+%% Creator: Inkscape 1.2 (dc2aedaf03, 2022-05-15), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'fig_op_control_framework_detailed_6.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{513.07086614bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.38674033)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.09859867,0.14925174){\rotatebox{-180}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+\end{tabular}}}}}%
+    \put(0.11084007,0.13413748){\rotatebox{-180}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.09859867,0.22113086){\rotatebox{-180}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+\end{tabular}}}}}%
+    \put(0.11084007,0.2060166){\rotatebox{-180}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.30991596,0.0258326){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}FK\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.27298902,0.22167858){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+\end{tabular}}}}}%
+    \put(0.25837112,0.20581996){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+\end{tabular}}}}}%
+    \put(0.27264497,0.18929582){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.36270915,0.22248868){\rotatebox{-180}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}+\end{tabular}}}}}%
+    \put(0.37495055,0.20737442){\rotatebox{-180}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.7678879,0.15873595){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CDPR \\Hardware/\\Model\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.53147126,0.22441888){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Reactive \\Controller\end{tabular}}}}%
+    \put(0.64047935,0.17425915){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Actuation\\Command\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.5417799,0.12904898){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CDPR \\Model\\\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.16393828,0.20706396){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$K_v$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.16393828,0.13605144){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$K_p$\end{tabular}}}}%
+    \put(0.00616355,0.15116101){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bm{x}_d$\end{tabular}}}}%
+    \put(0.00616355,0.22325492){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\dot{\bm{x}}_d$\end{tabular}}}}%
+    \put(0.07644678,0.09597294){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bm{x}$\end{tabular}}}}%
+    \put(0.07638494,0.17321149){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\dot{\bm{x}}$\end{tabular}}}}%
+    \put(0.20105765,0.23199819){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$K_v\dot{\bm{e}}$\end{tabular}}}}%
+    \put(0.20058409,0.15417302){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$K_p\bm{e}$\end{tabular}}}}%
+    \put(0.43101976,0.23199819){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bm{b}$\end{tabular}}}}%
+    \put(0.47493586,0.15880437){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bm{M,C,G}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.90581882,0.22612477){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}${\bm{q}}, \text{ }\dot{\bm{q}}$\end{tabular}}}}%
+    \put(0.14424765,0.15093728){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bm{e}$\end{tabular}}}}%
+    \put(0.14010756,0.22154867){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\dot{\bm{e}}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.32752902,0.16802076){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}${\bm{\dot J}\bm{\dot q}}$\end{tabular}}}}%
+    \put(0.43266733,0.17513425){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}${\bm{J^\dagger}_W}$\end{tabular}}}}%
+    \put(0.67668738,0.19471253){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bm{a}^{\star}$\end{tabular}}}}%
+    \put(0.57795394,0.16027188){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bm{B},\ddot{\bm{q}}$ \end{tabular}}}}%
+    \put(0.49028946,0.23784534){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bm{q}_c$\end{tabular}}}}%
+    \put(0.00616355,0.27223684){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ddot{\bm{x}}_d$\end{tabular}}}}%
+    \put(0.46335839,0.21035765){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\times$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.27249035,0.26642225){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Reactive Control\end{tabular}}}}%
+    \put(0.44295411,0.30533615){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\btheta^\star$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.2057511,0.33927184){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Iterative-Learning Control\\         (Section VI)\end{tabular}}}}%
+    \put(0.00616355,0.36396664){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}${\bm{x}}_{d,0}$\end{tabular}}}}%
+    \put(0.52377654,0.35519593){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}${\bm{a}}_{0}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.00618161,0.33944849){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}${\bm{x}}_{d,N-1}$\end{tabular}}}}%
+    \put(0.52379462,0.33067777){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}${\bm{a}}_{N-1}$\end{tabular}}}}%
+    \put(0.0950654,0.34636143){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vdots$\end{tabular}}}}%
+    \put(0.1733002,0.29728238){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vdots$\end{tabular}}}}%
+    \put(0.47106224,0.34636143){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vdots$\end{tabular}}}}%
+    \put(0.00616355,0.30588227){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}${\bm{x}}_{0}$\end{tabular}}}}%
+    \put(0.07052561,0.28927056){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}${\bm{x}}_{N-1}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{fig_op_control_framework_detailed_6.pdf}}%
+    \put(0.55574307,0.34101154){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time Samples\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
