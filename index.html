@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Dipankar Bhattacharya - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo">DB</div>
+        <nav class="main-nav">
+            <a href="#home">Home</a>
+            <a href="#posts">All Posts</a>
+            <a href="#research">Research</a>
+            <a href="#blog">Blog</a>
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="Photo_profile/dips.jpg" alt="Dr. Dipankar Bhattacharya">
+                </div>
+                <h2 class="profile-name" style="font-size: 0.75em; color: #000000">Dr. Dipankar Bhattacharya, Ph.D.</h2>
+                <p class="profile-title" style="font-size: 0.75em; color: #000000;"><i class="fas fa-award"></i> <strong>Marie Skłodowska-Curie Fellow</strong></p>
+                <p class="profile-education" style="font-size: 0.65em; color: #000000;"><i class="fas fa-university"></i> Dyson School, Imperial College London, UK</p>
+                <p class="profile-worked"style="font-size: 0.65em; color: #000000;"><i class="fas fa-graduation-cap"></i> <strong>PhD:</strong> Mechatronics Engineering (University of Auckland)</p>
+                <p class="profile-email"style="font-size: 0.65em; color: #000000;"><i class="fas fa-envelope"></i> <strong>Email:</strong> d.bhattacharya1(AT)imperial.ac.uk</p>
+                <p class="profile-interests" style="font-size: 0.65em; color: #000000;"><i class="fas fa-flask"></i> <strong>Research Interests:</strong> Control Systems, Soft Robotics, Cable-Driven Robots, Machine Learning, Robotics and Automation</p>
+                <p class="profile-location" style="font-size: 0.65em; color: #000000; text-align: left; margin-top: 8px;"><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Dyson Building, Imperial College London, SW7 2DB</p>
+            </div>
+
+            <div class="links-section">
+                <a href="mailto:d.bhattacharya1@imperial.ac.uk" class="link-item"><i class="fas fa-envelope"></i> Email</a>
+                <a href="#" class="link-item"><i class="fas fa-file-alt"></i> CV</a>
+                <a href="#" class="link-item"><i class="fas fa-briefcase"></i> Experience</a>
+                <a href="#" class="link-item"><i class="fas fa-book"></i> Research & Publication</a>
+                <a href="#" class="link-item"><i class="fas fa-graduation-cap"></i> Education</a>
+                <a href="#" class="link-item"><i class="fas fa-award"></i> Grants & Awards</a>
+                <a href="https://bhattner143.github.io/dips/" target="_blank" class="link-item"><i class="fas fa-globe"></i> Website</a>
+                <a href="https://scholar.google.com/citations?user=4BBRfsMAAAAJ&hl=en" target="_blank" class="link-item"><i class="fas fa-user-graduate"></i> Google Scholar</a>
+                <a href="http://www.linkedin.com/in/dipankar-bhattacharya-7132497b" target="_blank" class="link-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="tel:+447448647225" class="link-item"><i class="fas fa-phone"></i> Phone</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="news-feed-header">
+                <h2><i class="fas fa-newspaper"></i> News Feed:</h2>
+            </div>
+
+            <!-- Year Filter Tabs -->
+            <div class="filter-tabs" style="margin-bottom: 10px;">
+                <button class="year-btn active" data-year="all">All Years</button>
+                <button class="year-btn" data-year="2025">2025</button>
+                <button class="year-btn" data-year="2024">2024</button>
+                <button class="year-btn" data-year="2023">2023</button>
+                <button class="year-btn" data-year="2021">2021</button>
+                <button class="year-btn" data-year="2020">2020</button>
+                <button class="year-btn" data-year="2019">2019</button>
+                <button class="year-btn" data-year="2018">2018</button>
+                <button class="year-btn" data-year="2017">2017</button>
+                <button class="year-btn" data-year="2016">2016</button>
+                <button class="year-btn" data-year="2015">2015</button>
+                <button class="year-btn" data-year="2013">2013</button>
+                <button class="year-btn" data-year="2011">2011</button>
+                <button class="year-btn" data-year="2004">2004</button>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="awards">Awards</button>
+                <button class="tab-btn" data-filter="career">Career</button>
+                <button class="tab-btn" data-filter="grants">Grants</button>
+                <button class="tab-btn" data-filter="teaching">Teaching</button>
+                <button class="tab-btn" data-filter="publication">Publication</button>
+                <button class="tab-btn" data-filter="talk">Talk</button>
+                <button class="tab-btn" data-filter="work">Work</button>
+                <button class="tab-btn" data-filter="xtras">Xtras</button>
+            </div>
+
+            <!-- News Posts -->
+            <div class="news-posts">
+                <!-- Post 1a: European Talent Academy 2026 Selection -->
+                <article class="news-post" data-category="awards" data-year="2025">
+                    <div class="post-header">
+                        <span class="post-flag">🇪🇺</span>
+                        <h3 class="post-title">December 15th, 2025 | Selected for Prestigious <a href="https://www.imperial.ac.uk/admin-services/international-relations/european-talent-academy/" target="_blank" style="color: #0066cc; text-decoration: underline;">European Talent Academy 2026</a> 🏆</h3>
+                    </div>
+                    <p class="post-description">Selected to participate in the prestigious European Talent Academy 2026. This initiative aims to improve collaborations between universities (Imperial College London, Technical University of Munich (TUM), and Politecnico di Milano (PoliMi)) and to support career progression by providing networking, leadership development, and training opportunities, along with funding support.</p>
+                </article>
+
+                <!-- Post 1 -->
+                <article class="news-post" data-category="work" data-year="2025">
+                    <div class="post-header">
+                        <span class="post-flag"><img src="Imperial/Imperial_College_London_new_logo.png" alt="Imperial" style="height: 15px; vertical-align: middle;"></span>
+                        <h3 class="post-title">November 1st, 2025 | Started <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships" target="_blank" style="color: #0066cc; text-decoration: underline;">Marie Skłodowska-Curie Postdoctoral Fellowship</a> at Imperial College London 🚀</h3>
+                    </div>
+                    <p class="post-description">Excited to begin my MSCA Postdoctoral Fellowship on "CASREx: Cable-driven Arm Soft Re-configurable Exoskeleton for Muscle Impairment Rehabilitation" under the supervision of Prof. Thrishantha Nanayakkara at the <a href="https://www.imperial.ac.uk/morph-lab/" target="_blank" style="color: #0066cc; text-decoration: underline;">Morph Lab</a>, Dyson School of Engineering, Imperial College London. This 24-month highly prestigious fellowship is funded by Horizon Europe.</p>
+                    <div class="post-image">
+                        <img src="Photo_group/Group.jpg" alt="RTFF Fabric Manipulation Research" style="max-width: 600px; width: 100%; display: block; margin: 0 auto;">
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="news-post" data-category="publication" data-year="2025">
+                    <div class="post-header">
+                        <span class="post-flag"><img src="Images_publication/ICRA-VIE26-logo.png" alt="ICRA 2026" style="height: 15px; vertical-align: middle;"></span>
+                        <h3 class="post-title">October 10th, 2025 | Paper Submitted to <a href="https://2026.ieee-icra.org" target="_blank" style="color: #0066cc; text-decoration: underline;">IEEE ICRA 2026</a> 🎉</h3>
+                    </div>
+                    <p class="post-description">Our paper "RTFF: Random-to-Target Fabric Flattening Policy Using Dual-Arm Manipulator" has been submitted to the IEEE International Conference on Robotics and Automation (ICRA) 2026. This work focuses on automated fabric manipulation using dual-arm robotic systems. [<a href="https://arxiv.org/pdf/2510.00814" target="_blank" style="color: #0066cc; text-decoration: underline;">arXiv</a>] [<a href="https://kaitang98.github.io/RTFF_Policy/" target="_blank" style="color: #0066cc; text-decoration: underline;">Project Website</a>] [<a href="https://bhattner143.github.io/dips/Videos/icra_video_1080.mp4" target="_blank" style="color: #0066cc; text-decoration: underline;">Video</a>]</p>
+                    <div class="post-image">
+                        <img src="Images_publication/RTFF.jpg" alt="RTFF Fabric Manipulation Research" style="max-width: 600px; width: 100%; display: block; margin: 0 auto;">
+                    </div>
+                </article>
+
+                <!-- Post 1b: WRC 2025 Talk -->
+                <article class="news-post" data-category="talk" data-year="2025">
+                    <div class="post-header">
+                        <span class="post-flag">🇨🇳</span>
+                        <h3 class="post-title">August 8th, 2025 | Invited Speaker at <a href="https://www.worldrobotconference.com/en/" target="_blank" style="color: #0066cc; text-decoration: underline;">World Robotics Conference (WRC 2025)</a>, Beijing 🎤</h3>
+                    </div>
+                    <p class="post-description">Invited Speaker at the World Robotics Conference (WRC 2025), Beijing, China. Presented research on "Fabric modeling and perception for garment manufacturing," exploring robotics and AI solutions for fabric representation, simulation, and real-world applications.</p>
+                    <div class="post-image">
+                        <img src="Photo_group/WRC.jpeg" alt="World Robotics Conference 2025 Presentation" style="max-width: 600px; width: 100%; display: block; margin: 0 auto;">
+                    </div>
+                </article>
+
+                <!-- Post 1c: ICMA 2025 Workshop -->
+                <article class="news-post" data-category="talk" data-year="2025">
+                    <div class="post-header">
+                        <span class="post-flag">🇨🇳</span>
+                        <h3 class="post-title">August 3rd, 2025 | Workshop Organization and Presentation at IEEE ICMA 2025 🎤</h3>
+                    </div>
+                    <p class="post-description">Organized and presented at the Workshop on Robotics for Automated Garment Production at IEEE International Conference on Mechatronics and Automation (ICMA 2025), Beijing Empark Grand Hotel, Beijing, China. Presentation topic: "Mesh-based Fabric State Estimation and Manipulation."</p>
+                    <div class="post-image" style="display: flex; gap: 10px; justify-content: center; align-items: flex-start;">
+                        <img src="Photo_group/ICMA.jpeg" alt="ICMA 2025 Workshop Group Photo" style="max-width: 48%; width: 100%; display: block;">
+                        <img src="Photo_group/ICMA_presentation.jpeg" alt="ICMA 2025 Presentation" style="max-width: 48%; width: 100%; display: block;">
+                    </div>
+                </article>
+
+                
+
+                <!-- Post 3 -->
+                <article class="news-post" data-category="grants" data-year="2025">
+                    <div class="post-header">
+                        <span class="post-flag">🇪🇺</span>
+                        <h3 class="post-title">February, 2025 | Awarded Horizon Europe <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships" target="_blank" style="color: #0066cc; text-decoration: underline;">Marie Skłodowska-Curie Postdoctoral Fellowship</a> 🏆</h3>
+                    </div>
+                    <p class="post-description">Recipient of the prestigious Marie Skłodowska-Curie Postdoctoral Fellowship for the project "CASREx" (Grant No. 101205678) hosted at Imperial College London. The fellowship is funded under HORIZON-MSCA-2024-PF-01-01 for 24 months (EUR 276,187.92).</p>
+                    
+                </article>
+
+                <!-- Post 3b: ITF PRP Grant 2023 -->
+                <article class="news-post" data-category="grants" data-year="2023">
+                    <div class="post-header">
+                        <span class="post-flag">🇭🇰</span>
+                        <h3 class="post-title">2023 | Co-authored Innovation and Technology Fund (ITF) Partnership Research Program Grant 💰</h3>
+                    </div>
+                    <p class="post-description">Co-authored Innovation and Technology Fund (ITF) Partnership Research Program (PRP) grant for collaborative research initiatives in Hong Kong.</p>
+                    
+                </article>
+
+                <!-- Post 3b1: ICRA London 2023 Poster Presentation -->
+                <article class="news-post" data-category="talk" data-year="2023">
+                    <div class="post-header">
+                        <span class="post-flag">🇬🇧</span>
+                        <h3 class="post-title">May 29--June 3rd, 2023 | Poster Presentation at <a href="https://ewh.ieee.org/soc/ras/conf/fullysponsored/icra/ICRA%202023/www.icra2023.org/icra-programme.html" target="_blank" style="color: #0066cc; text-decoration: underline;">IEEE ICRA 2023</a>, London 📊</h3>
+                    </div>
+                    <p class="post-description">Presented poster at the IEEE International Conference on Robotics and Automation (ICRA) 2023, ExCeL London, United Kingdom. One of the premier robotics conferences showcasing cutting-edge research in robotics and automation.</p>
+                    <div style="margin-top: 15px;">
+                        <!-- First row of images -->
+                        <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap;">
+                            <img src="Images_ICRA_London/IMG_5376.JPG" alt="ICRA London 2023 - 1" style="max-width: 24%; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <img src="Images_ICRA_London/IMG_5398.jpg" alt="ICRA London 2023 - 2" style="max-width: 24%; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <img src="Images_ICRA_London/IMG_5404.jpg" alt="ICRA London 2023 - 3" style="max-width: 24%; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <img src="Images_ICRA_London/IMG_5463.jpg" alt="ICRA London 2023 - 4" style="max-width: 24%; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        </div>
+                        <!-- Second row of images -->
+                        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                            <img src="Images_ICRA_London/IMG_5467.jpg" alt="ICRA London 2023 - 5" style="max-width: 32%; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <img src="Images_ICRA_London/IMG_5473.jpg" alt="ICRA London 2023 - 6" style="max-width: 32%; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <img src="Images_ICRA_London/IMG_5475.jpg" alt="ICRA London 2023 - 7" style="max-width: 32%; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3c: RTH-ITF Grant 2022 -->
+                <article class="news-post" data-category="grants" data-year="2022">
+                    <div class="post-header">
+                        <span class="post-flag">🇭🇰</span>
+                        <h3 class="post-title">2022 | Co-authored Research Talent Hub for ITF Project Grant 💰</h3>
+                    </div>
+                    <p class="post-description">Co-authored Research Talent Hub for ITF project (RTH-ITF) grant supporting research talent development in Hong Kong.</p>
+                    
+                </article>
+
+                <!-- Post 3d: BvW Holding Grant 2018 -->
+                <article class="news-post" data-category="grants" data-year="2018">
+                    <div class="post-header">
+                        <span class="post-flag">🇨🇭</span>
+                        <h3 class="post-title">2018 | Awarded Research Grant from BvW Holding, Switzerland 🏆</h3>
+                    </div>
+                    <p class="post-description">Recipient of research grant for "Dynamic testing of implant stents using Robotic Soft Esophagus (RoSE)" from BvW Holding, Cham, Switzerland (39,000 NZD, 1 year).</p>
+                    
+                </article>
+
+                <!-- Post 3e: Riddet Travel Grant 2018-2019 -->
+                <article class="news-post" data-category="grants" data-year="2018">
+                    <div class="post-header">
+                        <span class="post-flag">🇳🇿</span>
+                        <h3 class="post-title">2018, 2019 | Awarded Riddet Travel Grants 🎓</h3>
+                    </div>
+                    <p class="post-description">Recipient of Riddet Travel grants from Riddet Institute Centre of Research Excellence (3,000 NZD).</p>
+                    
+                </article>
+
+                <!-- Post 3f: UoA PhD Scholarship 2019-2020 -->
+                <article class="news-post" data-category="grants" data-year="2019">
+                    <div class="post-header">
+                        <span class="post-flag">🇳🇿</span>
+                        <h3 class="post-title">2019--2020 | Doctor of Philosophy Scholarship, University of Auckland 🎓</h3>
+                    </div>
+                    <p class="post-description">Recipient of Doctor of Philosophy Scholarship from University of Auckland.</p>
+                    
+                </article>
+
+                <!-- Post 3g: Riddet PhD Scholarship 2016-2019 -->
+                <article class="news-post" data-category="grants" data-year="2016">
+                    <div class="post-header">
+                        <span class="post-flag">🇳🇿</span>
+                        <h3 class="post-title">2016--2019 | Doctor of Philosophy Scholarship, Riddet Institute 🎓</h3>
+                    </div>
+                    <p class="post-description">Recipient of Doctor of Philosophy Scholarship from Riddet Institute Centre of Research Excellence.</p>
+                    
+                </article>
+
+                <!-- Post 3h: MHRD GATE Scholarship 2011-2013 -->
+                <article class="news-post" data-category="grants" data-year="2011">
+                    <div class="post-header">
+                        <span class="post-flag">🇮🇳</span>
+                        <h3 class="post-title">2011--2013 | Masters of Technology Scholarship, MHRD GATE 🎓</h3>
+                    </div>
+                    <p class="post-description">Recipient of Masters of Technology Scholarship from Ministry of Human Resource (MHRD) GATE scholarship.</p>
+                    
+                </article>
+
+                <!-- Post 4: IEEE RAL 2025 -->
+                <article class="news-post" data-category="publication" data-year="2025">
+                    <div class="post-header">
+                        <span class="post-flag">📄</span>
+                        <h3 class="post-title">January 2025 | Paper Published in IEEE Robotics and Automation Letters 📚</h3>
+                    </div>
+                    <p class="post-description">B. Jin*, A. Kobayashi*, D. Bhattacharya, A. Seino, F. Tokuda, N.C. Tien, and K. Kosuge (2025). "Automated Straight-line Sewing of Stretchable Fabrics with Different Lengths". IEEE Robotics and Automation Letters, pp. 1-8. (*Equal contribution) [<a href="https://doi.org/10.1109/LRA.2025.3619791" target="_blank" style="color: #0066cc; text-decoration: underline;">Link</a>] [<a href="https://drive.google.com/file/d/1CNkMMuu3Ta_9BCj-ONXUNetOJkM6IgcK/view" target="_blank" style="color: #0066cc; text-decoration: underline;">Video</a>]</p>
+                </article>
+
+                <!-- Post 5: MMT 2025 -->
+                <article class="news-post" data-category="publication" data-year="2025">
+                    <div class="post-header">
+                        <span class="post-flag">📄</span>
+                        <h3 class="post-title">January 2025 | Paper Published in Mechanism and Machine Theory 📚</h3>
+                    </div>
+                    <p class="post-description">D. Bhattacharya, T. K. Cheung, Y. Wang, and D. Lau (2025). "Kinematic and Dynamic Modeling of Cable-Object Interference and Wrapping in Complex Geometrical-Shaped Cable-Driven Parallel Robots". Mechanism and Machine Theory, vol. 214, pp. 106092. [<a href="https://doi.org/10.1016/j.mechmachtheory.2025.106092" target="_blank" style="color: #0066cc; text-decoration: underline;">Link</a>] [<a href="https://github.com/bhattner143/GeoWrapSim-CDPR" target="_blank" style="color: #0066cc; text-decoration: underline;">GitHub</a>] [<a href="https://drive.google.com/file/d/1wv_-YRMZ-RpaE7pxipY27WhJc2ZteXAT/view" target="_blank" style="color: #0066cc; text-decoration: underline;">Video</a>]</p>
+                    <div class="post-image">
+                        <img src="Images_publication/bmaerm_human_arm_comp.png" alt="HKU Research" style="max-width: 600px; width: 100%; display: block; margin: 0 auto;">
+                    </div>
+                </article>
+
+                <!-- Post 5b: ICMA 2025 -->
+                <article class="news-post" data-category="publication" data-year="2025">
+                    <div class="post-header">
+                        <span class="post-flag">📄</span>
+                        <h3 class="post-title">January 2025 | Paper Published in IEEE ICMA 2025 📚</h3>
+                    </div>
+                    <p class="post-description">W. Dong, D. Bhattacharya, A. Kobayashi, A. Seino, F. Tokuda, X. Huang, K. Tang, N.C. Tien, and K. Kosuge (2025). "Precise Top-layer Fabric Segmentation for Fabric Destacking with Edge- and Shape-Aware Deep Networks". IEEE International Conference on Mechatronics and Automation (ICMA), pp. 1343-1348.</p>
+                </article>
+
+                <!-- Post 6b: HKU Visiting Research Associate 2024-2025 -->
+                <article class="news-post" data-category="work" data-year="2024">
+                    <div class="post-header">
+                        <span class="post-flag"><img src="HKU/University_of_Hong_Kong.svg.png" alt="HKU" style="height: 15px; vertical-align: middle;"></span>
+                        <h3 class="post-title">September 2024--October 2025 | Visiting Research Associate at JC STEM Lab of Robotics for Soft Materials, Hong Kong University 🔬</h3>
+                    </div>
+                    <p class="post-description">Visiting Research Associate in the Department of Electrical and Electronic Engineering at Hong Kong University (HKU), conducting research on advanced robotics and control systems.</p>
+                    
+                </article>
+
+                <!-- Post 6: TransGP Work 2024-2025 -->
+                <article class="news-post" data-category="work" data-year="2024">
+                    <div class="post-header">
+                        <span class="post-flag"><img src="HKU/TransGP-logo.png" alt="TransGP" style="height: 15px; vertical-align: middle;"></span>
+                        <h3 class="post-title">July 2024--October 2025 | Senior Research Engineer at <a href="https://www.transgp.hk" target="_blank" style="color: #0066cc; text-decoration: underline;">TransGP</a> 🔬</h3>
+                    </div>
+                    <p class="post-description">Served as Senior Research Engineer and Postdoctoral Fellow at the Center for Transformative Garment Production (TransGP) under Prof. Kazuhiro Kosuge. Led multidisciplinary teams developing high-performance models for fabric pre-sewing handling and folding, focusing on physics-based cloth manipulation with policy generated from imitation learning.</p>
+                    
+                </article>
+
+                
+
+                <!-- Post 6b: MAEG5090 Teaching at CUHK 2023 -->
+                <article class="news-post" data-category="teaching" data-year="2023">
+                    <div class="post-header">
+                        <span class="post-flag">🇭🇰</span>
+                        <h3 class="post-title">2023 | Delivered Lectures for MAEG5090 Topics in Robotics at CUHK 👨‍🏫</h3>
+                    </div>
+                    <p class="post-description">Delivered lectures for postgraduate course MAEG5090 Topics in Robotics at The Chinese University of Hong Kong. Class strength: 50 students. Covered advanced topics in robotics including cable-driven parallel robots, soft robotics, and robotic control systems.</p>
+                </article>
+
+                <!-- Post 7: CUHK Work 2021-2024 -->
+                <article class="news-post" data-category="work" data-year="2021">
+                    <div class="post-header">
+                        <span class="post-flag">🇭🇰</span>
+                        <h3 class="post-title">March 2021--June 2024 | Postdoctoral Fellow at The Chinese University of Hong Kong 🔬</h3>
+                    </div>
+                    <p class="post-description">Postdoctoral Fellow in the Department of Mechanical and Automation Engineering under Prof. Darwin Lau. Conducted research on modeling and control of cable-driven robots with cable wrapping around obstacles and links, and designed cable-driven growing vine robots for safer false ceiling inspections. Mentored undergraduate and postgraduate students and delivered lectures for MAEG5090 Topics in Robotics.</p>
+                </article>
+
+                <!-- Post 7b: ECN Visiting Postdoc 2021-2022 -->
+                <article class="news-post" data-category="work" data-year="2021">
+                    <div class="post-header">
+                        <span class="post-flag">🇫🇷</span>
+                        <h3 class="post-title">October 2021--January 2022 | Visiting Postdoctoral Fellow at École Centrale de Nantes 🔬</h3>
+                    </div>
+                    <p class="post-description">Visiting Postdoctoral Fellow in Laboratoire des Sciences du Numérique de Nantes (LS2N), École Centrale de Nantes (ECN). Supervisors: Prof. Stephane Caro and Prof. Darwin Lau. Project: Iterative-learning control of cable-driven parallel robot.</p>
+                </article>
+
+                <!-- Post 7a0: PhD Studies 2016-2021 -->
+                <article class="news-post" data-category="career" data-year="2016">
+                    <div class="post-header">
+                        <span class="post-flag">🇳🇿</span>
+                        <h3 class="post-title">August 2016--April 2021 | Ph.D. in Mechatronics Engineering, The University of Auckland 🎓</h3>
+                    </div>
+                    <p class="post-description">Pursued Ph.D. in Mechatronics Engineering at The University of Auckland, New Zealand. Research focus: "Robotic Soft Esophagus Design, Modeling, and Control for Endoprosthetic Stent Testing and Food Swallow Investigation". Supervisors: Prof. Weiliang Xu, Prof. Leo K. Cheng, and Dr. Stefan Dirven. Developed innovative soft robotic systems for medical applications, advancing the field of bio-inspired robotics and control systems.</p>
+                </article>
+
+                <!-- Post 7a1: UoA Teaching Assistant 2017-2020 -->
+                <article class="news-post" data-category="teaching" data-year="2017">
+                    <div class="post-header">
+                        <span class="post-flag">🇳🇿</span>
+                        <h3 class="post-title">2017--2020 | Graduate Teaching Assistant at The University of Auckland 👨‍🏫</h3>
+                    </div>
+                    <p class="post-description">Graduate Teaching Assistant for undergraduate courses at The University of Auckland. Courses taught:
+                    <br>• <strong>MECHENG 706: Mechatronics Design Project</strong> (2017-2019) - 4th year, 30 students
+                    <br>• <strong>MECHENG 306: Design of Sensing and Actuating Systems</strong> (2018) - 3rd year, 30 students
+                    <br>• <strong>ENGGEN 115: Principles of Engineering Design</strong> (2017-2019) - 1st year, 60 students
+                    <br>• <strong>ENGGEN 131: Introduction to Engineering Computation</strong> (2018-2019) - 1st year, 60 students
+                    <br>Responsibilities included supervising undergraduate students for problem solving, delivering tutorial sessions and workshops, managing laboratories, and conducting weekly interviews to monitor students' progress in design projects.</p>
+                </article>
+
+                <!-- Post 7c: PhD Defense 2021 -->
+                <article class="news-post" data-category="xtras" data-year="2021">
+                    <div class="post-header">
+                        <span class="post-flag">🇳🇿</span>
+                        <h3 class="post-title">March 24th, 2021 | Successfully Defended PhD Thesis at The University of Auckland 🎓</h3>
+                    </div>
+                    <p class="post-description">Successfully defended PhD thesis titled "Robotic Soft Esophagus Design, Modeling, and Control for Endoprosthetic Stent Testing and Food Swallow Investigation" in Mechatronics Engineering at The University of Auckland. [<a href="https://researchspace.auckland.ac.nz/collections/ce13d061-a418-4374-89a7-11874d6d583e/browse/author?value=Bhattacharya,%20Dipankar&bbm.return=1" target="_blank" style="color: #0066cc; text-decoration: underline;">Thesis</a>]</p>
+                    <div class="post-image">
+                        <img src="Photo_group/thesis.JPG" alt="PhD Defense Zoom Meeting" style="max-width: 600px; width: 100%; display: block; margin: 0 auto;">
+                    </div>
+                </article>
+
+                <!-- Post 7d: SoGut Experiments at North Shore Hospital -->
+                <article class="news-post" data-category="xtras" data-year="2019">
+                    <div class="post-header">
+                        <span class="post-flag">🇳🇿</span>
+                        <h3 class="post-title">2019-2020 | Performed SoGut Characterization Experiments at North Shore Hospital 🏥</h3>
+                    </div>
+                    <p class="post-description">Performed characterization experiments for SoGut: A Soft Robotic Gastric Simulator at North Shore Hospital, Auckland, as part of collaborative research during PhD studies at The University of Auckland.</p>
+                    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
+                        <img src="images_exp/sogut1.JPG" alt="SoGut Experiment 1" style="max-width: 32%; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <img src="images_exp/sogut2.JPG" alt="SoGut Experiment 2" style="max-width: 32%; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <img src="images_exp/sogut3.JPG" alt="SoGut Experiment 3" style="max-width: 32%; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    </div>
+                </article>
+
+                <!-- Post 7e: BioMouth 2018 Presentation -->
+                <article class="news-post" data-category="talk" data-year="2018">
+                    <div class="post-header">
+                        <span class="post-flag">🇳🇿</span>
+                        <h3 class="post-title">October 30th, 2018 | Presented at BioMouth 2018 Meet 🎤</h3>
+                    </div>
+                    <p class="post-description">Presented research work at the BioMouth 2018 Meet, Auckland, New Zealand.</p>
+                    <div class="post-image">
+                        <img src="images_conf/biomouth.jpg" alt="BioMouth 2018 Presentation" style="max-width: 600px; width: 100%; display: block; margin: 0 auto;">
+                    </div>
+                </article>
+
+                <!-- Post 8 -->
+                <article class="news-post" data-category="publication" data-year="2023">
+                    <div class="post-header">
+                        <span class="post-flag">📄</span>
+                        <h3 class="post-title">2023 | Paper Published in IEEE Transactions on Control Systems and Technology 📚</h3>
+                    </div>
+                    <p class="post-description">D. Bhattacharya, Y. P. Chan, S. Shang, Y. S. Chan, Y. Tan, and D. Lau (2023). "Tri-Space Operational Control of Redundant Multilink and Hybrid Cable-Driven Parallel Robots Using an Iterative-Learning based Reactive Approach". IEEE Transactions on Control Systems and Technology. [<a href="https://ieeexplore.ieee.org/document/10102340" target="_blank" style="color: #0066cc; text-decoration: underline;">Link</a>]</p>
+                    <div class="post-image">
+                        <img src="Images_publication/fig_op_control_framework_detailed_6.png" alt="Cable Robot Research" style="max-width: 600px; width: 100%; display: block; margin: 0 auto;">
+                    </div>
+                </article>
+
+                <!-- Post 9 -->
+                <article class="news-post" data-category="publication" data-year="2021">
+                    <div class="post-header">
+                        <span class="post-flag">📄</span>
+                        <h3 class="post-title">2021 | Paper Published in IEEE Transactions on Industrial Electronics 🎓</h3>
+                    </div>
+                    <p class="post-description">D. Bhattacharya, L. K. Cheng, and W. Xu (2021). "Nonlinear Model Predictive Control of a Robotic Soft Esophagus for Endoprosthetic Stent Testing". IEEE Transactions on Industrial Electronics. [<a href="https://doi.org/10.1109/TIE.2021.3121755" target="_blank" style="color: #0066cc; text-decoration: underline;">Link</a>]</p>
+                    
+                </article>
+
+                <!-- Post 10: Soft Robotics 2021 -->
+                <article class="news-post" data-category="publication" data-year="2021">
+                    <div class="post-header">
+                        <span class="post-flag">📄</span>
+                        <h3 class="post-title">2021 | Paper Published in Soft Robotics 🎓</h3>
+                    </div>
+                    <p class="post-description">D. Bhattacharya, S. Jesna, L. K. Cheng, and W. Xu (2021). "RoSE: A Robotic Soft Esophagus for Endoprosthetic Stent Testing". Soft Robotics. [<a href="https://doi.org/10.1089/soro.2019.0205" target="_blank" style="color: #0066cc; text-decoration: underline;">Link</a>]</p>
+                    <div class="post-image">
+                        <img src="Images_publication/soro_rose_fab_stent_test.png" alt="Soft Robotics Research" style="max-width: 600px; width: 100%; display: block; margin: 0 auto;">
+                    </div>
+                </article>
+
+                <!-- Post 10b: SoGut 2021 -->
+                <article class="news-post" data-category="publication" data-year="2021">
+                    <div class="post-header">
+                        <span class="post-flag">📄</span>
+                        <h3 class="post-title">2021 | Paper Published in Soft Robotics 🎓</h3>
+                    </div>
+                    <p class="post-description">Y. Dang, Y. Liu, R. Hashem, D. Bhattacharya, J. Allen, M. Stommel, L.K. Cheng, and W. Xu (2021). "SoGut: A Soft Robotic Gastric Simulator". Soft Robotics. [<a href="https://doi.org/10.1089/soro.2019.0136" target="_blank" style="color: #0066cc; text-decoration: underline;">Link</a>]</p>
+                    <div class="post-image">
+                        <img src="Images_publication/soro_sogut.svg" alt="Soft Robotics Gastric Simulator" style="max-width: 600px; width: 100%; display: block; margin: 0 auto;">
+                    </div>
+                </article>
+
+                <!-- Post 11: IEEE TIE 2020 -->
+                <article class="news-post" data-category="publication" data-year="2020">
+                    <div class="post-header">
+                        <span class="post-flag">📄</span>
+                        <h3 class="post-title">2020 | Paper Published in IEEE Transactions on Industrial Electronics 🎓</h3>
+                    </div>
+                    <p class="post-description">D. Bhattacharya, L. K. Cheng, and W. Xu (2020). "Sparse Machine Learning Discovery of Dynamic Differential Equation of an Esophageal Swallowing Robot". IEEE Transactions on Industrial Electronics, vol. 67, no. 6, pp. 4711–4720. [<a href="https://doi.org/10.1109/TIE.2019.2928239" target="_blank" style="color: #0066cc; text-decoration: underline;">Link</a>]</p>
+                </article>
+
+                <!-- Post 11b: RITA 2019 Book Chapter -->
+                <article class="news-post" data-category="publication" data-year="2019">
+                    <div class="post-header">
+                        <span class="post-flag">📖</span>
+                        <h3 class="post-title">2019 | Book Chapter Published in RITA 5 📚</h3>
+                    </div>
+                    <p class="post-description">D. Bhattacharya, L.K. Cheng, S. Dirven, and W. Xu (2019). "Artificial Intelligence Approach to the Trajectory Generation and Dynamics of a Soft Robotic Swallowing Simulator". Robot Intelligence Technology and Applications (RITA) 5, vol. 751, pp. 3-16, Springer. [<a href="https://doi.org/10.1007/978-3-319-78452-6_1" target="_blank" style="color: #0066cc; text-decoration: underline;">Link</a>]</p>
+                </article>
+
+                <!-- Post 11c: M2VIP 2018 Conference -->
+                <article class="news-post" data-category="publication" data-year="2018">
+                    <div class="post-header">
+                        <span class="post-flag">📄</span>
+                        <h3 class="post-title">2018 | Paper Published in M2VIP 2018 Conference 🎓</h3>
+                    </div>
+                    <p class="post-description">D. Bhattacharya, L.K. Cheng, and W. Xu (2018). "Testing and Analysis of Migration Displacement of a Flared Stent Deployed in an Esophageal Swallowing Robot". 25th International Conference on Mechatronics and Machine Vision in Practice (M2VIP), pp. 1-6. [<a href="https://doi.org/10.1109/M2VIP.2018.8600911" target="_blank" style="color: #0066cc; text-decoration: underline;">Link</a>]</p>
+                </article>
+
+                <!-- Post 11d: M2VIP 2017 Conference -->
+                <article class="news-post" data-category="publication" data-year="2017">
+                    <div class="post-header">
+                        <span class="post-flag">📄</span>
+                        <h3 class="post-title">2017 | Paper Published in M2VIP 2017 Conference 🎓</h3>
+                    </div>
+                    <p class="post-description">D. Bhattacharya, L.K. Cheng, S. Dirven, and W. Xu (2017). "Actuation Planning and Modeling of a Soft Swallowing Robot". 24th International Conference on Mechatronics and Machine Vision in Practice (M2VIP), pp. 1-6. [<a href="https://doi.org/10.1109/M2VIP.2017.8211476" target="_blank" style="color: #0066cc; text-decoration: underline;">Link</a>]</p>
+                </article>
+
+                <!-- Post 11e: RiTA 2017 Best Paper Award -->
+                <article class="news-post" data-category="awards" data-year="2017">
+                    <div class="post-header">
+                        <span class="post-flag">🇰🇷</span>
+                        <h3 class="post-title">2017 | Best Conference Paper Award at RiTA 2017 🏆</h3>
+                    </div>
+                    <p class="post-description">Recipient of Best Conference Paper Award at the 5th International Conference on Robotic Intelligence Technology and Applications (RiTA), Daejeon, Korea.</p>
+                </article>
+
+                <!-- Post 11f: DoF 2017 Poster Award -->
+                <article class="news-post" data-category="awards" data-year="2017">
+                    <div class="post-header">
+                        <span class="post-flag">🇳🇿</span>
+                        <h3 class="post-title">2017 | Ranked 2nd in Poster Presentation at DoF 2017 Conference 🏆</h3>
+                    </div>
+                    <p class="post-description">Ranked 2nd in poster presentation at the Delivery of Functionality in Complex Food Systems (DoF 2017) Conference.</p>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <img src="images_conf/Food_COnf.jpg" alt="DoF 2017 Poster Presentation" style="max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    </div>
+                </article>
+
+                <!-- Post 11e: IJSE 2015 -->
+                <article class="news-post" data-category="publication" data-year="2015">
+                    <div class="post-header">
+                        <span class="post-flag">📄</span>
+                        <h3 class="post-title">2015 | Paper Published in International Journal of Sustainable Energy 🎓</h3>
+                    </div>
+                    <p class="post-description">D. Bhattacharya, M.G. Nisha, and G.N. Pillai (2015). "Relevance Vector-Machine-Based Solar Cell Model". International Journal of Sustainable Energy, vol. 34, no. 10, pp. 685-692. [<a href="https://doi.org/10.1080/14786451.2014.885030" target="_blank" style="color: #0066cc; text-decoration: underline;">Link</a>]</p>
+                </article>
+
+                <!-- Post 12: Research Assistant UoA 2018-2019 -->
+                <article class="news-post" data-category="work" data-year="2018">
+                    <div class="post-header">
+                        <span class="post-flag">🇳🇿</span>
+                        <h3 class="post-title">January 2018--January 2019 | Research Assistant at The University of Auckland 🔬</h3>
+                    </div>
+                    <p class="post-description">Research Assistant under the direction of Prof. Peter Xu, working on measuring stent migration for esophageal stents of various designs, developing actuation protocols for soft-esophageal robots, and conducting experimental validation studies.</p>
+                </article>
+
+                <!-- Post 12a: Teaching at Galgotia's University 2013-2016 -->
+                <article class="news-post" data-category="teaching" data-year="2013">
+                    <div class="post-header">
+                        <span class="post-flag">🇮🇳</span>
+                        <h3 class="post-title">July 2013--June 2016 | Teaching at Galgotia's University 👨‍🏫</h3>
+                    </div>
+                    <p class="post-description">Delivered lectures for undergraduate and postgraduate courses at Galgotia's University, School of Electrical, Electronics and Communication Engineering. Courses taught:
+                    <br>• <strong>BECE2010: Digital Electronics</strong> - 2nd year undergraduate, 60 students
+                    <br>• <strong>BECE2016: Signals and Systems</strong> - 2nd year undergraduate, 60 students
+                    <br>• <strong>BTEE2002: Network Analysis and Synthesis</strong> - 2nd year undergraduate, 60 students
+                    <br>• <strong>BEEE3002: Control Systems</strong> - 3rd year undergraduate, 60 students
+                    <br>• <strong>BEEE2001: Electrical Measurement and Instrumentation</strong> - 2nd year undergraduate, 60 students
+                    <br>• <strong>BECE3020: Digital Signal Processing</strong> - 3rd year undergraduate, 60 students
+                    <br>• <strong>BTEE3019: Advanced Control System</strong> - 3rd year undergraduate, 60 students
+                    <br>• <strong>BEEE5004: Digital Control</strong> - 1st year postgraduate, 20 students
+                    <br>Responsibilities included developing teaching materials, supervising final year undergraduate projects, and managing laboratory sessions.</p>
+                </article>
+
+                <!-- Post 12: Lecturer Galgotia's University 2013-2016 -->
+                <article class="news-post" data-category="work" data-year="2013">
+                    <div class="post-header">
+                        <span class="post-flag">🇮🇳</span>
+                        <h3 class="post-title">July 2013--June 2016 | Lecturer (Assistant Professor) at Galgotia's University 🎓</h3>
+                    </div>
+                    <p class="post-description">Lecturer (Assistant Professor Grade-1) in School of Electrical, Electronics and Communication Engineering (SEECE). Delivered lectures for undergraduate and postgraduate courses, developed teaching materials, supervised final year undergraduate projects, and managed laboratory sessions.</p>
+                    <div class="post-image">
+                        <img src="Photo_group/galgotias.JPG" alt="Galgotia's University Group Photo" style="max-width: 600px; width: 100%; display: block; margin: 0 auto;">
+                    </div>
+                </article>
+
+                <!-- Post 13: M.Tech Studies 2011-2013 -->
+                <article class="news-post" data-category="career" data-year="2011">
+                    <div class="post-header">
+                        <span class="post-flag">🇮🇳</span>
+                        <h3 class="post-title">July 2011--July 2013 | M.Tech in Systems and Control, Indian Institute of Technology (IIT) Roorkee 🎓</h3>
+                    </div>
+                    <p class="post-description">Pursued Masters of Technology (M.Tech) in Systems and Control Engineering at Indian Institute of Technology (IIT) Roorkee. Research focus: Advanced control systems and automation. Thesis: "Relevance Vector Machine-based Solar Cell Modeling". Recipient of Ministry of Human Resource Development (MHRD) GATE scholarship. Developed strong foundation in control theory, system modeling, and optimization techniques.</p>
+                </article>
+
+                <!-- Post 14: B.Tech Studies 2004-2010 -->
+                <article class="news-post" data-category="career" data-year="2004">
+                    <div class="post-header">
+                        <span class="post-flag">🇮🇳</span>
+                        <h3 class="post-title">July 2004--June 2010 | B.Tech in Electronics and Communication Engineering, NERIST 🎓</h3>
+                    </div>
+                    <p class="post-description">Pursued Bachelor of Technology (B.Tech) in Electronics and Communication Engineering at North Eastern Regional Institute of Science and Technology (NERIST), Arunachal Pradesh. Project: "Implementation of Direct Torque Control (DTC) for Induction Motor". Built comprehensive knowledge in electronics, communication systems, signal processing, and embedded systems. Participated in National Service Scheme (NSS) activities including blood donation camps and community service.</p>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
