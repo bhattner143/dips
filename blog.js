@@ -5,10 +5,10 @@ const blogPosts = {
         date: 'February 11, 2026',
         body: `
             <p style="font-size:16px; color:#333; line-height:1.9;">
-            On 11 February 2026, Imperial College London hosted <strong>NVIDIA Robotics Day 2026</strong> — a full-day 
-            symposium organised by the School of Convergence Science, Human and Artificial Intelligence. The event 
-            convened leading researchers from Imperial alongside engineers and scientists from NVIDIA to chart the 
-            frontiers of <strong>embodied intelligence</strong>: the convergence of perception, learning, simulation, 
+            On 11 February 2026, Imperial College London hosted <strong>NVIDIA Robotics Day 2026</strong> — a full-day
+            symposium organised by the School of Convergence Science, Human and Artificial Intelligence. The event
+            convened leading researchers from Imperial alongside engineers and scientists from NVIDIA to chart the
+            frontiers of <strong>embodied intelligence</strong>: the convergence of perception, learning, simulation,
             and physical action that is redefining what robots can do in the real world.</p>
 
             <div class="blog-event-details">
@@ -21,51 +21,25 @@ const blogPosts = {
             <p>👉 <a href="https://www.imperial.ac.uk/events/204543/nvidia-robotics-day-2026/" target="_blank">
             Official Event Page</a></p>
 
-            <!-- ─── SECTION 1 ─── -->
-            <h3 class="blog-section-title">1. The Big Picture: From Scaling Laws to Embodied Foundation Models</h3>
-            <p>The symposium opened with a grounding observation: <strong>scaling laws</strong>, long validated for 
-            large language models and vision transformers, are now being applied to robotics. Larger 
-            compute budgets, richer datasets, and bigger models reliably yield better performance — 
-            suggesting that the same data-hungry, compute-intensive recipe that powered GPT and ViT 
-            can power the next generation of robot brains.</p>
+            <!-- ═══════════════════════════════════════════════════════════ -->
+            <!--  MORNING SESSION — Prof. Stephen James & Collaborators    -->
+            <!-- ═══════════════════════════════════════════════════════════ -->
+
+            <!-- ─── SECTION 1 — IMG_7684 (idx 0) ─── -->
+            <h3 class="blog-section-title">1. Genima — Turning Robot Control into Image Generation</h3>
+            <p>The symposium opened with a striking reframing of robot manipulation: what if a robot
+            controller could simply <em>draw</em> the answer? <strong>Genima</strong>
+            (Shridhar, Lo &amp; James, CoRL 2024) does exactly that — given the current camera
+            observation, a diffusion model generates a <em>target image</em> depicting where objects
+            should end up, and a low-level controller drives the robot to reach those targets.
+            By casting control as image generation, Genima sidesteps the need for explicit
+            action-space engineering.</p>
 
             <div class="blog-inline-images">
-                <img src="conf_nvidia/jpg/IMG_7710.jpg" alt="Scaling Laws for LLMs and Vision Transformers" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 25)" loading="lazy">
-            </div>
-            <p class="blog-caption">Scaling laws for compute, dataset size, and model parameters — the foundation for embodied AI at scale.</p>
-
-            <div class="mermaid-container">
-                <pre class="mermaid">
-graph LR
-    A["Compute ↑"] --> D["Better Robot<br/>Performance"]
-    B["Dataset Size ↑"] --> D
-    C["Model Parameters ↑"] --> D
-    D --> E["Foundation Models<br/>for Robotics"]
-    E --> F["Sim-to-Real<br/>Transfer"]
-    E --> G["Zero-Shot<br/>Generalisation"]
-    E --> H["Multi-Task<br/>Learning"]
-    style D fill:#76b900,stroke:#333,color:#fff
-    style E fill:#333,stroke:#76b900,color:#fff
-                </pre>
-            </div>
-
-            <!-- ─── SECTION 2 ─── -->
-            <h3 class="blog-section-title">2. Generative Models as Robot Controllers — Genima</h3>
-            <p>A highlight of the day was the presentation of <strong>Genima</strong> 
-            (Shridhar, Lo &amp; James, CoRL 2024), which reframes robotic manipulation as an 
-            <em>image generation problem</em>. The idea is strikingly simple: given the current 
-            camera observation, a diffusion model (SD-Turbo with ControlNet) generates a 
-            <em>target image</em> depicting where objects should end up, and a low-level 
-            controller then drives the robot to reach those targets.</p>
-
-            <div class="blog-inline-images two-col">
-                <img src="conf_nvidia/jpg/IMG_7684.jpg" alt="Robotics Into an Image Generation Problem" 
+                <img src="conf_nvidia/jpg/IMG_7684.jpg" alt="Genima — Robotics Into an Image Generation Problem"
                      onclick="openLightbox('nvidia-robotics-day-2026', 0)" loading="lazy">
-                <img src="conf_nvidia/jpg/IMG_7689.jpg" alt="Genima Pipeline — SD-Turbo + Controller" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 5)" loading="lazy">
             </div>
-            <p class="blog-caption">Left: Framing robotics as image generation. Right: The Genima pipeline — SD-Turbo draws targets, then a controller executes.</p>
+            <p class="blog-caption">Opening slide: Framing robotic manipulation as an image generation problem (Shridhar, Lo &amp; James, CoRL 2024).</p>
 
             <div class="mermaid-container">
                 <pre class="mermaid">
@@ -80,104 +54,21 @@ flowchart LR
                 </pre>
             </div>
 
-            <!-- ─── SECTION 3 ─── -->
-            <h3 class="blog-section-title">3. Coarse-to-Fine Reinforcement Learning</h3>
-            <p>Prof. Stephen James (Imperial) presented <strong>Coarse-to-Fine Reinforcement Learning</strong> 
-            (Seo, Uruc &amp; James, CoRL 2024), introducing <strong>CQN</strong> — a hierarchical method 
-            for continuous robot control. The key insight: rather than predicting a single continuous 
-            action value, CQN recursively subdivides the action space into discrete bins across 
-            multiple levels. At each level it selects the highest-Q bin and zooms in, achieving 
-            fine-grained precision without the sample inefficiency of purely continuous methods.</p>
-
-            <div class="blog-inline-images two-col">
-                <img src="conf_nvidia/jpg/IMG_7686.jpg" alt="Coarse-to-Fine RL — Hierarchical Binning" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 2)" loading="lazy">
-                <img src="conf_nvidia/jpg/IMG_7690.jpg" alt="CQN vs DrQ-v2+ comparison" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 6)" loading="lazy">
-            </div>
-            <p class="blog-caption">Left: Hierarchical action binning across 3 levels. Right: CQN (ours) vs. DrQ-v2+ baseline — real-world drawer opening.</p>
-
-            <div class="mermaid-container">
-                <pre class="mermaid">
-flowchart TD
-    L1["Level 1: 5 Coarse Bins<br/>[-1, 1]"] -->|"Q=0.78 → select [-0.2, 0.2]"| L2["Level 2: 5 Finer Bins<br/>[-0.2, 0.2]"]
-    L2 -->|"Q=0.95 → select [-0.04, 0.04]"| L3["Level 3: 5 Finest Bins<br/>[-0.04, 0.04]"]
-    L3 -->|"Q=0.99 → select"| ACT["Final Action: -0.016"]
-    style L1 fill:#4285f4,stroke:#333,color:#fff
-    style L2 fill:#34a853,stroke:#333,color:#fff
-    style L3 fill:#f4a832,stroke:#333,color:#fff
-    style ACT fill:#76b900,stroke:#333,color:#fff
-                </pre>
-            </div>
-
-            <!-- ─── SECTION 4 ─── -->
-            <h3 class="blog-section-title">4. In-Context Robot Learning &amp; Instant Policy</h3>
-            <p>The symposium showcased <strong>in-context learning</strong> for robotics — a paradigm 
-            where a pretrained model receives a handful of demonstration trajectories as context and 
-            immediately generalises to new scenarios without fine-tuning. The model attends over a 
-            sequence of demonstration states to predict actions for the current state.</p>
-
-            <p><strong>Instant Policy</strong> (Vosylius &amp; Johns, ICLR 2025) demonstrated 
-            real-time human-to-robot imitation: a person performs a task and the policy instantly 
-            replicates it on a Sawyer robot, with no explicit programming or re-training.</p>
-
-            <div class="blog-inline-images two-col">
-                <img src="conf_nvidia/jpg/IMG_7687.jpg" alt="In-Context Learning for Robotics" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 3)" loading="lazy">
-                <img src="conf_nvidia/jpg/IMG_7688.jpg" alt="Instant Policy — Vosylius and Johns, ICLR 2025" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 4)" loading="lazy">
-            </div>
-            <p class="blog-caption">Left: In-context learning from demo sequences. Right: Instant Policy — real-time human-to-robot transfer.</p>
-
-            <div class="mermaid-container">
-                <pre class="mermaid">
-flowchart LR
-    subgraph Context["📋 Demonstration Context"]
-        D1["Demo 1<br/>States 1..L"]
-        DN["Demo N<br/>States 1..L"]
-    end
-    CS["Current<br/>State"] --> TF["Transformer<br/>Policy"]
-    Context --> TF
-    TF --> P1["Action 1"]
-    TF --> PT["Action T"]
-    style TF fill:#76b900,stroke:#333,color:#fff
-    style Context fill:#f0f8ff,stroke:#0066cc
-                </pre>
-            </div>
-
-            <!-- ─── SECTION 5 ─── -->
-            <h3 class="blog-section-title">5. Learning a Thousand Tasks in a Day</h3>
-            <p>Perhaps the most ambitious result of the day: <strong>"Learning a Thousand Tasks in a Day"</strong> 
-            (Dreczkowski, Vitiello, Vosylius &amp; Johns, <em>Science Robotics</em> 2025). Using just 
-            <strong>17 hours of data collection</strong>, a single robot learned <strong>1,000 different tasks</strong> 
-            across 402 real-world objects and 31 different skills — with only 1 demonstration per task. 
-            This unprecedented efficiency points toward a future where robots can be deployed and 
-            retrained in hours, not months.</p>
+            <!-- ─── SECTION 2 — IMG_7685 (idx 1) ─── -->
+            <h3 class="blog-section-title">2. An LLM-Powered Architecture for Perception &amp; Action</h3>
+            <p>Next came an overview of a full-stack architecture for <strong>LLM-driven robotic control</strong>.
+            The system fuses RGBD motion tracking, human state estimation (posture, gaze, actions),
+            and SLAM-based scene understanding into a unified pipeline. Three LLM-powered assistants
+            collaborate in sequence: an <em>Object Affordances Assistant</em> identifies what actions
+            objects support, an <em>Action Generator</em> proposes the next action given the human's
+            state and gaze, and an <em>Action Verification Assistant</em> validates the proposal
+            before it reaches the motion planner.</p>
 
             <div class="blog-inline-images">
-                <img src="conf_nvidia/jpg/IMG_7705.jpg" alt="Science Robotics — Learning 1000 Tasks in a Day" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 21)" loading="lazy">
-            </div>
-            <p class="blog-caption">Featured on the cover of Science Robotics — 1,000 tasks, 402 objects, 17 hours of data.</p>
-
-            <!-- ─── SECTION 6 ─── -->
-            <h3 class="blog-section-title">6. LLMs Meet Robotics: Action Grammars &amp; Affordances</h3>
-            <p>The <strong>Brain &amp; Behaviour Lab</strong> (Imperial) presented work on bridging LLMs with 
-            physical robot control. Their framework decomposes natural human behaviour into formal 
-            <strong>action-grammars</strong> — structured rules of action sequences (Pick, Pour, Mix, Place) — 
-            and uses LLM-powered assistants for object affordance detection, action generation, 
-            and action verification before passing commands to a motion planner.</p>
-
-            <p>The key finding: <em>LLMs work well in lab settings but scaling remains a fundamental challenge</em>. 
-            The system demonstrated real-time pick-and-pour tasks using GPT-4o for affordance reasoning.</p>
-
-            <div class="blog-inline-images two-col">
-                <img src="conf_nvidia/jpg/IMG_7700.jpg" alt="Action Grammars — rules of action sequences" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 16)" loading="lazy">
-                <img src="conf_nvidia/jpg/IMG_7685.jpg" alt="LLM-based robotic control architecture" 
+                <img src="conf_nvidia/jpg/IMG_7685.jpg" alt="LLM-based robotic control architecture"
                      onclick="openLightbox('nvidia-robotics-day-2026', 1)" loading="lazy">
             </div>
-            <p class="blog-caption">Left: Formal action-grammars for human behaviour. Right: LLM-powered perception-action pipeline with GPT-4o.</p>
+            <p class="blog-caption">A multi-assistant LLM architecture: RGBD perception → affordance reasoning → action generation → verification → motion planning.</p>
 
             <div class="mermaid-container">
                 <pre class="mermaid">
@@ -200,36 +91,211 @@ flowchart TD
                 </pre>
             </div>
 
-            <!-- ─── SECTION 7 ─── -->
-            <h3 class="blog-section-title">7. Robust Locomotion: FLAIR for External Perturbation Compensation</h3>
-            <p>The <strong>FLAIR</strong> framework demonstrated automatic compensation for external 
-            perturbations during robot locomotion. In the demonstrated scenario, a mobile robot 
-            navigated while subjected to simulated wind from the corner of the room. 
-            Without FLAIR, the robot drifted off course; with FLAIR enabled, the robot 
-            maintained its planned trajectory despite disturbances — a critical capability 
-            for outdoor and industrial deployments.</p>
+            <!-- ─── SECTION 3 — IMG_7686 (idx 2) ─── -->
+            <h3 class="blog-section-title">3. Coarse-to-Fine Reinforcement Learning (CQN)</h3>
+            <p>Prof. Stephen James then presented <strong>Coarse-to-Fine Reinforcement Learning</strong>
+            (Seo, Uruc &amp; James, CoRL 2024), introducing <strong>CQN</strong> — a hierarchical method
+            for continuous robot control. The key insight: rather than predicting a single continuous
+            action value, CQN recursively subdivides the action space into discrete bins across
+            multiple levels. At each level it selects the highest-Q bin and zooms in, achieving
+            fine-grained precision without the sample inefficiency of purely continuous methods.</p>
 
             <div class="blog-inline-images">
-                <img src="conf_nvidia/jpg/IMG_7691.jpg" alt="FLAIR — Wind perturbation compensation" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 7)" loading="lazy">
+                <img src="conf_nvidia/jpg/IMG_7686.jpg" alt="Coarse-to-Fine RL — Hierarchical Binning"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 2)" loading="lazy">
             </div>
-            <p class="blog-caption">FLAIR (left) vs No FLAIR (right) — robustness to simulated wind perturbations.</p>
+            <p class="blog-caption">CQN: hierarchical action-space binning at 3 levels — progressively finer discretisation of the continuous action space.</p>
 
-            <!-- ─── SECTION 8 ─── -->
-            <h3 class="blog-section-title">8. NVIDIA Isaac for Healthcare — Surgical Robotics &amp; Simulation</h3>
-            <p>A major portion of the afternoon focused on <strong>NVIDIA's Isaac platform for Healthcare</strong>, 
-            showcasing how the full NVIDIA stack — Omniverse, Isaac Sim, Cosmos, MONAI, and Holoscan — 
-            is being applied to train surgical robots. The pipeline combines digital twins with 
-            teleoperation, synthetic data generation, and both imitation and reinforcement learning 
-            to produce deployable AI policy models.</p>
+            <div class="mermaid-container">
+                <pre class="mermaid">
+flowchart TD
+    L1["Level 1: 5 Coarse Bins<br/>[-1, 1]"] -->|"Q=0.78 → select [-0.2, 0.2]"| L2["Level 2: 5 Finer Bins<br/>[-0.2, 0.2]"]
+    L2 -->|"Q=0.95 → select [-0.04, 0.04]"| L3["Level 3: 5 Finest Bins<br/>[-0.04, 0.04]"]
+    L3 -->|"Q=0.99 → select"| ACT["Final Action: -0.016"]
+    style L1 fill:#4285f4,stroke:#333,color:#fff
+    style L2 fill:#34a853,stroke:#333,color:#fff
+    style L3 fill:#f4a832,stroke:#333,color:#fff
+    style ACT fill:#76b900,stroke:#333,color:#fff
+                </pre>
+            </div>
+
+            <!-- ─── SECTION 4 — IMG_7687 (idx 3) + IMG_7688 (idx 4) ─── -->
+            <h3 class="blog-section-title">4. In-Context Learning &amp; Robust Locomotion with FLAIR</h3>
+            <p>The talk continued with <strong>in-context learning</strong> for robotics — a paradigm
+            where a pretrained model receives a handful of demonstration trajectories as context and
+            immediately generalises to new scenarios without fine-tuning. The model attends over a
+            sequence of demonstration states to predict actions for the current state, enabling
+            rapid deployment from just a few examples.</p>
+
+            <p>Following this, the <strong>FLAIR</strong> framework demonstrated automatic compensation
+            for external perturbations during robot locomotion. A mobile robot navigated while
+            subjected to simulated wind; without FLAIR the robot drifted off course, while with
+            FLAIR it maintained its planned trajectory — a critical capability for outdoor and
+            industrial deployments.</p>
 
             <div class="blog-inline-images two-col">
-                <img src="conf_nvidia/jpg/IMG_7695.jpg" alt="Isaac for Healthcare architecture" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 11)" loading="lazy">
-                <img src="conf_nvidia/jpg/IMG_7697.jpg" alt="SDG: Data Augmentation via World Generation" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 13)" loading="lazy">
+                <img src="conf_nvidia/jpg/IMG_7687.jpg" alt="In-Context Learning for Robotics"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 3)" loading="lazy">
+                <img src="conf_nvidia/jpg/IMG_7688.jpg" alt="FLAIR — Automatic Wind Perturbation Compensation"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 4)" loading="lazy">
             </div>
-            <p class="blog-caption">Left: NVIDIA Isaac for Healthcare pipeline. Right: Synthetic data augmentation with Cosmos-transfer1.</p>
+            <p class="blog-caption">Left: In-context learning from demo sequences — generalisation without fine-tuning. Right: FLAIR vs No FLAIR under simulated wind.</p>
+
+            <div class="mermaid-container">
+                <pre class="mermaid">
+flowchart LR
+    subgraph Context["📋 Demonstration Context"]
+        D1["Demo 1<br/>States 1..L"]
+        DN["Demo N<br/>States 1..L"]
+    end
+    CS["Current<br/>State"] --> TF["Transformer<br/>Policy"]
+    Context --> TF
+    TF --> P1["Action 1"]
+    TF --> PT["Action T"]
+    style TF fill:#76b900,stroke:#333,color:#fff
+    style Context fill:#f0f8ff,stroke:#0066cc
+                </pre>
+            </div>
+
+            <!-- ─── SECTION 5 — IMG_7689 (idx 5) + IMG_7690 (idx 6) ─── -->
+            <h3 class="blog-section-title">5. Instant Policy &amp; the Full Genima Pipeline</h3>
+            <p><strong>Instant Policy</strong> (Vosylius &amp; Johns, ICLR 2025) demonstrated
+            real-time human-to-robot imitation: a person performs a task and the policy instantly
+            replicates it on a Sawyer robot, with no explicit programming or re-training. This
+            one-shot transfer from human demonstration to robot execution showcases how far
+            few-shot imitation learning has come.</p>
+
+            <p>The session then circled back to the full <strong>Genima pipeline</strong>, showing how
+            SD-Turbo paired with ControlNet generates goal images that a low-level controller executes.
+            The beauty of the approach lies in its modularity: the generative model handles high-level
+            planning (what the scene should look like), while classical control handles low-level
+            execution (how to get there).</p>
+
+            <div class="blog-inline-images two-col">
+                <img src="conf_nvidia/jpg/IMG_7689.jpg" alt="Instant Policy — Vosylius and Johns, ICLR 2025"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 5)" loading="lazy">
+                <img src="conf_nvidia/jpg/IMG_7690.jpg" alt="Genima Pipeline — SD-Turbo + ControlNet"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 6)" loading="lazy">
+            </div>
+            <p class="blog-caption">Left: Instant Policy — real-time human-to-robot transfer on a Sawyer arm. Right: The complete Genima pipeline using SD-Turbo + ControlNet.</p>
+
+            <!-- ─── SECTION 6 — IMG_7691 (idx 7) ─── -->
+            <h3 class="blog-section-title">6. Real-World Validation: CQN in Action</h3>
+            <p>Closing the morning session, Prof. James returned to <strong>CQN</strong> with
+            compelling real-world results. Side-by-side comparisons on a drawer-opening task showed
+            CQN significantly outperforming the <strong>DrQ-v2+</strong> baseline — achieving more
+            consistent grasps, smoother trajectories, and higher success rates. The results validated
+            that hierarchical coarse-to-fine discretisation translates from simulation to the real
+            world with minimal performance degradation.</p>
+
+            <div class="blog-inline-images">
+                <img src="conf_nvidia/jpg/IMG_7691.jpg" alt="CQN vs DrQ-v2+ — Real-World Comparison"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 7)" loading="lazy">
+            </div>
+            <p class="blog-caption">CQN (left) vs DrQ-v2+ (right) on real-world drawer opening — CQN delivers more reliable grasps and smoother execution.</p>
+
+            <!-- ═══════════════════════════════════════════════════════════ -->
+            <!--  MIDDAY SESSION — NVIDIA                                  -->
+            <!-- ═══════════════════════════════════════════════════════════ -->
+
+            <!-- ─── SECTION 7 — IMG_7692 (idx 8) + IMG_7693 (idx 9) ─── -->
+            <h3 class="blog-section-title">7. NVIDIA: Contact Physics &amp; Scaling Laws for Embodied AI</h3>
+            <p>The midday NVIDIA session opened with their approach to <strong>contact simulation</strong> —
+            the bedrock of physics-based robot training. Their key design principle: the physics solver
+            should <em>not</em> need to know about geometry. A contact detection module finds overlapping
+            pairs, identifies reaction points (position, normal direction, overlap depth, body references),
+            and passes them to the solver as a flat list. Speculative contacts are created <em>before</em>
+            actual overlap occurs, improving stability.</p>
+
+            <p>This was immediately followed by a discussion of <strong>scaling laws</strong>: the observation
+            that larger compute budgets, richer datasets, and bigger models reliably yield better
+            performance. Long validated for LLMs and vision transformers, these laws are now being
+            applied to robotics — suggesting that the same data-hungry, compute-intensive recipe
+            can power the next generation of robot brains.</p>
+
+            <div class="blog-inline-images two-col">
+                <img src="conf_nvidia/jpg/IMG_7692.jpg" alt="NVIDIA — What is a Contact?"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 8)" loading="lazy">
+                <img src="conf_nvidia/jpg/IMG_7693.jpg" alt="Scaling Laws for LLMs and Vision Transformers"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 9)" loading="lazy">
+            </div>
+            <p class="blog-caption">Left: NVIDIA's geometry-agnostic contact simulation. Right: Scaling laws — the foundation for embodied foundation models.</p>
+
+            <div class="mermaid-container">
+                <pre class="mermaid">
+flowchart TD
+    GEO["Geometry<br/>Representation"] --> CD["Contact<br/>Detection"]
+    CD -->|"position, normal,<br/>overlap depth,<br/>body references"| CL["Contact<br/>Point List"]
+    CL --> PS["Physics Solver<br/>(geometry-agnostic)"]
+    PS --> DYN["Dynamics<br/>Update"]
+    SC["Speculative<br/>Contacts"] -.->|"pre-overlap<br/>creation"| CL
+    style CD fill:#76b900,stroke:#333,color:#fff
+    style PS fill:#333,stroke:#76b900,color:#fff
+                </pre>
+            </div>
+
+            <div class="mermaid-container">
+                <pre class="mermaid">
+graph LR
+    A["Compute ↑"] --> D["Better Robot<br/>Performance"]
+    B["Dataset Size ↑"] --> D
+    C["Model Parameters ↑"] --> D
+    D --> E["Foundation Models<br/>for Robotics"]
+    E --> F["Sim-to-Real<br/>Transfer"]
+    E --> G["Zero-Shot<br/>Generalisation"]
+    E --> H["Multi-Task<br/>Learning"]
+    style D fill:#76b900,stroke:#333,color:#fff
+    style E fill:#333,stroke:#76b900,color:#fff
+                </pre>
+            </div>
+
+            <!-- ─── SECTION 8 — IMG_7694 (idx 10) ─── -->
+            <h3 class="blog-section-title">8. NVIDIA Research Ecosystem: Cosmos Policy, SONIC, DreamZero &amp; DreamGen</h3>
+            <p>NVIDIA then mapped their broader research landscape for embodied AI,
+            connecting four major threads of ongoing work:</p>
+            <ul style="margin: 8px 0 16px 24px; color: #444; line-height: 1.8;">
+                <li><strong>Cosmos Policy</strong> — world-model guided robot planning (arxiv 2601.16163)</li>
+                <li><strong>SONIC</strong> — scalable open-domain navigation (arxiv 2511.07820)</li>
+                <li><strong>DreamZero</strong> — dream-based robot policy learning without real data</li>
+                <li><strong>DreamGen</strong> — generative world models for synthetic training data</li>
+            </ul>
+
+            <div class="blog-inline-images">
+                <img src="conf_nvidia/jpg/IMG_7694.jpg" alt="NVIDIA Related Research — Cosmos, SONIC, DreamZero, DreamGen"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 10)" loading="lazy">
+            </div>
+
+            <div class="mermaid-container">
+                <pre class="mermaid">
+graph TB
+    NV["NVIDIA Embodied AI<br/>Research Ecosystem"] --> CP["Cosmos Policy<br/>World-model guided<br/>robot planning"]
+    NV --> SO["SONIC<br/>Scalable open-domain<br/>navigation"]
+    NV --> DZ["DreamZero<br/>Dream-based robot<br/>policy learning"]
+    NV --> DG["DreamGen<br/>Generative world<br/>models for training"]
+    CP -->|"arxiv 2601.16163"| APP["Real-World<br/>Deployment"]
+    SO -->|"arxiv 2511.07820"| APP
+    DZ --> APP
+    DG --> APP
+    style NV fill:#76b900,stroke:#333,color:#fff
+    style APP fill:#333,stroke:#76b900,color:#fff
+                </pre>
+            </div>
+
+            <!-- ─── SECTION 9 — IMG_7695 (idx 11) + IMG_7696 (idx 12) + IMG_7697 (idx 13) + IMG_7698 (idx 14) ─── -->
+            <h3 class="blog-section-title">9. NVIDIA Isaac for Healthcare — Surgical Robotics &amp; Simulation</h3>
+            <p>A highlight of the NVIDIA session was <strong>Isaac for Healthcare</strong>, showcasing
+            how the full NVIDIA stack — Omniverse, Isaac Sim, Cosmos, MONAI, and Holoscan — is being
+            applied to train surgical robots. The pipeline combines digital twins with teleoperation,
+            synthetic data generation, and both imitation and reinforcement learning to produce
+            deployable AI policy models.</p>
+
+            <div class="blog-inline-images two-col">
+                <img src="conf_nvidia/jpg/IMG_7695.jpg" alt="Isaac for Healthcare architecture"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 11)" loading="lazy">
+                <img src="conf_nvidia/jpg/IMG_7696.jpg" alt="Deformable Gaussian Splats with G-SHARP"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 12)" loading="lazy">
+            </div>
+            <p class="blog-caption">Left: NVIDIA Isaac for Healthcare — from digital twin to deployed surgical robot. Right: G-SHARP Gaussian splatting for surgical scene reconstruction.</p>
 
             <div class="mermaid-container">
                 <pre class="mermaid">
@@ -253,101 +319,96 @@ flowchart LR
                 </pre>
             </div>
 
-            <p>Two breakthrough results stood out:</p>
+            <p>Two breakthrough results followed in rapid succession:</p>
             <ul style="margin: 8px 0 16px 24px; color: #444; line-height: 1.8;">
-                <li><strong>Deformable Gaussian Splats with G-SHARP</strong> — real-world surgical scenes 
-                reconstructed in under 2 minutes using a commercially usable Gaussian splatting engine, 
+                <li><strong>Deformable Gaussian Splats with G-SHARP</strong> — real-world surgical scenes
+                reconstructed in under 2 minutes using a commercially usable Gaussian splatting engine,
                 with inference at 30 fps. This enables real-to-sim transfer where Gaussians model tissue dynamics.</li>
-                <li><strong>Cosmos Transfer 2.5</strong> — integration of Cosmos Transfer with surgical 
-                simulators to achieve photorealistic simulation. By training on surgical datasets and 
-                extracting depth/instance segmentations, the system produces 720p surgical videos at ~2 fps.</li>
+                <li><strong>SDG: Data Augmentation via Controllable World Generation</strong> — using Cosmos-transfer1
+                to generate diverse synthetic training data from simulator outputs.</li>
+                <li><strong>Cosmos Transfer 2.5</strong> — integration with surgical simulators to achieve
+                photorealistic simulation, producing 720p surgical videos at ~2 fps by training on real
+                surgical datasets and extracting depth/instance segmentations.</li>
             </ul>
 
             <div class="blog-inline-images two-col">
-                <img src="conf_nvidia/jpg/IMG_7696.jpg" alt="G-SHARP Gaussian Splats for Surgery" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 12)" loading="lazy">
-                <img src="conf_nvidia/jpg/IMG_7698.jpg" alt="Cosmos Transfer 2.5 with Surgical Simulators" 
+                <img src="conf_nvidia/jpg/IMG_7697.jpg" alt="SDG: Data Augmentation via World Generation"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 13)" loading="lazy">
+                <img src="conf_nvidia/jpg/IMG_7698.jpg" alt="Cosmos Transfer 2.5 with Surgical Simulators"
                      onclick="openLightbox('nvidia-robotics-day-2026', 14)" loading="lazy">
             </div>
-            <p class="blog-caption">Left: G-SHARP surgical scene reconstruction. Right: Cosmos Transfer 2.5 — photorealistic surgical simulation.</p>
+            <p class="blog-caption">Left: Synthetic data generation with Cosmos-transfer1. Right: Cosmos Transfer 2.5 — photorealistic surgical simulation at 720p.</p>
 
-            <!-- ─── SECTION 9 ─── -->
-            <h3 class="blog-section-title">9. NVIDIA Physics Simulation: Contact Modelling</h3>
-            <p>NVIDIA engineers explained their approach to <strong>contact simulation</strong> — 
-            the bedrock of any physics-based robot training. Their key design principle: 
-            the physics solver should <em>not</em> need to know about geometry. Instead, 
-            a contact detection module finds overlapping pairs, identifies reaction points 
-            (position, normal direction, overlap depth, body references), and passes them to 
-            the solver as a flat list of contact points. Speculative contacts are created 
-            <em>before</em> actual overlap occurs, improving stability.</p>
+            <!-- ═══════════════════════════════════════════════════════════ -->
+            <!--  AFTERNOON SESSION — Brain & Behaviour Lab                -->
+            <!-- ═══════════════════════════════════════════════════════════ -->
 
-            <div class="blog-inline-images">
-                <img src="conf_nvidia/jpg/IMG_7693.jpg" alt="NVIDIA Contact Physics" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 9)" loading="lazy">
-            </div>
-            <p class="blog-caption">NVIDIA's contact simulation architecture — geometry-agnostic physics solving.</p>
-
-            <div class="mermaid-container">
-                <pre class="mermaid">
-flowchart TD
-    GEO["Geometry<br/>Representation"] --> CD["Contact<br/>Detection"]
-    CD -->|"position, normal,<br/>overlap depth,<br/>body references"| CL["Contact<br/>Point List"]
-    CL --> PS["Physics Solver<br/>(geometry-agnostic)"]
-    PS --> DYN["Dynamics<br/>Update"]
-    SC["Speculative<br/>Contacts"] -.->|"pre-overlap<br/>creation"| CL
-    PS -.->|"mass, inertia"| DYN
-    style CD fill:#76b900,stroke:#333,color:#fff
-    style PS fill:#333,stroke:#76b900,color:#fff
-                </pre>
-            </div>
-
-            <!-- ─── SECTION 10 ─── -->
-            <h3 class="blog-section-title">10. NVIDIA Research Ecosystem: Cosmos Policy, SONIC, DreamZero &amp; DreamGen</h3>
-            <p>The final session mapped NVIDIA's broader research landscape for embodied AI, 
-            connecting four major threads of ongoing work:</p>
+            <!-- ─── SECTION 10 — IMG_7699 (idx 15) + IMG_7700 (idx 16) + IMG_7701 (idx 17) ─── -->
+            <h3 class="blog-section-title">10. Action Grammars, LLM Affordances &amp; the Scaling Challenge</h3>
+            <p>The afternoon shifted to the <strong>Brain &amp; Behaviour Lab</strong> (Imperial), which
+            presented work on bridging LLMs with physical robot control. Their framework decomposes
+            natural human behaviour into formal <strong>action-grammars</strong> — structured rules
+            of action sequences (Pick, Pour, Mix, Place) — and uses LLM-powered assistants for
+            object affordance detection, action generation, and action verification before passing
+            commands to a motion planner.</p>
 
             <div class="blog-inline-images">
-                <img src="conf_nvidia/jpg/IMG_7694.jpg" alt="NVIDIA Related Research — Cosmos, SONIC, DreamZero, DreamGen" 
-                     onclick="openLightbox('nvidia-robotics-day-2026', 10)" loading="lazy">
+                <img src="conf_nvidia/jpg/IMG_7699.jpg" alt="Natural human behavior has action-grammars"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 15)" loading="lazy">
             </div>
+            <p class="blog-caption">Action grammars: decomposing natural human behaviour into structured, composable action sequences.</p>
 
-            <div class="mermaid-container">
-                <pre class="mermaid">
-graph TB
-    NV["NVIDIA Embodied AI<br/>Research Ecosystem"] --> CP["Cosmos Policy<br/>World-model guided<br/>robot planning"]
-    NV --> SO["SONIC<br/>Scalable open-domain<br/>navigation"]
-    NV --> DZ["DreamZero<br/>Dream-based robot<br/>policy learning"]
-    NV --> DG["DreamGen<br/>Generative world<br/>models for training"]
-    CP -->|"arxiv 2601.16163"| APP["Real-World<br/>Deployment"]
-    SO -->|"arxiv 2511.07820"| APP
-    DZ --> APP
-    DG --> APP
-    style NV fill:#76b900,stroke:#333,color:#fff
-    style APP fill:#333,stroke:#76b900,color:#fff
-                </pre>
-            </div>
-
-            <!-- ─── SECTION 11 ─── -->
-            <h3 class="blog-section-title">11. Ongoing Frontiers: Action Prediction &amp; Egocentric Understanding</h3>
-            <p>The closing talks highlighted <strong>ongoing work</strong> on action prediction and 
-            egocentric video understanding, using the <strong>HD-Epic dataset</strong> with a 
-            <strong>DAM (Describe Anything Model)</strong> visual backbone. Preliminary results 
-            showed promising action classification from 20-second memory windows of egocentric video, 
-            demonstrating the potential for robots to understand and predict human intent from 
-            first-person perspectives.</p>
+            <p>The detailed architecture showed how LLM-based affordance reasoning connects perception
+            to action: RGBD motion tracking feeds human state and gaze information to an Action Generator,
+            while Robot Perception (SLAM) feeds detected objects to an Object Affordances assistant.
+            An Action Verification step validates proposals before execution.</p>
 
             <div class="blog-inline-images two-col">
-                <img src="conf_nvidia/jpg/IMG_7701.jpg" alt="LLMs work well in lab but scaling is a challenge" 
+                <img src="conf_nvidia/jpg/IMG_7700.jpg" alt="LLM Affordances Architecture"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 16)" loading="lazy">
+                <img src="conf_nvidia/jpg/IMG_7701.jpg" alt="LLMs work well in lab but scaling is a challenge"
                      onclick="openLightbox('nvidia-robotics-day-2026', 17)" loading="lazy">
-                <img src="conf_nvidia/jpg/IMG_7702.jpg" alt="Ongoing work — HD-Epic dataset results" 
+            </div>
+            <p class="blog-caption">Left: Full LLM affordance pipeline with GPT-4o. Right: The scaling challenge — LLMs work well in the lab, but robust scaling to diverse real-world environments remains an open problem.</p>
+
+            <p>The key finding was candid and important: <em>LLMs work well in lab settings but scaling
+            remains a fundamental challenge</em>. The system demonstrated real-time pick-and-pour tasks
+            using GPT-4o for affordance reasoning, but transitioning to unstructured, diverse environments
+            exposed the limits of current approaches.</p>
+
+            <!-- ─── SECTION 11 — IMG_7702 (idx 18) + IMG_7705 (idx 21) ─── -->
+            <h3 class="blog-section-title">11. Ongoing Frontiers: Egocentric Understanding &amp; Learning 1,000 Tasks</h3>
+            <p>The closing talks highlighted <strong>ongoing work</strong> on action prediction and
+            egocentric video understanding, using the <strong>HD-Epic dataset</strong> with a
+            <strong>DAM (Describe Anything Model)</strong> visual backbone. Preliminary results
+            showed promising action classification from 20-second memory windows of egocentric video,
+            demonstrating the potential for robots to understand and predict human intent from
+            first-person perspectives.</p>
+
+            <div class="blog-inline-images">
+                <img src="conf_nvidia/jpg/IMG_7702.jpg" alt="Ongoing work — HD-Epic dataset results"
                      onclick="openLightbox('nvidia-robotics-day-2026', 18)" loading="lazy">
             </div>
-            <p class="blog-caption">Left: LLM-powered robot demo using GPT-4o. Right: Action prediction with DAM backbone on HD-Epic dataset.</p>
+            <p class="blog-caption">Preliminary results: action prediction using DAM backbone on the HD-Epic egocentric video dataset.</p>
 
-            <!-- ─── OVERALL ARCHITECTURE ─── -->
+            <p>Perhaps the most ambitious result of the day came from the concluding presentation:
+            <strong>"Learning a Thousand Tasks in a Day"</strong>
+            (Dreczkowski, Vitiello, Vosylius &amp; Johns, <em>Science Robotics</em> 2025). Using just
+            <strong>17 hours of data collection</strong>, a single robot learned <strong>1,000 different tasks</strong>
+            across 402 real-world objects and 31 different skills — with only 1 demonstration per task.
+            This unprecedented efficiency points toward a future where robots can be deployed and
+            retrained in hours, not months.</p>
+
+            <div class="blog-inline-images">
+                <img src="conf_nvidia/jpg/IMG_7705.jpg" alt="Science Robotics — Learning 1000 Tasks in a Day"
+                     onclick="openLightbox('nvidia-robotics-day-2026', 21)" loading="lazy">
+            </div>
+            <p class="blog-caption">Featured on the cover of Science Robotics — 1,000 tasks, 402 objects, 17 hours of data collection.</p>
+
+            <!-- ─── SECTION 12: OVERALL ARCHITECTURE ─── -->
             <h3 class="blog-section-title">12. The Emerging Architecture of Embodied Intelligence</h3>
-            <p>Stepping back, the talks collectively painted a coherent architectural picture of where 
-            embodied AI is heading. The following diagram synthesises the key themes from the symposium 
+            <p>Stepping back, the talks collectively painted a coherent architectural picture of where
+            embodied AI is heading. The following diagram synthesises the key themes from the symposium
             into a unified view of the modern embodied intelligence stack:</p>
 
             <div class="mermaid-container">
@@ -387,12 +448,12 @@ flowchart TB
 
             <!-- ─── CLOSING ─── -->
             <h3 class="blog-section-title">Closing Remarks</h3>
-            <p>NVIDIA Robotics Day 2026 reinforced a clear thesis: the tools for building truly 
-            intelligent robots — foundation models, high-fidelity simulation, and scalable learning 
-            algorithms — are converging. The gap between simulated and real-world performance is 
-            narrowing, the number of tasks a single robot can learn is exploding, and the 
-            infrastructure (Omniverse, Isaac, Cosmos) is maturing into a production-grade platform. 
-            For researchers at Imperial and beyond, the message was unmistakable: <em>the era of 
+            <p>NVIDIA Robotics Day 2026 reinforced a clear thesis: the tools for building truly
+            intelligent robots — foundation models, high-fidelity simulation, and scalable learning
+            algorithms — are converging. The gap between simulated and real-world performance is
+            narrowing, the number of tasks a single robot can learn is exploding, and the
+            infrastructure (Omniverse, Isaac, Cosmos) is maturing into a production-grade platform.
+            For researchers at Imperial and beyond, the message was unmistakable: <em>the era of
             embodied intelligence is no longer approaching — it has arrived</em>.</p>
 
             <p style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e0e0e0; color: #888; font-size: 13px;">
