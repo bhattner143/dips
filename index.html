@@ -6,6 +6,7 @@
     <title>Dr. Dipankar Bhattacharya - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -689,6 +690,12 @@
                 yearFilterRow.style.display = '';
             });
         });
+    </script>
+    <script>
+        mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: {
+            primaryColor: '#76b900', primaryTextColor: '#fff', primaryBorderColor: '#333',
+            lineColor: '#666', secondaryColor: '#f0f8ff', tertiaryColor: '#fafbfc'
+        }});
     </script>
 </body>
 </html>
