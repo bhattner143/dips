@@ -1,0 +1,74 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build CV (cv-llt.tex)",
+            "type": "shell",
+            "command": "cd CV_latex_source && pdflatex -interaction=nonstopmode cv-llt.tex && biber cv-llt && pdflatex -interaction=nonstopmode cv-llt.tex && pdflatex -interaction=nonstopmode cv-llt.tex",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build CV2 (cv2.tex)",
+            "type": "shell",
+            "command": "cd CV_latex_source && pdflatex -interaction=nonstopmode cv2.tex && biber cv2 && pdflatex -interaction=nonstopmode cv2.tex && pdflatex -interaction=nonstopmode cv2.tex",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Resume (resume.tex)",
+            "type": "shell",
+            "command": "cd CV_latex_source && pdflatex -interaction=nonstopmode resume.tex",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean LaTeX Build Files (CV_latex_source)",
+            "type": "shell",
+            "command": "cd CV_latex_source && rm -f *.aux *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.run.xml *.log *.out *.toc *.synctex.gz",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build All CVs",
+            "dependsOn": [
+                "Build CV (cv-llt.tex)",
+                "Build CV2 (cv2.tex)",
+                "Build Resume (resume.tex)"
+            ],
+            "dependsOrder": "sequence",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Quick Build CV (cv-llt.tex) - Single Pass",
+            "type": "shell",
+            "command": "cd CV_latex_source && pdflatex -interaction=nonstopmode cv-llt.tex",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

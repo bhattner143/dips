@@ -16,6 +16,7 @@
             <a href="#posts">All Posts</a>
             <a href="#research">Research</a>
             <a href="#blog">Blog</a>
+            <a href="#" id="roadmap-nav-btn"><i class="fas fa-route"></i> Career Roadmap</a>
             <button class="search-btn"><i class="fas fa-search"></i></button>
         </nav>
     </header>
@@ -39,12 +40,14 @@
 
             <div class="links-section">
                 <a href="mailto:d.bhattacharya1@imperial.ac.uk" class="link-item"><i class="fas fa-envelope"></i> Email</a>
-                <a href="#" class="link-item"><i class="fas fa-file-alt"></i> CV</a>
+                <a href="CV_latex_source/cv-llt.pdf" target="_blank" class="link-item"><i class="fas fa-file-alt"></i> CV</a>
                 <a href="#" class="link-item"><i class="fas fa-briefcase"></i> Experience</a>
                 <a href="#" class="link-item"><i class="fas fa-book"></i> Research & Publication</a>
                 <a href="#" class="link-item"><i class="fas fa-graduation-cap"></i> Education</a>
                 <a href="#" class="link-item"><i class="fas fa-award"></i> Grants & Awards</a>
                 <a href="https://bhattner143.github.io/dips/" target="_blank" class="link-item"><i class="fas fa-globe"></i> Website</a>
+                <a href="https://profiles.imperial.ac.uk/d.bhattacharya1" target="_blank" class="link-item"><i class="fas fa-university"></i> Imperial Profile</a>
+                <a href="https://www.imperial.ac.uk/morph-lab/" target="_blank" class="link-item"><i class="fas fa-flask"></i> Morph Lab</a>
                 <a href="https://scholar.google.com/citations?user=4BBRfsMAAAAJ&hl=en" target="_blank" class="link-item"><i class="fas fa-user-graduate"></i> Google Scholar</a>
                 <a href="http://www.linkedin.com/in/dipankar-bhattacharya-7132497b" target="_blank" class="link-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 <a href="tel:+447448647225" class="link-item"><i class="fas fa-phone"></i> Phone</a>
@@ -87,6 +90,12 @@
                 <button class="tab-btn" data-filter="teaching">Teaching</button>
                 <button class="tab-btn" data-filter="talk">Talk</button>
                 <button class="tab-btn" data-filter="xtras">Xtras</button>
+                <button class="tab-btn" id="roadmap-tab-btn" data-filter="roadmap"><i class="fas fa-route"></i> Career Roadmap</button>
+            </div>
+
+            <!-- Career Roadmap Panel -->
+            <div id="roadmap-panel" style="display:none; margin-top:15px; text-align:center;">
+                <img src="career_map/career_roadmap_used.png" alt="Dr. Dipankar Bhattacharya Career Roadmap" style="width:100%; max-width:100%; border-radius:10px; box-shadow:0 4px 16px rgba(0,0,0,0.15);">
             </div>
 
             <!-- News Posts -->
@@ -596,6 +605,63 @@
         </main>
     </div>
 
+    <!-- Career Roadmap Modal Overlay -->
+    <div id="roadmap-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:9999; overflow-y:auto;">
+        <div style="max-width:1200px; margin:0 auto; padding:30px 20px; text-align:center;">
+            <button id="roadmap-close-btn" style="position:fixed; top:18px; right:24px; background:#fff; border:none; border-radius:50%; width:38px; height:38px; font-size:20px; cursor:pointer; z-index:10000; line-height:38px;">&times;</button>
+            <h2 style="color:#fff; font-size:1.6em; margin-bottom:20px;"><i class="fas fa-route"></i> Career Roadmap</h2>
+            <img src="career_map/image.png" alt="Dr. Dipankar Bhattacharya Career Roadmap" style="width:100%; max-width:1100px; border-radius:12px; box-shadow:0 4px 32px rgba(0,0,0,0.6);">
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        document.getElementById('roadmap-nav-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('roadmap-overlay').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+        document.getElementById('roadmap-close-btn').addEventListener('click', function() {
+            document.getElementById('roadmap-overlay').style.display = 'none';
+            document.body.style.overflow = '';
+        });
+        document.getElementById('roadmap-overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Career Roadmap tab toggle
+        const roadmapTabBtn = document.getElementById('roadmap-tab-btn');
+        const roadmapPanel = document.getElementById('roadmap-panel');
+        const newsPosts = document.querySelector('.news-posts');
+        const yearFilterRow = document.querySelectorAll('.filter-tabs')[0]; // year buttons row
+
+        roadmapTabBtn.addEventListener('click', function() {
+            const isActive = this.classList.contains('active');
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            if (!isActive) {
+                this.classList.add('active');
+                roadmapPanel.style.display = 'block';
+                newsPosts.style.display = 'none';
+                yearFilterRow.style.display = 'none';
+            } else {
+                document.querySelector('.tab-btn[data-filter="all"]').classList.add('active');
+                roadmapPanel.style.display = 'none';
+                newsPosts.style.display = 'block';
+                yearFilterRow.style.display = '';
+            }
+        });
+
+        // Clicking any other tab hides roadmap panel
+        document.querySelectorAll('.tab-btn:not(#roadmap-tab-btn)').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                roadmapPanel.style.display = 'none';
+                newsPosts.style.display = 'block';
+                yearFilterRow.style.display = '';
+            });
+        });
+    </script>
 </body>
 </html>

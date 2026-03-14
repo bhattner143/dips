@@ -20,7 +20,7 @@
 Thumbs.db
 
 # Editor directories and files
-.vscode/
+# .vscode/ - keeping this for project tasks
 .idea/
 *.swp
 *.swo
