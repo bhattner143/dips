@@ -32,6 +32,7 @@ node_modules/
 # Large files / non-web assets
 *.photoslibrary
 *.photoslibrary/**
+*.HEIC
 Videos/
 CU60-logo/
 git_profile_page/

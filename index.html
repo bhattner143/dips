@@ -89,6 +89,7 @@
                 <button class="tab-btn" data-filter="awards">Awards</button>
                 <button class="tab-btn" data-filter="teaching">Teaching</button>
                 <button class="tab-btn" data-filter="talk">Talk</button>
+                <button class="tab-btn" data-filter="blog">Blog</button>
                 <button class="tab-btn" data-filter="xtras">Xtras</button>
                 <button class="tab-btn" id="roadmap-tab-btn" data-filter="roadmap"><i class="fas fa-route"></i> Career Roadmap</button>
             </div>
@@ -100,6 +101,23 @@
 
             <!-- News Posts -->
             <div class="news-posts">
+                <!-- Blog: NVIDIA Robotics Day 2026 -->
+                <article class="news-post" data-category="blog" data-year="2026">
+                    <div class="post-header">
+                        <span class="post-flag"><img src="conf_nvidia/jpg/IMG_7686.jpg" alt="NVIDIA" style="height: 15px; vertical-align: middle;"></span>
+                        <h3 class="post-title">February 11th, 2026 | Attended <a href="https://www.imperial.ac.uk/events/204543/nvidia-robotics-day-2026/" target="_blank" style="color: #0066cc; text-decoration: underline;">NVIDIA Robotics Day 2026</a> at Imperial College London 🤖</h3>
+                    </div>
+                    <p class="post-description">Attended NVIDIA Robotics Day 2026, a full-day symposium hosted by the School of Convergence Science, Human and Artificial Intelligence at Imperial College London. The event brought together leading researchers from Imperial and experts from NVIDIA for an immersive exploration of embodied intelligence.</p>
+                    <div class="blog-card-preview" onclick="openBlogOverlay('nvidia-robotics-day-2026')">
+                        <div class="blog-card-thumb">
+                            <img src="conf_nvidia/jpg/IMG_7686.jpg" alt="NVIDIA Robotics Day 2026">
+                        </div>
+                        <div class="blog-card-info">
+                            <span class="blog-read-more"><i class="fas fa-images"></i> View full blog post with 37 photos &rarr;</span>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- Post: Dyson Engineering Departmental Seminar February 2026 -->
                 <article class="news-post" data-category="talk" data-year="2026">
                     <div class="post-header">
@@ -614,7 +632,16 @@
         </div>
     </div>
 
+    <!-- Blog Overlay -->
+    <div id="blog-overlay" class="blog-overlay" style="display:none;">
+        <div class="blog-overlay-content">
+            <button class="blog-close-btn" onclick="closeBlogOverlay()">&times;</button>
+            <div id="blog-overlay-body"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="blog.js"></script>
     <script>
         document.getElementById('roadmap-nav-btn').addEventListener('click', function(e) {
             e.preventDefault();
