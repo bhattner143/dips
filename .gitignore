@@ -29,6 +29,16 @@ Thumbs.db
 # Node modules (if you add any build tools later)
 node_modules/
 
+# Large files / non-web assets
+*.photoslibrary
+*.photoslibrary/**
+Videos/
+CU60-logo/
+git_profile_page/
+career_visualizations/
+latex_source/
+CV_latex_output/
+
 # Backup files
 *.bak
 *~
