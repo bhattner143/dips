@@ -92,7 +92,59 @@
                 <button class="tab-btn" data-filter="talk">Talk</button>
                 <button class="tab-btn" data-filter="blog">Blog</button>
                 <button class="tab-btn" data-filter="xtras">Xtras</button>
+                <button class="tab-btn" id="supervision-tab-btn" data-filter="supervision"><i class="fas fa-user-graduate"></i> Supervision</button>
                 <button class="tab-btn" id="roadmap-tab-btn" data-filter="roadmap"><i class="fas fa-route"></i> Career Roadmap</button>
+            </div>
+
+            <!-- Supervision Panel -->
+            <div id="supervision-panel" style="display:none; margin-top:20px; padding: 10px 0;">
+                <h3 style="font-size:1.2em; color:#333; margin-bottom:18px; border-bottom:2px solid #e0e0e0; padding-bottom:8px;"><i class="fas fa-user-graduate"></i> Student Supervision</h3>
+
+                <h4 style="font-size:1em; color:#c00; margin-bottom:12px;">Current Students</h4>
+                <table style="width:100%; border-collapse:collapse; font-size:0.88em; margin-bottom:24px;">
+                    <thead>
+                        <tr style="background:#f5f5f5; text-align:left;">
+                            <th style="padding:8px 12px; border-bottom:2px solid #ddd;">Name</th>
+                            <th style="padding:8px 12px; border-bottom:2px solid #ddd;">Programme</th>
+                            <th style="padding:8px 12px; border-bottom:2px solid #ddd;">Institution</th>
+                            <th style="padding:8px 12px; border-bottom:2px solid #ddd;">Period</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid #eee;">
+                            <td style="padding:8px 12px;"><strong>Ben Surtees</strong></td>
+                            <td style="padding:8px 12px;">Year 3 MEng, Design Engineering</td>
+                            <td style="padding:8px 12px;">Dyson School, Imperial College London</td>
+                            <td style="padding:8px 12px;">2026</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #eee;">
+                            <td style="padding:8px 12px;"><strong>Lijiangke Liu</strong></td>
+                            <td style="padding:8px 12px;">Year 3 MEng, Design Engineering</td>
+                            <td style="padding:8px 12px;">Dyson School, Imperial College London</td>
+                            <td style="padding:8px 12px;">2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 style="font-size:1em; color:#c00; margin-bottom:12px;">Past Students</h4>
+                <table style="width:100%; border-collapse:collapse; font-size:0.88em;">
+                    <thead>
+                        <tr style="background:#f5f5f5; text-align:left;">
+                            <th style="padding:8px 12px; border-bottom:2px solid #ddd;">Name</th>
+                            <th style="padding:8px 12px; border-bottom:2px solid #ddd;">Programme</th>
+                            <th style="padding:8px 12px; border-bottom:2px solid #ddd;">Institution</th>
+                            <th style="padding:8px 12px; border-bottom:2px solid #ddd;">Period</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid #eee;">
+                            <td style="padding:8px 12px;"><strong>Kai Tang</strong></td>
+                            <td style="padding:8px 12px;">BEng, Electrical Engineering</td>
+                            <td style="padding:8px 12px;">University of Hong Kong</td>
+                            <td style="padding:8px 12px;">2024&ndash;2026</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Career Roadmap Panel -->
@@ -696,15 +748,25 @@
             }
         });
 
-        // Career Roadmap tab toggle
+        // Panel tab toggle helper
         const roadmapTabBtn = document.getElementById('roadmap-tab-btn');
+        const supervisionTabBtn = document.getElementById('supervision-tab-btn');
         const roadmapPanel = document.getElementById('roadmap-panel');
+        const supervisionPanel = document.getElementById('supervision-panel');
         const newsPosts = document.querySelector('.news-posts');
-        const yearFilterRow = document.querySelectorAll('.filter-tabs')[0]; // year buttons row
+        const yearFilterRow = document.querySelectorAll('.filter-tabs')[0];
+
+        function hideAllPanels() {
+            roadmapPanel.style.display = 'none';
+            supervisionPanel.style.display = 'none';
+            newsPosts.style.display = 'block';
+            yearFilterRow.style.display = '';
+        }
 
         roadmapTabBtn.addEventListener('click', function() {
             const isActive = this.classList.contains('active');
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            hideAllPanels();
             if (!isActive) {
                 this.classList.add('active');
                 roadmapPanel.style.display = 'block';
@@ -712,18 +774,27 @@
                 yearFilterRow.style.display = 'none';
             } else {
                 document.querySelector('.tab-btn[data-filter="all"]').classList.add('active');
-                roadmapPanel.style.display = 'none';
-                newsPosts.style.display = 'block';
-                yearFilterRow.style.display = '';
             }
         });
 
-        // Clicking any other tab hides roadmap panel
-        document.querySelectorAll('.tab-btn:not(#roadmap-tab-btn)').forEach(function(btn) {
+        supervisionTabBtn.addEventListener('click', function() {
+            const isActive = this.classList.contains('active');
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            hideAllPanels();
+            if (!isActive) {
+                this.classList.add('active');
+                supervisionPanel.style.display = 'block';
+                newsPosts.style.display = 'none';
+                yearFilterRow.style.display = 'none';
+            } else {
+                document.querySelector('.tab-btn[data-filter="all"]').classList.add('active');
+            }
+        });
+
+        // Clicking any other tab hides all panels
+        document.querySelectorAll('.tab-btn:not(#roadmap-tab-btn):not(#supervision-tab-btn)').forEach(function(btn) {
             btn.addEventListener('click', function() {
-                roadmapPanel.style.display = 'none';
-                newsPosts.style.display = 'block';
-                yearFilterRow.style.display = '';
+                hideAllPanels();
             });
         });
     </script>
