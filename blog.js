@@ -498,6 +498,82 @@ flowchart TB
             'conf_nvidia/jpg/IMG_7720.jpg',
             'conf_nvidia/jpg/IMG_7721.jpg'
         ]
+    },
+    'eta-london-2026': {
+        title: 'European Talent Academy 2026 — London Session, Imperial College London',
+        date: 'March 18–20, 2026',
+        body: `
+            <p style="font-size:16px; color:#333; line-height:1.9;">
+            Excited to be a part of the highly competitive <strong>European Talent Academy (ETA) 2026</strong>,
+            London session (March 18–20, 2026) at <strong>Imperial College London</strong>.
+            Over three inspiring days, we had the chance to connect with fellow early-career researchers
+            from across Europe, exchange ideas, and explore how interdisciplinary collaboration can help
+            address major societal challenges.</p>
+
+            <div class="blog-event-details">
+                <span>📅 March 18–20, 2026</span>
+                <span>📍 Imperial College London (South Kensington &amp; White City)</span>
+                <span>🤝 ETA Cohort — Imperial, TUM &amp; PoliMi</span>
+            </div>
+
+            <p>👉 <a href="https://www.imperial.ac.uk/admin-services/international-relations/european-talent-academy/" target="_blank">
+            Official ETA Programme Page</a></p>
+
+            <h3 class="blog-section-title">Day 1 — Guided Tour of South Kensington</h3>
+            <p>The session began with a guided tour of South Kensington, offering a great introduction to
+            Imperial's historic surroundings and a chance to get to know the cohort in a more informal setting.
+            Walking past the Royal Albert Hall and the Albert Memorial provided a memorable backdrop
+            for the start of what would be an intensive and rewarding three days.</p>
+
+            <div class="blog-inline-images two-col">
+                <img src="ETA/London/1774608437336.jpeg" alt="Royal Albert Hall, South Kensington"
+                     onclick="openLightbox('eta-london-2026', 1)" loading="lazy">
+                <img src="ETA/London/1774608450894.jpeg" alt="Albert Memorial, South Kensington"
+                     onclick="openLightbox('eta-london-2026', 3)" loading="lazy">
+            </div>
+            <p class="blog-caption">South Kensington neighbourhood: Royal Albert Hall and the Albert Memorial — landmarks that frame Imperial College London.</p>
+
+            <h3 class="blog-section-title">Day 2 — Sessions at White City Campus</h3>
+            <p>Day 2 was packed with engaging sessions at White City Campus — from programme introductions
+            and alumni insights to research pitches, collaboration meetings, and group discussions.
+            It was especially valuable to hear the breadth of research interests in the room and begin
+            identifying common themes and opportunities for future collaboration.</p>
+
+            <div class="blog-inline-images">
+                <img src="ETA/London/1774608437192.jpeg" alt="Collaboration sessions at White City Campus"
+                     onclick="openLightbox('eta-london-2026', 0)" loading="lazy">
+            </div>
+            <p class="blog-caption">Round 1 collaboration meetings at White City Campus — early-career researchers pitching and connecting across disciplines.</p>
+
+            <h3 class="blog-section-title">Day 3 — Teamwork, Self-Awareness &amp; DiSC</h3>
+            <p>Day 3 focused on teamwork and self-awareness, including a session on <strong>DiSC personality analysis</strong>.
+            DiSC is a framework that helps individuals better understand their working and communication styles
+            across four broad tendencies — <strong>D</strong>ominance, <strong>I</strong>nfluence,
+            <strong>S</strong>teadiness, and <strong>C</strong>onscientiousness.
+            It was a useful reminder that strong collaboration is not only about expertise, but also about
+            understanding how people interact, contribute, and work best together.</p>
+
+            <div class="blog-inline-images">
+                <img src="ETA/London/1774608440016.jpeg" alt="ETA 2026 London cohort group photo"
+                     onclick="openLightbox('eta-london-2026', 2)" loading="lazy">
+            </div>
+            <p class="blog-caption">The ETA 2026 London cohort — early-career researchers from Imperial, TUM, and PoliMi gathered at White City Campus.</p>
+
+            <h3 class="blog-section-title">Looking Ahead — Munich &amp; Milan</h3>
+            <p>Grateful to be part of a programme that brings together young researchers to build connections,
+            strengthen professional skills, and lay the groundwork for future interdisciplinary projects.
+            Looking forward to the next chapters of this journey in <strong>Munich (TUM)</strong> and
+            <strong>Milan (PoliMi)</strong>.</p>
+
+            <p style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e0e0e0; color: #888; font-size: 13px;">
+            <em>Written by Dr. Dipankar Bhattacharya. Photos taken during the ETA 2026 London session.</em></p>
+        `,
+        photos: [
+            'ETA/London/1774608437192.jpeg',
+            'ETA/London/1774608437336.jpeg',
+            'ETA/London/1774608440016.jpeg',
+            'ETA/London/1774608450894.jpeg'
+        ]
     }
 };
 
