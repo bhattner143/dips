@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work Package Achievement Dashboard</title>
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#dbe3ee;
+      --blue:#2563eb;
+      --green:#16a34a;
+      --amber:#d97706;
+      --teal:#0f766e;
+      --purple:#7c3aed;
+      --soft-blue:#dbeafe;
+      --soft-green:#dcfce7;
+      --soft-amber:#fef3c7;
+      --soft-purple:#ede9fe;
+      --shadow:0 10px 25px rgba(15, 23, 42, 0.08);
+      --radius:16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+      color:var(--text);
+    }
+
+    .container{
+      width:min(1180px, 94%);
+      margin:32px auto 48px;
+    }
+
+    .hero{
+      background: linear-gradient(135deg, #1d4ed8, #0f766e);
+      color:#fff;
+      padding:28px 24px;
+      border-radius:20px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1{
+      margin:0 0 8px;
+      font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+      line-height:1.2;
+    }
+
+    .hero p{
+      margin:0;
+      font-size:1rem;
+      line-height:1.6;
+      opacity:0.95;
+      max-width:900px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:20px;
+      margin-top:22px;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+      border:1px solid #edf2f7;
+    }
+
+    .span-12{ grid-column: span 12; }
+    .span-8{ grid-column: span 8; }
+    .span-4{ grid-column: span 4; }
+    .span-6{ grid-column: span 6; }
+
+    .section-title{
+      margin:0 0 18px;
+      font-size:1.2rem;
+      color:#0f172a;
+    }
+
+    .subtle{
+      color:var(--muted);
+      font-size:0.95rem;
+      margin-top:-8px;
+      margin-bottom:16px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:14px;
+    }
+
+    .stat{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      background:#fbfdff;
+    }
+
+    .stat .num{
+      font-size:1.8rem;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+
+    .stat .label{
+      color:var(--muted);
+      font-size:0.92rem;
+      line-height:1.4;
+    }
+
+    .wp-list{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .wp-item{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      background:#fcfdff;
+    }
+
+    .wp-top{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:flex-start;
+      margin-bottom:10px;
+    }
+
+    .wp-name{
+      font-weight:700;
+      line-height:1.35;
+      margin-bottom:6px;
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:0.92rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 18px;
+    }
+
+    .badge{
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:0.85rem;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .badge.green{ background:var(--soft-green); color:#166534; }
+    .badge.blue{ background:var(--soft-blue); color:#1d4ed8; }
+    .badge.amber{ background:var(--soft-amber); color:#92400e; }
+    .badge.purple{ background:var(--soft-purple); color:#6d28d9; }
+
+    .progress-wrap{
+      margin-top:10px;
+    }
+
+    .progress-header{
+      display:flex;
+      justify-content:space-between;
+      font-size:0.92rem;
+      margin-bottom:6px;
+      color:var(--muted);
+    }
+
+    .bar{
+      height:12px;
+      background:#e5edf7;
+      border-radius:999px;
+      overflow:hidden;
+    }
+
+    .fill{
+      height:100%;
+      border-radius:999px;
+    }
+
+    .fill.green{ background: linear-gradient(90deg, #22c55e, #16a34a); }
+    .fill.blue{ background: linear-gradient(90deg, #3b82f6, #2563eb); }
+    .fill.amber{ background: linear-gradient(90deg, #f59e0b, #d97706); }
+    .fill.purple{ background: linear-gradient(90deg, #8b5cf6, #7c3aed); }
+
+    .wp-note{
+      margin-top:10px;
+      color:#334155;
+      line-height:1.6;
+      font-size:0.95rem;
+    }
+
+    .achievements{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .achievement{
+      border-left:5px solid var(--blue);
+      padding:12px 14px;
+      background:#f8fbff;
+      border-radius:10px;
+    }
+
+    .achievement strong{
+      display:block;
+      margin-bottom:4px;
+      color:#0f172a;
+    }
+
+    .timeline{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .time-box{
+      flex:1 1 180px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      background:#fbfdff;
+    }
+
+    .time-box h4{
+      margin:0 0 8px;
+      font-size:1rem;
+    }
+
+    .time-box p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.5;
+      font-size:0.92rem;
+    }
+
+    .footer-note{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:0.88rem;
+      line-height:1.5;
+    }
+
+    ul{
+      margin:8px 0 0 18px;
+      padding:0;
+    }
+
+    li{
+      margin-bottom:6px;
+      line-height:1.5;
+    }
+
+    @media (max-width: 960px){
+      .span-8, .span-4, .span-6{ grid-column: span 12; }
+      .stats{ grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px){
+      .stats{ grid-template-columns: 1fr; }
+      .wp-top{ flex-direction:column; align-items:flex-start; }
+      .container{ width:92%; margin:18px auto 32px; }
+      .hero{ padding:20px 18px; }
+      .card{ padding:18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Achievement Dashboard – Month 8 (June 2026)</h1>
+      <p>
+        This dashboard presents progress across all work packages, highlighting delivery status, speed of execution,
+        and broader academic contributions in research, supervision, teaching, dissemination, and funding development.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card span-12">
+        <h2 class="section-title">Headline Summary</h2>
+        <div class="stats">
+          <div class="stat">
+            <div class="num">2</div>
+            <div class="label">Work packages completed by Month 8</div>
+          </div>
+          <div class="stat">
+            <div class="num">228%</div>
+            <div class="label">Efficiency achieved in WP2 delivery</div>
+          </div>
+          <div class="stat">
+            <div class="num">3</div>
+            <div class="label">Grant applications currently in preparation</div>
+          </div>
+          <div class="stat">
+            <div class="num">3</div>
+            <div class="label">Students supervised: 2 MEng + 1 PhD</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card span-8">
+        <h2 class="section-title">Work Package Progress Overview</h2>
+        <p class="subtle">Progress representation based on your June 2026 update.</p>
+
+        <div class="wp-list">
+          <div class="wp-item">
+            <div class="wp-top">
+              <div>
+                <div class="wp-name">WP1 – Hardware platform development and experimental setup</div>
+                <div class="meta">
+                  <span><strong>Due:</strong> Mo 8</span>
+                  <span><strong>Status:</strong> Completed</span>
+                </div>
+              </div>
+              <span class="badge green">Near expected level</span>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-header">
+                <span>Completion</span>
+                <span>100%</span>
+              </div>
+              <div class="bar"><div class="fill green" style="width:100%"></div></div>
+            </div>
+          </div>
+
+          <div class="wp-item">
+            <div class="wp-top">
+              <div>
+                <div class="wp-name">WP2 – Digital twin, modelling, and simulation framework</div>
+                <div class="meta">
+                  <span><strong>Due:</strong> Mo 16</span>
+                  <span><strong>Status:</strong> Completed</span>
+                </div>
+              </div>
+              <span class="badge blue">Several months ahead</span>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-header">
+                <span>Completion</span>
+                <span>100%</span>
+              </div>
+              <div class="bar"><div class="fill blue" style="width:100%"></div></div>
+            </div>
+            <div class="wp-note">Delivered several months ahead of schedule with 228% efficiency.</div>
+          </div>
+
+          <div class="wp-item">
+            <div class="wp-top">
+              <div>
+                <div class="wp-name">WP3 – Learning-based model, control, and pilot study</div>
+                <div class="meta">
+                  <span><strong>Due:</strong> Mo 24</span>
+                  <span><strong>Status:</strong> 50% completed</span>
+                </div>
+              </div>
+              <span class="badge purple">Strongly ahead</span>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-header">
+                <span>Completion</span>
+                <span>50%</span>
+              </div>
+              <div class="bar"><div class="fill purple" style="width:50%"></div></div>
+            </div>
+            <div class="wp-note">Ethics approval is being prepared, followed by the pilot study after approval.</div>
+          </div>
+
+          <div class="wp-item">
+            <div class="wp-top">
+              <div>
+                <div class="wp-name">WP4 – Researcher training and knowledge transfer</div>
+                <div class="meta">
+                  <span><strong>Due:</strong> Mo 20</span>
+                  <span><strong>Status:</strong> Active and progressing well</span>
+                </div>
+              </div>
+              <span class="badge purple">Strongly ahead</span>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-header">
+                <span>Progress</span>
+                <span>Strong</span>
+              </div>
+              <div class="bar"><div class="fill purple" style="width:85%"></div></div>
+            </div>
+            <div class="wp-note">
+              High activity in supervision, lectures, seminars, grant preparation, and international collaboration.
+            </div>
+          </div>
+
+          <div class="wp-item">
+            <div class="wp-top">
+              <div>
+                <div class="wp-name">WP5 – Communication and dissemination</div>
+                <div class="meta">
+                  <span><strong>Due:</strong> Mo 24</span>
+                  <span><strong>Status:</strong> Started</span>
+                </div>
+              </div>
+              <span class="badge amber">On track</span>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-header">
+                <span>Progress</span>
+                <span>Early stage</span>
+              </div>
+              <div class="bar"><div class="fill amber" style="width:25%"></div></div>
+            </div>
+            <div class="wp-note">Ongoing plan for journal paper submission to <em>IEEE Transactions on Robotics</em>.</div>
+          </div>
+
+          <div class="wp-item">
+            <div class="wp-top">
+              <div>
+                <div class="wp-name">WP6 – Result exploitation and management activities</div>
+                <div class="meta">
+                  <span><strong>Due:</strong> Mo 24</span>
+                  <span><strong>Status:</strong> Ongoing</span>
+                </div>
+              </div>
+              <span class="badge amber">On track</span>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-header">
+                <span>Progress</span>
+                <span>Ongoing</span>
+              </div>
+              <div class="bar"><div class="fill amber" style="width:30%"></div></div>
+            </div>
+            <div class="wp-note">
+              Management responsibilities are established, weekly review meetings are ongoing, and fellowship planning is underway.
+            </div>
+          </div>
+        </div>
+
+        <p class="footer-note">
+          Note: For WP4–WP6, the progress bar is a visual approximation to support presentation and can be adjusted if you want a stricter scoring method.
+        </p>
+      </div>
+
+      <div class="card span-4">
+        <h2 class="section-title">Key Achievement Highlights</h2>
+        <div class="achievements">
+          <div class="achievement">
+            <strong>Research Delivery</strong>
+            Completed WP1 on time and WP2 well ahead of schedule.
+          </div>
+          <div class="achievement">
+            <strong>Advanced Progress</strong>
+            WP3 has already reached 50% completion despite a Month 24 deadline.
+          </div>
+          <div class="achievement">
+            <strong>Supervision and Teaching</strong>
+            Appointed Assistant Supervisor and currently supervising 2 MEng students and 1 PhD student.
+          </div>
+          <div class="achievement">
+            <strong>Lectures and Seminars</strong>
+            Delivered lectures, technical teaching, invited talks, departmental seminars, and robotics postgraduate seminars.
+          </div>
+          <div class="achievement">
+            <strong>External Recognition</strong>
+            Selected for the competitive European Talent Academy 2026 with collaboration opportunities involving TUM and Polimi.
+          </div>
+          <div class="achievement">
+            <strong>Funding Development</strong>
+            Preparing 3 grant applications, including 1 NVIDIA Academic Grant and 2 Imperial Connect Fund proposals.
+          </div>
+          <div class="achievement">
+            <strong>Project Management</strong>
+            Weekly project review meetings in place, with exploitation and fellowship planning underway.
+          </div>
+        </div>
+      </div>
+
+      <div class="card span-12">
+        <h2 class="section-title">Timeline View</h2>
+        <div class="timeline">
+          <div class="time-box">
+            <h4>Month 8 Milestone Position</h4>
+            <p>By Month 8, WP1 is complete, WP2 is already complete despite a Month 16 deadline, and WP3 is substantially advanced relative to its Month 24 target.</p>
+          </div>
+          <div class="time-box">
+            <h4>Training and Knowledge Transfer</h4>
+            <p>WP4 shows strong progress through supervision, teaching, seminars, grant writing, and international recognition.</p>
+          </div>
+          <div class="time-box">
+            <h4>Dissemination</h4>
+            <p>WP5 has started with journal publication planning, indicating dissemination activity is underway and on track.</p>
+          </div>
+          <div class="time-box">
+            <h4>Management and Exploitation</h4>
+            <p>WP6 is active with project management structures, weekly review meetings, and fellowship mentorship already established.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card span-12">
+        <h2 class="section-title">Detailed WP4 Contributions</h2>
+        <ul>
+          <li>Selected for the competitive European Talent Academy 2026 to collaborate with TUM and Politecnico di Milano (Polimi).</li>
+          <li>Currently preparing three grant applications: one NVIDIA Academic Grant and two Imperial Connect Fund proposals with TUM and Polimi.</li>
+          <li>Appointed as an Assistant Supervisor at the Dyson School.</li>
+          <li>Ongoing supervision of two Year 3 MEng students and one PhD student.</li>
+          <li>Delivered a lecture and supervised DESE 71002 Robotics Research Projects.</li>
+          <li>Reviewed Imperial Summer School lectures.</li>
+          <li>Delivered invited lectures.</li>
+          <li>Delivered departmental and robotics postgraduate seminars.</li>
+          <li>Conducted two online lecture and discussion sessions for the Morph’s Lab group.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Elegant Academic CV Template for Dr. Dipankar Bhattacharya
+% Reuses the same section files as cv-llt.tex using robust, non-overlapping macros.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Use Cochineal - a premium, elegant, highly-readable serif font for academic CVs
+\usepackage[p,osf,swashQ]{cochineal}
+\usepackage[medium,bold]{cabin} % Sans-serif font for headers/sections
+\usepackage[varqu,varl,scale=0.9]{zi4}
+
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=2.2cm,top=2.2cm,bottom=2.2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyphenat}
+\usepackage[hyphens]{url}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+
+% Elegant Oxford Blue for links and subtle accents
+\definecolor{accent}{HTML}{1B365D}
+\definecolor{charcoal}{HTML}{222222}
+
+\hypersetup{colorlinks=true,allcolors=accent,breaklinks=true}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+%%% Bibliography configuration
+\usepackage[backend=biber,style=numeric,sorting=none,defernumbers=true,maxbibnames=99,giveninits=true,uniquename=init]{biblatex}
+\addbibresource{own-bib.bib}
+
+% Bold the CV owner's name in the bibliography.
+\newcommand{\myname}[2]{\def\@mylastname{#1}\def\@myfirstname{#2}}
+\makeatletter
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ test {\ifdefstrequal{\namepartfamily}{\@mylastname}}
+               and
+               test {\ifdefstrequal{\namepartgiven}{\@myfirstname}}}
+    {\textbf{#1}}{#1}}
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ test {\ifdefstrequal{\namepartfamily}{\@mylastname}}
+               and
+               test {\ifdefstrequal{\namepartgiven}{\@myfirstname}}}
+    {\textbf{#1}}{#1}}
+\makeatother
+\myname{Dipankar}{Bhattacharya\bibnamedelima Dipankar}
+
+\defbibheading{subbibliography}{\par\vspace{0.45em}\textbf{\large\color{accent} #1}\par\vspace{0.2em}}
+\defbibfilter{booksandchapters}{type=book or type=incollection}
+\setlength{\bibitemsep}{0.35em}
+
+%%% Section formatting - clean, modern, with a thin ruled line
+\titleformat{\section}{\Large\bfseries\sffamily\color{accent}}{}{0pt}{}[\vspace{-0.2em}\rule{\linewidth}{0.8pt}]
+\titlespacing*{\section}{0pt}{1.2em}{0.4em}
+
+%%% Compatibility macros for shared section files
+\newcommand{\btit}[1]{\textbf{\textit{#1}}}
+
+% \makerubric{file} -> \input{file}; \makerubrichead{title} -> section header.
+\newcommand{\makerubric}[1]{\input{#1}}
+\newcommand{\makerubrichead}[1]{\section*{#1}}
+
+% A robust, elegant left-column listing structure that prevents overlap.
+% Long labels (like "Research areas") automatically wrap cleanly in the margin.
+\usepackage{enumitem}
+\newenvironment{rubric}[1]
+  {\section*{#1}%
+   \begin{description}[
+     leftmargin=2.8cm,
+     labelwidth=2.8cm,
+     labelsep=0.2cm,
+     style=multiline,
+     itemsep=0.6em,
+     parsep=0pt,
+     topsep=0.2em,
+     font=\normalfont\bfseries\sffamily\color{charcoal}%
+   ]}
+  {\end{description}}
+
+% \entry*[date] text...   (only the * form is used by the section files)
+\makeatletter
+\newcommand{\entry}{\@ifstar\@entrystar\@entrystar}
+\newcommand{\@entrystar}[1][]{\item[#1]\ignorespaces}
+\makeatother
+
+% \subrubric{Title} -> a sub-heading inside a rubric.
+\newcommand{\subrubric}[1]{%
+  \item[]\par\vspace{0.5em}{\large\bfseries\sffamily\color{accent}#1}\par\vspace{0.15em}}
+
+% \noentry{date} is only used by curve for column sizing; ignore here.
+\newcommand{\noentry}[1]{}
+
+\begin{document}
+
+%%% Main Header Block
+\begin{center}
+  {\Huge\bfseries\sffamily\color{accent} Dr. Dipankar Bhattacharya, Ph.D.}\\[0.5em]
+  {\large\bfseries Marie Sk\l{}odowska-Curie Postdoctoral Fellow (2025--2027)}\\
+  Dyson School of Design Engineering, Imperial College London, United Kingdom\\[0.8em]
+  \small
+  \href{mailto:d.bhattacharya1@imperial.ac.uk}{d.bhattacharya1@imperial.ac.uk} $\,\cdot\,$ 
+  \href{mailto:dipankar22041988@gmail.com}{dipankar22041988@gmail.com} $\,\cdot\,$ 
+  +44 7448 647 225\\
+  \href{https://bhattner143.github.io/dips/}{https://bhattner143.github.io/dips/} $\,\cdot\,$ 
+  \href{http://www.linkedin.com/in/dipankar-bhattacharya-7132497b}{LinkedIn} $\,\cdot\,$ 
+  RCS1-103, Royal College of Science, SW7 2DB, London
+\end{center}
+
+\vspace{0.5em}
+
+\input{research}
+\makerubric{education}
+\makerubric{employment}
+
+\input{publications}
+\makerubric{grants}
+\makerubric{academic}
+\makerubric{teaching}
+\makerubric{skills}
+
+\end{document}

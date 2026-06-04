@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fellowship-focused Academic CV for Dr. Dipankar Bhattacharya
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[p,osf,swashQ]{cochineal}
+\usepackage[medium,bold]{cabin}
+\usepackage[varqu,varl,scale=0.9]{zi4}
+
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=2.2cm,top=2.1cm,bottom=2.1cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyphenat}
+\usepackage[hyphens]{url}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\definecolor{accent}{HTML}{1B365D}
+\definecolor{charcoal}{HTML}{222222}
+
+\hypersetup{colorlinks=true,allcolors=accent,breaklinks=true}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+\usepackage[backend=biber,style=numeric,sorting=none,defernumbers=true,maxbibnames=99,giveninits=true,uniquename=init]{biblatex}
+\addbibresource{own-bib.bib}
+
+\newcommand{\myname}[2]{\def\@mylastname{#1}\def\@myfirstname{#2}}
+\makeatletter
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ test {\ifdefstrequal{\namepartfamily}{\@mylastname}}
+               and
+               test {\ifdefstrequal{\namepartgiven}{\@myfirstname}}}
+    {\textbf{#1}}{#1}}
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ test {\ifdefstrequal{\namepartfamily}{\@mylastname}}
+               and
+               test {\ifdefstrequal{\namepartgiven}{\@myfirstname}}}
+    {\textbf{#1}}{#1}}
+\makeatother
+\myname{Dipankar}{Bhattacharya\bibnamedelima Dipankar}
+
+\defbibheading{subbibliography}{\par\vspace{0.45em}\textbf{\large\color{accent} #1}\par\vspace{0.2em}}
+\defbibfilter{booksandchapters}{type=book or type=incollection}
+\setlength{\bibitemsep}{0.3em}
+
+\titleformat{\section}{\Large\bfseries\sffamily\color{accent}}{}{0pt}{}[\vspace{-0.2em}\rule{\linewidth}{0.8pt}]
+\titlespacing*{\section}{0pt}{1.0em}{0.35em}
+
+\newcommand{\btit}[1]{\textbf{\textit{#1}}}
+\newcommand{\makerubric}[1]{\input{#1}}
+\newcommand{\makerubrichead}[1]{\section*{#1}}
+
+\newenvironment{rubric}[1]
+  {\section*{#1}%
+   \begin{description}[
+     leftmargin=2.9cm,
+     labelwidth=2.7cm,
+     labelsep=0.2cm,
+     style=multiline,
+     itemsep=0.5em,
+     parsep=0pt,
+     topsep=0.2em,
+     font=\normalfont\bfseries\sffamily\color{charcoal}%
+   ]}
+  {\end{description}}
+
+\makeatletter
+\newcommand{\entry}{\@ifstar\@entrystar\@entrystar}
+\newcommand{\@entrystar}[1][]{\item[#1]\ignorespaces}
+\makeatother
+\newcommand{\subrubric}[1]{\item[]\par\vspace{0.4em}{\large\bfseries\sffamily\color{accent}#1}\par\vspace{0.1em}}
+\newcommand{\noentry}[1]{}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\bfseries\sffamily\color{accent} Dr. Dipankar Bhattacharya, Ph.D.}\\[0.4em]
+  {\large\bfseries Marie Sk\l{}odowska-Curie Postdoctoral Fellow | Robotics for Healthcare and Manufacturing}\\
+  Dyson School of Design Engineering, Imperial College London, United Kingdom\\[0.7em]
+  \small
+  \href{mailto:d.bhattacharya1@imperial.ac.uk}{d.bhattacharya1@imperial.ac.uk} $\,\cdot\,$
+  \href{mailto:dipankar22041988@gmail.com}{dipankar22041988@gmail.com} $\,\cdot\,$
+  +44 7448 647 225\\
+  \href{https://bhattner143.github.io/dips/}{bhattner143.github.io/dips} $\,\cdot\,$
+  \href{http://www.linkedin.com/in/dipankar-bhattacharya-7132497b}{LinkedIn} $\,\cdot\,$
+  London, United Kingdom
+\end{center}
+
+\vspace{0.35em}
+
+\input{research}
+\makerubric{highlights}
+\makerubric{grants}
+\makerubric{employment}
+\input{publications}
+\makerubric{academic}
+\makerubric{teaching}
+\makerubric{education}
+\makerubric{skills}
+
+\end{document}
