@@ -562,8 +562,9 @@ flowchart TB
             <h3 class="blog-section-title">Looking Ahead — Munich &amp; Milan</h3>
             <p>Grateful to be part of a programme that brings together young researchers to build connections,
             strengthen professional skills, and lay the groundwork for future interdisciplinary projects.
-            Looking forward to the next chapters of this journey in <strong>Munich (TUM)</strong> and
-            <strong>Milan (PoliMi)</strong>.</p>
+            The Munich session followed in June 2026 — see the
+            <a href="#" onclick="openBlogOverlay('eta-munich-2026'); return false;">Munich session blog post</a>.
+            Looking forward to the final retreat in <strong>Milan (PoliMi)</strong>.</p>
 
             <p style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e0e0e0; color: #888; font-size: 13px;">
             <em>Written by Dr. Dipankar Bhattacharya. Photos taken during the ETA 2026 London session.</em></p>
@@ -573,6 +574,126 @@ flowchart TB
             'ETA/London/1774608437336.jpeg',
             'ETA/London/1774608440016.jpeg',
             'ETA/London/1774608450894.jpeg'
+        ]
+    },
+    'eta-munich-2026': {
+        title: 'European Talent Academy 2026 — Munich Session, Technical University of Munich',
+        date: 'June 16–18, 2026',
+        body: `
+            <p style="font-size:16px; color:#333; line-height:1.9;">
+            Three days in Munich for the second in-person session of the
+            <strong>European Talent Academy (ETA) 2026</strong> (June 16–18, 2026) at the
+            <strong>Technical University of Munich (TUM)</strong>.
+            The cohort from Imperial College London, Politecnico di Milano, and TUM came together around the theme
+            <em>Smarter and healthier cities on a changing planet</em> — building cross-European collaborations
+            among early-career researchers through workshops, grant training, and team-based proposal development.</p>
+
+            <div class="blog-event-details">
+                <span>📅 June 16–18, 2026</span>
+                <span>📍 TUM — Vorhoelzer Forum &amp; Faculty Club, Munich</span>
+                <span>🤝 ETA Cohort — Imperial, TUM &amp; PoliMi</span>
+            </div>
+
+            <p>👉 <a href="https://www.imperial.ac.uk/admin-services/international-relations/european-talent-academy/" target="_blank">
+            Official ETA Programme Page</a></p>
+
+            <h3 class="blog-section-title">Day 1 — Welcome, Old Town &amp; Bavarian Networking</h3>
+            <p>Day 1 opened with welcome and introductions at the <strong>Vorhoelzer Forum</strong> and
+            <strong>Faculty Club, TUM</strong>, followed by a walking tour of Munich's old town starting at
+            <strong>Odeonsplatz</strong>. The evening brought Bavarian Kegeln at
+            <strong>Wirtshaus Hohenwart</strong> and dinner at <strong>Park Café</strong> — a great way to
+            reconnect with the cohort and meet colleagues from across Imperial, TUM, and PoliMi in a more
+            informal setting.</p>
+
+            <div class="blog-inline-images">
+                <img src="ETA/London/Munich/a763582c-c550-4262-9a66-c53b734940de.jpg" alt="ETA 2026 Munich cohort at TUM"
+                     onclick="openLightbox('eta-munich-2026', 0)" loading="lazy">
+            </div>
+            <p class="blog-caption">The ETA 2026 Munich cohort at the Technical University of Munich (TUM).</p>
+
+            <div class="blog-inline-images two-col">
+                <img src="ETA/London/Munich/IMG_8902.jpeg" alt="Munich old town walking tour"
+                     onclick="openLightbox('eta-munich-2026', 1)" loading="lazy">
+                <img src="ETA/London/Munich/IMG_8903.jpeg" alt="Frauenkirche towers, Munich"
+                     onclick="openLightbox('eta-munich-2026', 2)" loading="lazy">
+            </div>
+            <p class="blog-caption">Walking tour of Munich's old town — Frauenkirche towers in the distance.</p>
+
+            <div class="blog-inline-images two-col">
+                <img src="ETA/London/Munich/2a6f5fc1-933c-4e7a-92a4-0947d0b8339e.jpg" alt="ETA cohort networking dinner, Munich"
+                     onclick="openLightbox('eta-munich-2026', 3)" loading="lazy">
+                <img src="ETA/London/Munich/IMG_8877.jpeg" alt="Park Café dinner, Munich"
+                     onclick="openLightbox('eta-munich-2026', 4)" loading="lazy">
+            </div>
+            <p class="blog-caption">Networking dinner at Park Café and an outdoor beer-garden gathering with the ETA cohort.</p>
+
+            <div class="blog-inline-images three-col">
+                <img src="ETA/London/Munich/IMG_8875.jpeg" alt="Bavarian appetizers, Munich"
+                     onclick="openLightbox('eta-munich-2026', 5)" loading="lazy">
+                <img src="ETA/London/Munich/IMG_8878.jpeg" alt="Pretzel and beer, Munich"
+                     onclick="openLightbox('eta-munich-2026', 6)" loading="lazy">
+                <img src="ETA/London/Munich/IMG_8879.jpeg" alt="Schnitzel at Hofbräuhaus, Munich"
+                     onclick="openLightbox('eta-munich-2026', 7)" loading="lazy">
+            </div>
+
+            <h3 class="blog-section-title">Day 2 — Grant-Writing Workshop &amp; Team Proposals</h3>
+            <p>Day 2 was led by <strong>Judy Mielke</strong> (scientifyRESEARCH) in a hands-on
+            <strong>Grant-Writing Workshop</strong>. We worked through developing a research vision
+            (what, why, how, who, and why now), adopting a funder's perspective, turning strategy into text,
+            and drafting abstracts. The practical highlight was delivering <strong>3-minute pitches</strong>
+            with peer feedback and developing <strong>joint proposals</strong> within our cohort teams.</p>
+
+            <div class="blog-inline-images">
+                <img src="ETA/London/Munich/3bae267c-1829-4e63-bab2-d4bac1dc6fbf.jpg" alt="Grant-writing workshop at ETA Munich 2026"
+                     onclick="openLightbox('eta-munich-2026', 8)" loading="lazy">
+            </div>
+            <p class="blog-caption">Grant-writing workshop led by Judy Mielke (scientifyRESEARCH) — developing research vision and funder-ready abstracts.</p>
+
+            <div class="blog-inline-images">
+                <img src="ETA/London/Munich/806f6585-bbf6-450e-8030-db65b37512e8.jpg" alt="ETA team proposal development session"
+                     onclick="openLightbox('eta-munich-2026', 9)" loading="lazy">
+            </div>
+            <p class="blog-caption">Team-based joint proposal development — my cohort team included Angela Casarella, Simone Mentasti, Nicolò Botteghi, Sandra Rojas, and Simone Perottoni.</p>
+
+            <h3 class="blog-section-title">Day 3 — Future Vision, Leadership &amp; Academic Careers</h3>
+            <p>Day 3 focused on career development and visibility. <strong>Inês P. Perpétuo, PhD</strong> (Imperial)
+            led a session on future leadership, professional narrative, and researcher findability.
+            <strong>Dr. Thomas Alcock</strong> (TUM) discussed navigating academia, mobility, and competitive funding,
+            and <strong>Prof. Anna Dowbaj</strong> (TUM) shared insights on the career path from PhD to Principal Investigator.</p>
+
+            <div class="blog-inline-images">
+                <img src="ETA/London/Munich/IMG_8911.jpeg" alt="Dr Thomas Alcock on academic careers, ETA Munich 2026"
+                     onclick="openLightbox('eta-munich-2026', 10)" loading="lazy">
+            </div>
+            <p class="blog-caption">Dr. Thomas Alcock (TUM) — "Why did I choose an academic career?" session on Day 3.</p>
+
+            <div class="blog-inline-images">
+                <img src="ETA/London/Munich/IMG_8904.jpeg" alt="Munich street view, ETA 2026"
+                     onclick="openLightbox('eta-munich-2026', 11)" loading="lazy">
+            </div>
+
+            <h3 class="blog-section-title">Looking Ahead — Milan &amp; Beyond</h3>
+            <p>Grateful to the organising team — Bettina Burger, Iris Figliolia, Inês P. Perpétuo, Judy Mielke,
+            and Jennifer Borzomì — and to my cohort teammates for three intensive and rewarding days in Munich.
+            Next up: developing our research proposals, mentor meetings, partner visits across Europe, and the
+            final retreat in <strong>Milan (PoliMi)</strong>.</p>
+
+            <p style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e0e0e0; color: #888; font-size: 13px;">
+            <em>Written by Dr. Dipankar Bhattacharya. Photos taken during the ETA 2026 Munich session.</em></p>
+        `,
+        photos: [
+            'ETA/London/Munich/a763582c-c550-4262-9a66-c53b734940de.jpg',
+            'ETA/London/Munich/IMG_8902.jpeg',
+            'ETA/London/Munich/IMG_8903.jpeg',
+            'ETA/London/Munich/2a6f5fc1-933c-4e7a-92a4-0947d0b8339e.jpg',
+            'ETA/London/Munich/IMG_8877.jpeg',
+            'ETA/London/Munich/IMG_8875.jpeg',
+            'ETA/London/Munich/IMG_8878.jpeg',
+            'ETA/London/Munich/IMG_8879.jpeg',
+            'ETA/London/Munich/3bae267c-1829-4e63-bab2-d4bac1dc6fbf.jpg',
+            'ETA/London/Munich/806f6585-bbf6-450e-8030-db65b37512e8.jpg',
+            'ETA/London/Munich/IMG_8911.jpeg',
+            'ETA/London/Munich/IMG_8904.jpeg'
         ]
     }
 };
