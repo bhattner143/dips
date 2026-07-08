@@ -1,0 +1,63 @@
+% TikZ figures for narrative-cv.tex (load after accent/charcoal colours are defined)
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, calc, shapes.geometric}
+
+\definecolor{health}{HTML}{2E86AB}
+\definecolor{cable}{HTML}{A23B72}
+\definecolor{manuf}{HTML}{F18F01}
+\definecolor{rehab}{HTML}{C73E1D}
+\definecolor{metricbg}{HTML}{F4F6F9}
+
+\newcommand{\NarrativeMetricsFigure}{%
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}cccc@{}}
+  \fcolorbox{accent!30}{metricbg}{\begin{tabular}{c}\textbf{\large 9}\\Journal articles\\\scriptsize 8 published, 1 accepted\end{tabular}} &
+  \fcolorbox{accent!30}{metricbg}{\begin{tabular}{c}\textbf{\large 4}\\Conference papers\\\scriptsize incl.\ IROS 2026 accepted\end{tabular}} &
+  \fcolorbox{accent!30}{metricbg}{\begin{tabular}{c}\textbf{\large 1}\\Book chapter\\\scriptsize Springer, 2019\end{tabular}} &
+  \fcolorbox{accent!30}{metricbg}{\begin{tabular}{c}\textbf{\large 6}\\Countries\\\scriptsize IN, NZ, HK, CN, FR, UK\end{tabular}} \\[6pt]
+  \fcolorbox{accent!30}{metricbg}{\begin{tabular}{c}\textbf{\large 5}\\Grants\\\scriptsize 2 led; 2 co-authored\end{tabular}} &
+  \fcolorbox{accent!30}{metricbg}{\begin{tabular}{c}\textbf{\large 6+}\\Students supervised\\\scriptsize 2 MEng; 3 PhD; 1 placement\end{tabular}} &
+  \fcolorbox{accent!30}{metricbg}{\begin{tabular}{c}\textbf{\large EUR 276k}\\MSCA fellowship\\\scriptsize 24-month independent PI\end{tabular}} &
+  \fcolorbox{accent!30}{metricbg}{\begin{tabular}{c}\textbf{\large 10+}\\Invited talks\\\scriptsize Imperial, WRC, ICMA, ETA\end{tabular}}
+\end{tabular}
+\end{center}}
+
+\newcommand{\NarrativeTimelineFigure}{%
+\begin{center}
+\small
+\begin{tikzpicture}[
+  phase/.style={rectangle, rounded corners=2pt, draw=accent!40, fill=white, align=center, font=\scriptsize, text width=2.2cm}
+]
+  \draw[accent!25, line width=2.5pt] (0,0) -- (13.5,0);
+  \foreach \x/\yr/\pos/\txt in {
+    0/2013/below/{Lecturer\\Galgotias, India},
+    2.5/2016/above/{Ph.D.\\Auckland\\RoSE},
+    5.0/2021/below/{Postdoc\\CUHK\\Cable robots},
+    7.5/2024/above/{TransGP/HKU\\Garment robotics},
+    10.0/2025/below/{MSCA Fellow\\Imperial\\CASREx},
+    12.5/2026/above/{Assistant\\Supervisor\\ETA 2026}
+  }{
+    \fill[accent] (\x,0) circle (3pt);
+    \node[font=\scriptsize\bfseries\sffamily, text=accent, yshift=8pt] at (\x,0) {\yr};
+    \ifnum\pdfstrcmp{\pos}{below}=0
+      \node[phase] at (\x,-1.15) {\txt};
+    \else
+      \node[phase] at (\x,1.15) {\txt};
+    \fi
+  }
+\end{tikzpicture}
+\end{center}}
+
+\newcommand{\NarrativeDomainsFigure}{%
+\begin{center}
+\begin{tikzpicture}
+  \node[ellipse, draw=health, fill=health!12, minimum width=3.4cm, minimum height=1.4cm, align=center, font=\small] (h) at (0,0) {\textbf{Healthcare}\\Soft medical robotics\\3 journals + industry};
+  \node[ellipse, draw=cable, fill=cable!10, minimum width=3.4cm, minimum height=1.4cm, align=center, font=\small] (c) at (5.0,0) {\textbf{Cable robots}\\Modelling \& control\\MMT + TCST};
+  \node[ellipse, draw=manuf, fill=manuf!12, minimum width=3.4cm, minimum height=1.4cm, align=center, font=\small] (m) at (10.0,0) {\textbf{Manufacturing}\\Fabric manipulation\\RA-L, T-ASE, IROS};
+  \node[ellipse, draw=rehab, fill=rehab!10, minimum width=3.6cm, minimum height=1.4cm, align=center, font=\small] (r) at (5.0,-2.1) {\textbf{Rehabilitation (now)}\\CASREx exosuit\\EMG + digital twin + RL};
+  \draw[-{Stealth}, accent!50, thick] (h.south east) to[bend left=12] (r.north west);
+  \draw[-{Stealth}, accent!50, thick] (c.south) -- (r.north);
+  \draw[-{Stealth}, accent!50, thick] (m.south west) to[bend right=12] (r.north east);
+\end{tikzpicture}
+\end{center}}

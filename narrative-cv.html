@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Dipankar Bhattacharya — Narrative CV (Interactive)</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <style>
+    .narrative-wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 48px; }
+    .narrative-wrap h1 { color: #1B365D; font-size: 1.8em; margin-bottom: 0.2em; }
+    .narrative-wrap h2 { color: #1B365D; border-bottom: 2px solid #e0e0e0; padding-bottom: 6px; margin-top: 2em; }
+    .narrative-wrap h3 { color: #333; margin-top: 1.4em; }
+    .guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+    .guide-card { background: #F4F6F9; border: 1px solid #c5d0de; border-radius: 8px; padding: 16px; }
+    .guide-card h4 { margin: 0 0 8px; color: #1B365D; }
+    .guide-card .tag { display: inline-block; background: #1B365D; color: #fff; font-size: 0.75em; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
+    .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0; }
+    .metric-box { background: #F4F6F9; border: 1px solid #c5d0de; border-radius: 8px; padding: 14px; text-align: center; }
+    .metric-box .num { font-size: 1.8em; font-weight: 700; color: #1B365D; line-height: 1.1; }
+    .metric-box .label { font-size: 0.85em; color: #444; margin-top: 4px; }
+    .metric-box .sub { font-size: 0.72em; color: #666; margin-top: 2px; }
+    .mermaid { margin: 16px 0; }
+    .prose { line-height: 1.65; color: #222; font-size: 0.95em; }
+    .prose p { margin-bottom: 0.9em; }
+    .download-links { margin: 16px 0; }
+    .download-links a { margin-right: 16px; color: #1B365D; }
+    @media (max-width: 768px) {
+      .guide-grid, .metrics-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="narrative-wrap">
+    <h1>Narrative CV</h1>
+    <p><strong>Dr. Dipankar Bhattacharya, Ph.D.</strong> — Marie Skłodowska-Curie Fellow, Imperial College London</p>
+    <p class="download-links">
+      <a href="CV_latex_source/narrative-cv.pdf" target="_blank">📄 PDF version</a>
+      <a href="CV_latex_source/cv-simple.pdf" target="_blank">📄 Full CV</a>
+      <a href="https://profiles.imperial.ac.uk/d.bhattacharya1/about" target="_blank">🏛 Imperial Profile</a>
+    </p>
+
+    <h2>Which version should I use?</h2>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <span class="tag">SHORT · ~370 words</span>
+        <h4>Concise narrative</h4>
+        <p>Identity, CASREx fellowship, career arc, and impact in one page. Use for <strong>word-limited forms</strong>, MSCA summaries, cover letters, and reviewer first impressions.</p>
+      </div>
+      <div class="guide-card">
+        <span class="tag">LONG · full module</span>
+        <h4>Detailed narrative</h4>
+        <p>Quantified evidence, contextualised publications, collaboration, teaching, supervision, and future direction. Use for <strong>UKRI narrative CV modules</strong>, fellowship applications, promotion dossiers, and interviews.</p>
+      </div>
+    </div>
+
+    <h2>Research impact at a glance</h2>
+    <div class="metrics-grid">
+      <div class="metric-box"><div class="num">9</div><div class="label">Journal articles</div><div class="sub">8 published · 1 accepted</div></div>
+      <div class="metric-box"><div class="num">4</div><div class="label">Conference papers</div><div class="sub">incl. IROS 2026 accepted</div></div>
+      <div class="metric-box"><div class="num">1</div><div class="label">Book chapter</div><div class="sub">Springer, 2019</div></div>
+      <div class="metric-box"><div class="num">6</div><div class="label">Countries</div><div class="sub">IN · NZ · HK · CN · FR · UK</div></div>
+      <div class="metric-box"><div class="num">5</div><div class="label">Grants</div><div class="sub">2 led · 2 co-authored</div></div>
+      <div class="metric-box"><div class="num">6+</div><div class="label">Students supervised</div><div class="sub">2 MEng · 3 PhD · 1 placement</div></div>
+      <div class="metric-box"><div class="num">EUR 276k</div><div class="label">MSCA fellowship</div><div class="sub">24-month independent PI</div></div>
+      <div class="metric-box"><div class="num">10+</div><div class="label">Invited talks</div><div class="sub">Imperial · WRC · ICMA · ETA</div></div>
+    </div>
+
+    <h2>Career timeline</h2>
+    <pre class="mermaid">
+timeline
+    title Research career path
+    2013 : Lecturer — Galgotias University, India
+    2016 : Ph.D. start — University of Auckland
+    2018 : Industry grant — BvW stent testing (NZD 39k)
+    2021 : RoSE publications — Soft Robotics, IEEE TIE
+    2021 : Postdoc — CUHK, cable-driven robots
+    2023 : IEEE TCST — tri-space control
+    2024 : TransGP — led garment robotics programme
+    2025 : MMT journal — cable wrapping model
+    2025 : MSCA Fellow — Imperial, CASREx (EUR 276k)
+    2026 : IROS & T-ASE accepted — fabric robotics
+    2026 : Assistant Supervisor — 2 MEng students
+    2026 : European Talent Academy — Munich session
+    </pre>
+
+    <h2>How research domains connect</h2>
+    <pre class="mermaid">
+flowchart TB
+    subgraph past["Prior research pillars"]
+        H["Healthcare robotics<br/>RoSE · stent testing<br/>3 journals + industry"]
+        C["Cable-driven robots<br/>MMT 2025 · TCST 2023"]
+        M["Manufacturing robotics<br/>RA-L · T-ASE · IROS"]
+    end
+    R["CASREx — Rehabilitation<br/>EMG · digital twin · learning<br/>Imperial MSCA fellowship"]
+    H --> R
+    C --> R
+    M --> R
+    style R fill:#C73E1D22,stroke:#C73E1D
+    style H fill:#2E86AB18,stroke:#2E86AB
+    style C fill:#A23B7218,stroke:#A23B72
+    style M fill:#F18F0118,stroke:#F18F01
+    </pre>
+
+    <h2>Short narrative CV</h2>
+    <div class="prose">
+      <p>I am a robotics researcher developing intelligent machines for healthcare, rehabilitation, and manufacturing—with <strong>9 journal articles</strong>, <strong>4 conference papers</strong>, and research across <strong>6 countries</strong>. My work addresses settings where the body or handled material is soft, deformable, and easily disturbed.</p>
+      <p>I lead <strong>CASREx</strong>, a Marie Skłodowska-Curie Horizon Europe fellowship at Imperial College London (<strong>EUR 276,187.92</strong>; 24 months) on a cable-driven soft exosuit for upper-arm muscle-impairment rehabilitation. Everyday stability—carrying a cup without spilling when bumped—depends on how the brain adjusts arm stiffness. After stroke, this is often impaired. CASREx combines human experiments, muscle-signal recordings, a digital twin, and machine learning to translate healthy stiffness strategies into adaptive patient assistance.</p>
+      <p>My career has moved deliberately: Ph.D. at Auckland (RoSE soft esophagus; <strong>NZD 39,000</strong> industry funding); postdoc at CUHK (cable-robot modelling; <em>MMT</em> 2025, <em>IEEE TCST</em> 2023); Senior Research Engineer at TransGP (led fabric-robotics programme; <em>IEEE RA-L</em> 2025, <em>T-ASE</em> 2026 accepted, <em>IROS</em> 2026 accepted). I supervise <strong>2 MEng students</strong> at Imperial, mentor doctoral researchers at HKU, review for major robotics venues, and was selected for the <strong>European Talent Academy 2026</strong>.</p>
+      <p>My aim is a long-term programme on human-centred soft robotics—helping people recover stability, and building automation that works with the real world.</p>
+    </div>
+
+    <h2>Long narrative CV</h2>
+    <div class="prose">
+      <p><strong>Research identity.</strong> My contribution sits at the crossover of soft and cable-driven robotics, human-centred control, and learning-enabled systems. Across 9 journal articles, 4 conference papers, and 1 Springer book chapter, I model deformable systems, estimate state under uncertainty, and close the loop with adaptive control.</p>
+      <p><strong>Current fellowship.</strong> I lead CASREx at Imperial—a EUR 276,187.92 MSCA project on a soft cable-driven exosuit for upper-arm rehabilitation. The project targets arm <em>stability during disturbance</em>, not only movement—a gap highlighted by the UK RATULS trial (n=770). Methods include human experiments, EMG, digital twins, and machine learning.</p>
+      <p><strong>Career arc.</strong> Ph.D. (Auckland): RoSE platform, BvW industry contract (NZD 39,000), Soft Robotics and IEEE TIE outputs. Postdoc (CUHK): MMT 2025 and IEEE TCST 2023; 2 ITF grant co-authorships. TransGP (2024–2025): led garment-robotics team; RA-L, T-ASE, IROS outputs. Imperial (2025–): independent fellow, Assistant Supervisor, ETA 2026, Imperial Connect Fund collaborations.</p>
+      <p><strong>Impact and community.</strong> Translation in medical-device testing, garment manufacturing, and rehabilitation. Collaboration across 6 countries. Reviewer for IEEE RA-L, ICRA, ASME JMR. 10+ invited talks. Supervision of 6+ students.</p>
+      <p><strong>Future.</strong> Near-term: validate CASREx as impedance-aware rehabilitation. Medium-term: research programme on human-centred soft and cable-driven robots.</p>
+    </div>
+
+    <p style="margin-top:2em; font-size:0.85em; color:#666;">Sources: cv-simple.pdf, Profile.pdf, own-bib.bib (March 2026). Companion PDF: <a href="CV_latex_source/narrative-cv.pdf">narrative-cv.pdf</a></p>
+  </div>
+  <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+</body>
+</html>
