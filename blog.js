@@ -695,6 +695,158 @@ flowchart TB
             'ETA/London/Munich/IMG_8911.jpeg',
             'ETA/London/Munich/IMG_8904.jpeg'
         ]
+    },
+
+    'wrc-beijing-2025': {
+        title: 'WRC 2025 — TransGP &amp; SewingDX Exhibit at the 10th World Robot Conference, Beijing',
+        date: 'August 8–12, 2025',
+        body: `
+            <p style="font-size:16px; color:#333; line-height:1.9;">
+            The <strong>10th World Robot Conference (WRC 2025)</strong> took place from 8 to 12 August 2025 at the
+            Beiren Etrong International Exhibition and Convention Center in Beijing, China. As the largest robotics
+            exhibition in China, WRC 2025 brought together over 400 exhibitors, 170+ robots on display, and thousands
+            of attendees from industry, academia, and government — showcasing the latest breakthroughs in industrial
+            automation, humanoid robotics, surgical systems, and intelligent manufacturing.</p>
+
+            <div class="blog-event-details">
+                <span>📅 8–12 August 2025</span>
+                <span>📍 Beiren Etrong International Exhibition &amp; Convention Center, Beijing</span>
+                <span>🤖 400+ exhibitors · 170+ robots</span>
+            </div>
+
+            <p>👉 <a href="https://www.worldrobotconference.com/en/" target="_blank">Official WRC 2025 Website</a></p>
+
+            <h3 class="blog-section-title">1. TransGP at WRC 2025</h3>
+            <p>Representing the <strong>Center for Transformative Garment Production (TransGP)</strong> — an
+            InnoHK research centre hosted at the University of Hong Kong under the direction of
+            <strong>Prof. Kazuhiro Kosuge</strong> — our team exhibited the
+            <strong>Smart 3D Sewing System</strong>, an end-to-end automated garment manufacturing pipeline.
+            The system integrates dual-arm robotic fabric handling, real-time 3D perception, mesh-based state
+            estimation, and adaptive seam planning to autonomously load, align, sew, and unload garment panels
+            without human intervention.</p>
+
+            <p>Alongside the research exhibit, <strong>SewingDX Limited</strong> — a TransGP spin-off company —
+            demonstrated the commercial translation pathway, showcasing how the Smart 3D Sewing System is being
+            productised for factory-floor deployment. The combined presence of TransGP and SewingDX illustrated
+            the full spectrum from fundamental robotics research to industry-ready automation solutions for the
+            global garment manufacturing sector.</p>
+
+            <h3 class="blog-section-title">2. Exhibition Highlights</h3>
+            <p>The TransGP booth attracted significant interest from industry partners, government delegates,
+            and international visitors. Live demonstrations of the 3D sewing process — from fabric pickup and
+            alignment through to stitched output — showed the system's ability to handle stretchable fabrics of
+            varying shapes and sizes, a long-standing challenge in automated garment production.</p>
+
+            <p>As a Senior Research Engineer at TransGP, I contributed to the fabric perception and manipulation
+            modules underpinning the exhibition, alongside colleagues from the dual-arm manipulation, sewing
+            hardware, and software integration teams.</p>
+
+            <div class="blog-inline-images">
+                <img src="images_WRC/IMG_1914.JPG" alt="TransGP Smart 3D Sewing System at WRC 2025"
+                     onclick="openLightbox('wrc-beijing-2025', 0)" loading="lazy">
+            </div>
+            <p class="blog-caption">The TransGP Smart 3D Sewing System on display at the World Robot Conference 2025, Beijing.</p>
+
+            <p style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e0e0e0; color: #888; font-size: 13px;">
+            <em>Written by Dr. Dipankar Bhattacharya. Photos taken during WRC 2025 at the Beiren Etrong International Exhibition and Convention Center, Beijing.</em></p>
+        `,
+        photos: [
+            'images_WRC/IMG_1914.JPG',
+            'images_WRC/IMG_1893.JPG',
+            'images_WRC/IMG_1898.JPG',
+            'images_WRC/IMG_1901.JPG',
+            'images_WRC/IMG_1918.JPG',
+            'images_WRC/IMG_1923.JPG',
+            'images_WRC/IMG_1930.JPG',
+            'images_WRC/IMG_1931.JPG',
+            'images_WRC/IMG_1934.JPG',
+            'images_WRC/IMG_3805.JPG',
+            'images_WRC/IMG_3829.JPG',
+            'images_WRC/IMG_3889.JPG',
+            'images_WRC/IMG_3896.JPG',
+            'images_WRC/IMG_3898.JPG',
+            'images_WRC/IMG_3924.JPG',
+            'images_WRC/IMG_3939.JPG',
+            'images_WRC/IMG_4038.JPG',
+            'images_WRC/IMG_4042.JPG',
+            'images_WRC/IMG_4046.JPG',
+            'images_WRC/IMG_4052.JPG',
+            'images_WRC/IMG_4060.JPG',
+            'images_WRC/IMG_4066.JPG',
+            'images_WRC/IMG_4070.JPG',
+            'images_WRC/IMG_4074.JPG',
+            'images_WRC/IMG_4084.JPG',
+            'images_WRC/IMG_4088.JPG',
+            'images_WRC/IMG_4093.JPG',
+            'images_WRC/IMG_4099.JPG',
+            'images_WRC/IMG_4103.JPG',
+            'images_WRC/IMG_4113.JPG',
+            'images_WRC/IMG_4117.JPG',
+            'images_WRC/IMG_4121.JPG',
+            'images_WRC/IMG_4127.JPG',
+            'images_WRC/IMG_4131.JPG',
+            'images_WRC/IMG_4146.JPG',
+            'images_WRC/IMG_4150.JPG',
+            'images_WRC/IMG_4154.JPG',
+            'images_WRC/IMG_4160.JPG',
+            'images_WRC/IMG_4164.JPG',
+            'images_WRC/IMG_4168.JPG',
+            'images_WRC/IMG_4174.JPG',
+            'images_WRC/IMG_4178.JPG',
+            'images_WRC/IMG_4182.JPG'
+        ]
+    },
+
+    'icra-london-2023': {
+        title: 'IEEE ICRA 2023 — Poster Presentation in London',
+        date: 'May 29 – June 3, 2023',
+        body: `
+            <p style="font-size:16px; color:#333; line-height:1.9;">
+            The 2023 IEEE International Conference on Robotics and Automation (ICRA 2023) was held from
+            <strong>29 May to 3 June 2023</strong> at the <strong>ExCeL London</strong>, United Kingdom.
+            ICRA is one of the flagship conferences of the IEEE Robotics and Automation Society, and
+            ICRA 2023 brought together several thousand researchers from across the world to present
+            the latest advances in robotics, automation, perception, planning, and control.</p>
+
+            <div class="blog-event-details">
+                <span>📅 29 May – 3 June 2023</span>
+                <span>📍 ExCeL London, United Kingdom</span>
+                <span>🤖 IEEE International Conference on Robotics and Automation (ICRA)</span>
+            </div>
+
+            <p>👉 <a href="https://ewh.ieee.org/soc/ras/conf/fullysponsored/icra/ICRA%202023/www.icra2023.org/icra-programme.html" target="_blank">
+            ICRA 2023 Programme</a></p>
+
+            <h3 class="blog-section-title">1. The Conference</h3>
+            <p>ICRA 2023 featured keynotes, workshops, oral sessions, and a large poster/expo floor
+            showcasing cutting-edge research across the robotics community. The ExCeL London venue
+            — with its waterfront location in the Royal Docks — provided an excellent setting for
+            the conference's broad technical and networking programme.</p>
+
+            <h3 class="blog-section-title">2. My Poster Presentation</h3>
+            <p>I presented a poster at ICRA 2023, sharing my doctoral research on cable-driven parallel
+            robots and related soft-robotics work developed during my time at the University of Auckland
+            and CUHK. The poster session was a great opportunity to discuss the work with researchers
+            working on related problems in manipulation, modelling, and control.</p>
+
+            <div class="blog-inline-images">
+                <img src="Images_ICRA_London/IMG_5463.jpg" alt="ICRA London 2023 — Conference Highlights"
+                     onclick="openLightbox('icra-london-2023', 0)" loading="lazy">
+            </div>
+            <p class="blog-caption">ICRA 2023 at ExCeL London — view from the conference floor.</p>
+
+            <p style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e0e0e0; color: #888; font-size: 13px;">
+            <em>Written by Dr. Dipankar Bhattacharya. Photos taken during IEEE ICRA 2023 at ExCeL London.</em></p>
+        `,
+        photos: [
+            'Images_ICRA_London/IMG_5376.JPG',
+            'Images_ICRA_London/IMG_5398.jpg',
+            'Images_ICRA_London/IMG_5404.jpg',
+            'Images_ICRA_London/IMG_5463.jpg',
+            'Images_ICRA_London/IMG_5467.jpg',
+            'Images_ICRA_London/IMG_5473.jpg',
+            'Images_ICRA_London/IMG_5475.jpg'
+        ]
     }
 };
 
