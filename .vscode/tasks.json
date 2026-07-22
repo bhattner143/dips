@@ -16,6 +16,17 @@
             "problemMatcher": []
         },
         {
+            "label": "Build CV Simple (cv-simple.tex)",
+            "type": "shell",
+            "command": "cd CV_latex_source && pdflatex -interaction=nonstopmode cv-simple.tex && biber cv-simple && pdflatex -interaction=nonstopmode cv-simple.tex && pdflatex -interaction=nonstopmode cv-simple.tex",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "Build CV2 (cv2.tex)",
             "type": "shell",
             "command": "cd CV_latex_source && pdflatex -interaction=nonstopmode cv2.tex && biber cv2 && pdflatex -interaction=nonstopmode cv2.tex && pdflatex -interaction=nonstopmode cv2.tex",
@@ -52,6 +63,7 @@
             "label": "Build All CVs",
             "dependsOn": [
                 "Build CV (cv-llt.tex)",
+                "Build CV Simple (cv-simple.tex)",
                 "Build CV2 (cv2.tex)",
                 "Build Resume (resume.tex)"
             ],
@@ -63,6 +75,17 @@
             "label": "Quick Build CV (cv-llt.tex) - Single Pass",
             "type": "shell",
             "command": "cd CV_latex_source && pdflatex -interaction=nonstopmode cv-llt.tex",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Quick Build CV Simple (cv-simple.tex) - Single Pass",
+            "type": "shell",
+            "command": "cd CV_latex_source && pdflatex -interaction=nonstopmode cv-simple.tex",
             "group": "build",
             "presentation": {
                 "reveal": "always",
