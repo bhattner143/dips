@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Dipankar Bhattacharya — Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-v2.css">
+</head>
+<body>
+  <div class="preview-banner">
+    Preview only — current site unchanged.
+    <a href="index.html">Open existing index.html</a>
+  </div>
+
+  <header class="site-nav">
+    <a class="nav-mark" href="#top">Dipankar Bhattacharya</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#appointments">Appointments</a>
+      <a href="#news">News</a>
+      <a class="nav-cta" href="CV_latex_source/cv-simple.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-media" aria-hidden="true">
+      <img src="Images_publication/fabric_alignment_tase.png" alt="">
+      <div class="hero-shade"></div>
+    </div>
+    <div class="hero-inner">
+      <h1 class="hero-brand">Dr. Dipankar Bhattacharya</h1>
+      <p class="hero-role">Marie Skłodowska-Curie Fellow · Dyson School, Imperial College London</p>
+      <p class="hero-lede">
+        Robotics researcher working on soft systems, cable-driven actuation, and learning-enabled manipulation for rehabilitation and garment automation.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="CV_latex_source/cv-simple.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a class="btn btn-ghost" href="https://scholar.google.com/citations?user=4BBRfsMAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="btn btn-ghost" href="mailto:d.bhattacharya1@imperial.ac.uk">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="about">
+      <p class="section-label">About</p>
+      <h2 class="section-title">Independent robotics research across soft machines and deformable objects</h2>
+      <div class="about-grid reveal">
+        <img class="portrait" src="Photo_profile/dips.jpg" alt="Portrait of Dr. Dipankar Bhattacharya">
+        <div class="about-body">
+          <p>
+            I develop model-based and learning-enabled robotic systems for healthcare and manufacturing.
+            My work joins soft robotics, cable-driven actuation, deformable-object perception, and control —
+            from RoSE, an early soft-robotic esophagus for endoprosthetic stent testing
+            (<em>Soft Robotics</em>, 2021; later cited in <em>Nature Communications</em>, 2026),
+            through cable-wrapping kinematics for CDPRs, to fabric manipulation for garment production.
+          </p>
+          <p>
+            As Marie Skłodowska-Curie Fellow at Imperial College London, I lead
+            <a href="https://cordis.europa.eu/project/id/101205678" target="_blank" rel="noopener">CASREx</a>
+            on cable-driven soft exosuits for upper-arm rehabilitation.
+          </p>
+          <div class="about-meta">
+            <div><strong>Affiliation</strong><br>Morph Lab · Imperial College London</div>
+            <div><strong>PhD</strong><br>Mechatronics Engineering, University of Auckland</div>
+            <div><strong>Interests</strong><br>Soft robotics · CDPRs · Fabric ML · Control</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <p class="section-label">Research</p>
+      <h2 class="section-title">Three threads, one systems view</h2>
+      <p class="section-intro">
+        Across healthcare and garment automation, the same questions recur: how to sense soft bodies under occlusion, actuate them safely, and close the loop with models that still work on hardware.
+      </p>
+      <div class="themes reveal">
+        <article class="theme">
+          <h3>Soft robotics &amp; rehabilitation</h3>
+          <p>RoSE and related platforms for stent testing; CASREx cable-driven exosuits for upper-arm muscle impairment.</p>
+        </article>
+        <article class="theme">
+          <h3>Cable-driven systems</h3>
+          <p>Wrapping kinematics and tri-space operational control for complex-geometry CDPRs (MMT 2025; IEEE TCST 2023).</p>
+        </article>
+        <article class="theme">
+          <h3>Fabric perception &amp; policy</h3>
+          <p>GLW-ICP alignment, RTFF dual-arm flattening, and sewing automation with mesh-aware imitation learning.</p>
+        </article>
+      </div>
+
+      <div class="project-band reveal">
+        <div>
+          <p class="section-label">Featured project</p>
+          <h3>GLW-ICP — robotic fabric alignment for sewing</h3>
+          <p>
+            Millimetre-level edge and sewing-line alignment under occlusion using Global–Local Weighted ICP,
+            validated on collar, rectangle, and shirt panels.
+          </p>
+          <p>
+            <a href="https://bhattner143.github.io/rfas-glwicp.github.io/" target="_blank" rel="noopener">Project website</a>
+            ·
+            <a href="https://doi.org/10.36227/techrxiv.175691617.74372270/v1" target="_blank" rel="noopener">Paper</a>
+            ·
+            <a href="https://youtu.be/mx7qoWU1zaE?si=bx7CuCKsdGmSFEJi" target="_blank" rel="noopener">Video</a>
+          </p>
+        </div>
+        <img src="Images_publication/fabric_alignment_tase.png" alt="Robotic fabric alignment system with roller end-effector">
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <p class="section-label">Selected publications</p>
+      <h2 class="section-title">Recent journal and conference work</h2>
+      <ul class="pub-list">
+        <li class="pub-item reveal">
+          <div class="pub-venue">RAL 2026</div>
+          <div>
+            <h3>SFIL: Safety Filtering for Imitation Learning on Series-Elastic Cable Arms under Co-Contraction</h3>
+            <p class="authors">D. Bhattacharya · Submitted to IEEE Robotics and Automation Letters</p>
+          </div>
+        </li>
+        <li class="pub-item reveal">
+          <div class="pub-venue">T-ASE 2026</div>
+          <div>
+            <h3>Robotic Fabric Alignment System for Sewing Using Global-Local Weighted ICP</h3>
+            <p class="authors">W. Wang, D. Bhattacharya, A. Kobayashi, A. Seino, F. Tokuda, N. C. Tien, K. Kosuge · Accepted, IEEE T-ASE</p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.36227/techrxiv.175691617.74372270/v1" target="_blank" rel="noopener">Paper</a>
+              <a href="https://bhattner143.github.io/rfas-glwicp.github.io/" target="_blank" rel="noopener">Project</a>
+              <a href="https://youtu.be/mx7qoWU1zaE?si=bx7CuCKsdGmSFEJi" target="_blank" rel="noopener">Video</a>
+            </div>
+          </div>
+        </li>
+        <li class="pub-item reveal">
+          <div class="pub-venue">IROS 2026</div>
+          <div>
+            <h3>RTFF: Random-to-Target Fabric Flattening Policy Using Dual-Arm Manipulator</h3>
+            <p class="authors">D. Bhattacharya*, K. Tang*, X. Hang, F. Tokuda, N. Tien, K. Kosuge · Accepted (*equal contribution)</p>
+            <div class="pub-links">
+              <a href="https://lnkd.in/eNQ2a9uq" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/bhattner143/mesh_gat_dataset_generation" target="_blank" rel="noopener">Code</a>
+              <a href="https://kaitang98.github.io/RTFF_Policy/" target="_blank" rel="noopener">Project</a>
+            </div>
+          </div>
+        </li>
+        <li class="pub-item reveal">
+          <div class="pub-venue">RA-L 2025</div>
+          <div>
+            <h3>Automated Straight-line Sewing of Stretchable Fabrics with Different Lengths</h3>
+            <p class="authors">B. Jin*, A. Kobayashi*, D. Bhattacharya, et al. · IEEE Robotics and Automation Letters</p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1109/LRA.2025.3619791" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </div>
+        </li>
+        <li class="pub-item reveal">
+          <div class="pub-venue">MMT 2025</div>
+          <div>
+            <h3>Kinematic and Dynamic Modeling of Cable-Object Interference and Wrapping in Complex Geometrical-Shaped CDPRs</h3>
+            <p class="authors">D. Bhattacharya, T. K. Cheung, Y. Wang, D. Lau · Mechanism and Machine Theory</p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1016/j.mechmachtheory.2025.106092" target="_blank" rel="noopener">DOI</a>
+              <a href="https://github.com/bhattner143/GeoWrapSim-CDPR" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </li>
+        <li class="pub-item reveal">
+          <div class="pub-venue">Soft Rob. 2021</div>
+          <div>
+            <h3>RoSE: A Robotic Soft Esophagus for Endoprosthetic Stent Testing</h3>
+            <p class="authors">D. Bhattacharya, S. Jesna, L. K. Cheng, W. Xu · Soft Robotics</p>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1089/soro.2019.0205" target="_blank" rel="noopener">DOI</a>
+              <a href="https://www.nature.com/articles/s41467-026-70260-2" target="_blank" rel="noopener">Cited in Nature Comm. 2026</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <p style="margin-top:1.25rem;font-size:0.95rem;color:var(--muted);">
+        Full list in the
+        <a href="CV_latex_source/cv-simple.pdf" target="_blank" rel="noopener">CV</a>
+        and on
+        <a href="https://scholar.google.com/citations?user=4BBRfsMAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+      </p>
+    </section>
+
+    <section class="section" id="appointments">
+      <p class="section-label">Appointments</p>
+      <h2 class="section-title">Academic and research roles</h2>
+      <ul class="appointments reveal">
+        <li>
+          <time>2025–present</time>
+          <div>
+            <strong>Marie Skłodowska-Curie Fellow</strong>
+            <span>Dyson School of Design Engineering, Imperial College London · CASREx</span>
+          </div>
+        </li>
+        <li>
+          <time>2024–2025</time>
+          <div>
+            <strong>Senior Research Engineer / Postdoctoral Fellow</strong>
+            <span>Center for Transformative Garment Production (TransGP); Visiting Research Associate, HKU</span>
+          </div>
+        </li>
+        <li>
+          <time>2021–2024</time>
+          <div>
+            <strong>Postdoctoral Fellow</strong>
+            <span>Chinese University of Hong Kong · cable-driven parallel robots</span>
+          </div>
+        </li>
+        <li>
+          <time>2016–2021</time>
+          <div>
+            <strong>PhD, Mechatronics Engineering</strong>
+            <span>University of Auckland · soft robotic esophagus (RoSE)</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="news">
+      <p class="section-label">Selected news</p>
+      <h2 class="section-title">Recent milestones</h2>
+      <ul class="news-list reveal">
+        <li>
+          <time>Aug 2026</time>
+          <p>SFIL submitted to IEEE Robotics and Automation Letters.</p>
+        </li>
+        <li>
+          <time>Jul 2026</time>
+          <p>Fabric alignment paper accepted in IEEE T-ASE; project site live at <a href="https://bhattner143.github.io/rfas-glwicp.github.io/" target="_blank" rel="noopener">GLW-ICP</a>.</p>
+        </li>
+        <li>
+          <time>Jun 2026</time>
+          <p>RTFF accepted at IEEE/RSJ IROS 2026, Pittsburgh.</p>
+        </li>
+        <li>
+          <time>Mar 2026</time>
+          <p>RoSE foundational work cited in <a href="https://www.nature.com/articles/s41467-026-70260-2" target="_blank" rel="noopener">Nature Communications</a>.</p>
+        </li>
+        <li>
+          <time>Jan 2026</time>
+          <p>Invited talk, Imperial Robotics Postgrad Committee — learning-based fabric manipulation.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="contact-strip" id="contact">
+      <div>
+        <h2>Get in touch</h2>
+        <p>Room 302, Dyson Building, Imperial College London, SW7 2DB · Open to collaboration on soft robotics, CDPRs, and deformable-object manipulation.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:d.bhattacharya1@imperial.ac.uk">Email</a>
+        <a href="https://profiles.imperial.ac.uk/d.bhattacharya1/about" target="_blank" rel="noopener">Imperial profile</a>
+        <a href="https://www.imperial.ac.uk/morph-lab/" target="_blank" rel="noopener">Morph Lab</a>
+        <a href="https://www.linkedin.com/in/dipankar-bhattacharya-phd-imperial" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://orcid.org/0000-0002-4737-9818" target="_blank" rel="noopener">ORCID</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="y"></span> Dipankar Bhattacharya</span>
+    <span><a href="index.html">← Back to current site</a></span>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-visible");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
