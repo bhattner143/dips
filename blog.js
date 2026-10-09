@@ -697,6 +697,163 @@ flowchart TB
         ]
     },
 
+    'iros-pittsburgh-2026': {
+        title: 'From Steel City to Roboburgh — IROS 2026 Pittsburgh',
+        date: 'September 27 – October 1, 2026',
+        body: `
+            <p style="font-size:16px; color:#333; line-height:1.9;">
+            Pittsburgh spent a century making steel. For five days at the
+            <strong>38th IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)</strong>,
+            it made a convincing case that it now makes robots — <em>Roboburgh</em>. More than
+            <strong>1,900</strong> contributed papers (each with a talk and a poster),
+            <strong>170+</strong> exhibitors, plenaries, workshops, and competitions filled the
+            David L. Lawrence Convention Center on the Allegheny riverfront.</p>
+
+            <div class="blog-event-details">
+                <span>📅 27 September – 1 October 2026</span>
+                <span>📍 David L. Lawrence Convention Center, Pittsburgh, PA</span>
+                <span>📄 Our paper #3269 · RTFF</span>
+            </div>
+
+            <p>👉 <a href="https://bhattner143.github.io/iros-2026-pittsburgh/" target="_blank">Full trip blog — From Steel City to Roboburgh</a>
+            &nbsp;·&nbsp;
+            <a href="https://2026.ieee-iros.org/" target="_blank">IROS 2026</a></p>
+
+            <h3 class="blog-section-title">1. The plenary question</h3>
+            <p>Monday’s plenary on startups and entrepreneurship put <strong>Vijay Kumar</strong>,
+            <strong>Andrea Thomaz</strong> (Diligent Robotics) and others on the Hall C stage, with
+            Lisa Chai and Henrik I. Christensen moderating. Wednesday closed the scientific programme
+            with the debate the organising committee had teased all year:
+            <em>Should robots be generalists or specialists?</em></p>
+
+            <div class="blog-inline-images">
+                <img src="Images_IROS_Pittsburgh/hero-hall.jpg" alt="IROS 2026 exhibit hall overview"
+                     onclick="openLightbox('iros-pittsburgh-2026', 0)" loading="lazy">
+                <img src="Images_IROS_Pittsburgh/debate.jpg" alt="Generalist vs specialist debate slide"
+                     onclick="openLightbox('iros-pittsburgh-2026', 1)" loading="lazy">
+            </div>
+            <p class="blog-caption">Exhibit hall overview · Wednesday’s generalist vs specialist debate.</p>
+
+            <h3 class="blog-section-title">2. Humanoids can already do hard stage work</h3>
+            <p>Walking the humanoid aisle, it is hard not to be impressed by how far the form has come.
+            Bodies that once struggled to stay upright now sell athletic competence as a product demo —
+            <strong>Unitree</strong> G1 clusters, <strong>EngineAI</strong> T800 sparring in a ring,
+            <strong>Galbot</strong> humanoid tennis with whole-body planning. The motion control is real,
+            and it is evolving fast.</p>
+
+            <div class="blog-inline-images">
+                <img src="Images_IROS_Pittsburgh/booth-engineai.jpg" alt="EngineAI humanoids at IROS 2026"
+                     onclick="openLightbox('iros-pittsburgh-2026', 2)" loading="lazy">
+                <img src="Images_IROS_Pittsburgh/booth-unitree.jpg" alt="Unitree booth at IROS 2026"
+                     onclick="openLightbox('iros-pittsburgh-2026', 5)" loading="lazy">
+                <img src="Images_IROS_Pittsburgh/booth-galbot.jpg" alt="Galbot humanoid demo"
+                     onclick="openLightbox('iros-pittsburgh-2026', 8)" loading="lazy">
+            </div>
+            <p class="blog-caption">EngineAI · Unitree · Galbot — athletic demos on the exhibit floor.</p>
+
+            <h3 class="blog-section-title">3. Why I favour specialists — and where humanoids still matter</h3>
+            <p>Stage routines are closed-world performances. Homes and garment cells are open-world,
+            non-stationary, and full of contact that vision alone does not solve. That is why I leave
+            IROS on the <strong>specialist</strong> side of the plenary: robot vacuums, warehouse AMRs,
+            force-controlled cobots such as <strong>Flexiv</strong>, and fabric policies like
+            <strong>RTFF</strong> are designed for a narrow job and already ship value.</p>
+            <p>Humanoids still matter where the world is built for people and working conditions are poor —
+            warehouses and fulfilment centres. Amazon’s aisle, with yellow automation beside Digit-class picking,
+            makes that pitch clear. The point is not humanoid everywhere. It is humanoid where human form is
+            the constraint, and specialist machines everywhere else.</p>
+            <blockquote style="margin:1em 0; padding:0.75em 1em; border-left:3px solid #b85c38; color:#333; font-style:italic;">
+            Humanoids for harsh, human-shaped workplaces. Specialists such as vacuums, arms and fabric policies for the rest.
+            </blockquote>
+
+            <div class="blog-inline-images">
+                <img src="Images_IROS_Pittsburgh/booth-amazon.jpg" alt="Amazon fulfilment automation booth"
+                     onclick="openLightbox('iros-pittsburgh-2026', 9)" loading="lazy">
+                <img src="Images_IROS_Pittsburgh/booth-digit.jpg" alt="Digit-class biped picking"
+                     onclick="openLightbox('iros-pittsburgh-2026', 11)" loading="lazy">
+                <img src="Images_IROS_Pittsburgh/booth-flexiv.jpg" alt="Flexiv force-controlled arms"
+                     onclick="openLightbox('iros-pittsburgh-2026', 12)" loading="lazy">
+            </div>
+            <p class="blog-caption">Amazon · Digit-class picking · Flexiv Enlight — specialist and humanoid niches side by side.</p>
+
+            <h3 class="blog-section-title">4. Our paper — RTFF (#3269)</h3>
+            <p>Kai Tang and I share first authorship on
+            <em>RTFF: Random-to-Target Fabric Flattening Policy Using Dual-Arm Manipulator</em>,
+            with Hang Xu, Fuyuki Tokuda, Norman C. Tien, and Kazuhiro Kosuge. Kai gave the talk on Wednesday
+            afternoon in <em>Learning Priors for Specialized Manipulation Skills</em> (rooms 411/412);
+            we stood the poster at Pod C11 West from 16:30–18:00.</p>
+
+            <div class="blog-inline-images">
+                <img src="Images_IROS_Pittsburgh/talk-kai.jpg" alt="Kai Tang presenting RTFF"
+                     onclick="openLightbox('iros-pittsburgh-2026', 15)" loading="lazy">
+                <img src="Images_IROS_Pittsburgh/poster-full.jpg" alt="RTFF conference poster"
+                     onclick="openLightbox('iros-pittsburgh-2026', 16)" loading="lazy">
+                <img src="Images_IROS_Pittsburgh/poster-dipankar.jpg" alt="Dipankar beside the RTFF poster"
+                     onclick="openLightbox('iros-pittsburgh-2026', 17)" loading="lazy">
+            </div>
+            <p class="blog-caption">Talk · poster · Pod C11 West.</p>
+            <p>[<a href="https://arxiv.org/abs/2510.00814" target="_blank">arXiv</a>]
+            [<a href="https://kaitang98.github.io/RTFF_Policy/" target="_blank">Project</a>]
+            [<a href="https://github.com/bhattner143/mesh_gat_dataset_generation" target="_blank">Code</a>]</p>
+
+            <h3 class="blog-section-title">5. Pittsburgh between sessions</h3>
+            <p>Between sessions the terrace looks onto the yellow bridges. One lunch was a Primanti Bros
+            sandwich with fries in the sandwich. Wednesday night the conference moved to the Carnegie Science
+            Center for the farewell reception — Steel City still, with better actuators.</p>
+
+            <div class="blog-inline-images">
+                <img src="Images_IROS_Pittsburgh/bridges.jpg" alt="Yellow bridges over the Allegheny"
+                     onclick="openLightbox('iros-pittsburgh-2026', 25)" loading="lazy">
+                <img src="Images_IROS_Pittsburgh/skyline.jpg" alt="Downtown Pittsburgh skyline"
+                     onclick="openLightbox('iros-pittsburgh-2026', 26)" loading="lazy">
+            </div>
+            <p class="blog-caption">Allegheny bridges · downtown from the convention centre terrace.</p>
+
+            <p style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e0e0e0;">
+            <strong>Read the full essay, booth catalog, and 222-photo album:</strong>
+            <a href="https://bhattner143.github.io/iros-2026-pittsburgh/" target="_blank">bhattner143.github.io/iros-2026-pittsburgh</a></p>
+
+            <p style="margin-top: 12px; color: #888; font-size: 13px;">
+            <em>Written by Dr. Dipankar Bhattacharya. Photos from IROS 2026, Pittsburgh.</em></p>
+        `,
+        photos: [
+            'Images_IROS_Pittsburgh/hero-hall.jpg',
+            'Images_IROS_Pittsburgh/debate.jpg',
+            'Images_IROS_Pittsburgh/booth-engineai.jpg',
+            'Images_IROS_Pittsburgh/booth-engineai-1.jpg',
+            'Images_IROS_Pittsburgh/booth-engineai-2.jpg',
+            'Images_IROS_Pittsburgh/booth-unitree.jpg',
+            'Images_IROS_Pittsburgh/booth-unitree-1.jpg',
+            'Images_IROS_Pittsburgh/booth-unitree-2.jpg',
+            'Images_IROS_Pittsburgh/booth-galbot.jpg',
+            'Images_IROS_Pittsburgh/booth-amazon.jpg',
+            'Images_IROS_Pittsburgh/booth-amazon-1.jpg',
+            'Images_IROS_Pittsburgh/booth-digit.jpg',
+            'Images_IROS_Pittsburgh/booth-flexiv.jpg',
+            'Images_IROS_Pittsburgh/booth-flexiv-1.jpg',
+            'Images_IROS_Pittsburgh/booth-franka.jpg',
+            'Images_IROS_Pittsburgh/talk-kai.jpg',
+            'Images_IROS_Pittsburgh/poster-full.jpg',
+            'Images_IROS_Pittsburgh/poster-dipankar.jpg',
+            'Images_IROS_Pittsburgh/DSC09519.jpg',
+            'Images_IROS_Pittsburgh/DSC09520.jpg',
+            'Images_IROS_Pittsburgh/DSC09522.jpg',
+            'Images_IROS_Pittsburgh/DSC09524.jpg',
+            'Images_IROS_Pittsburgh/DSC09526.jpg',
+            'Images_IROS_Pittsburgh/DSC09530.jpg',
+            'Images_IROS_Pittsburgh/poster-simlify.jpg',
+            'Images_IROS_Pittsburgh/bridges.jpg',
+            'Images_IROS_Pittsburgh/skyline.jpg',
+            'Images_IROS_Pittsburgh/hall-paxini.jpg',
+            'Images_IROS_Pittsburgh/DSC09508.jpg',
+            'Images_IROS_Pittsburgh/DSC09325.jpg',
+            'Images_IROS_Pittsburgh/poster-deform.jpg',
+            'Images_IROS_Pittsburgh/poster-hop.jpg',
+            'Images_IROS_Pittsburgh/flexiv.jpg',
+            'Images_IROS_Pittsburgh/unitree-ish.jpg',
+            'Images_IROS_Pittsburgh/booster.jpg'
+        ]
+    },
+
     'wrc-beijing-2025': {
         title: 'WRC 2025 — TransGP &amp; SewingDX Exhibit at the 10th World Robot Conference, Beijing',
         date: 'August 8–12, 2025',
