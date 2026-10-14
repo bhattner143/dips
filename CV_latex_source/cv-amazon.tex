@@ -1,0 +1,136 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Two-page industry CV (Amazon Robotics - Senior Research Scientist / Internship)
+% Self-contained: no biblatex, no shared section files.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[p,osf,swashQ]{cochineal}
+\usepackage[medium,bold]{cabin}
+\usepackage[varqu,varl,scale=0.9]{zi4}
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=1.7cm,top=1.5cm,bottom=1.4cm]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+
+\definecolor{accent}{HTML}{1B365D}
+\hypersetup{colorlinks=true,allcolors=accent,breaklinks=true}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+\titleformat{\section}{\large\bfseries\sffamily\color{accent}}{}{0pt}{}[\vspace{-0.45em}\rule{\linewidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{0.8em}{0.35em}
+
+\setlist[itemize]{leftmargin=1.1em,itemsep=0.1em,topsep=0.15em,parsep=0pt}
+
+% \job{title}{org}{dates}
+\newcommand{\job}[3]{\vspace{0.35em}\textbf{#1}, #2 \hfill {\small\sffamily #3}\par}
+\newcommand{\pub}[1]{\item #1}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries\sffamily\color{accent} Dr. Dipankar Bhattacharya, Ph.D.}\\[0.3em]
+  {\bfseries Marie Sk\l{}odowska-Curie Fellow}, Imperial College London\\[0.15em]
+  {\small Learning-based Manipulation and Control}\\[0.2em]
+  {\small
+  London, UK (open to relocation) $\,\cdot\,$ +44 7448 647 225 $\,\cdot\,$
+  \href{mailto:dipankar22041988@gmail.com}{dipankar22041988@gmail.com}\\
+  \href{https://bhattner143.github.io/dips/}{bhattner143.github.io/dips} $\,\cdot\,$
+  \href{https://profiles.imperial.ac.uk/d.bhattacharya1/about}{Imperial Profile} $\,\cdot\,$
+  \href{https://www.linkedin.com/in/dipankar-bhattacharya-phd-imperial}{LinkedIn}\\
+  \href{https://scholar.google.com/citations?user=4BBRfsMAAAAJ\&hl=en}{Google Scholar} $\,\cdot\,$
+  \href{https://orcid.org/0000-0002-4737-9818}{ORCID}}
+\end{center}
+
+\section*{Summary}
+Robotics researcher with a Ph.D. in Mechatronics Engineering and 5+ years of postdoctoral and industry-facing
+research at Imperial College London, TransGP (Hong Kong), HKU and CUHK. I build
+learning-based and model-based systems for robotic manipulation, with focus on deformable objects
+(imitation learning, mesh-based perception, dual-arm control), and I take them from simulation (Isaac Sim, PyDrake)
+to real hardware. Previously Senior Research Engineer on an industry-partnered garment-automation project, where I
+led a multidisciplinary team and translated industrial requirements into deployed manipulation pipelines.
+Currently an EU-funded Marie Sk\l{}odowska-Curie Fellow (EUR 276k) leading my own research programme.
+\textbf{Seeking:} Senior Research Scientist (full-time) or internship; available from June 2027 (internship earlier).
+
+\section*{Experience}
+
+\job{Marie Sk\l{}odowska-Curie Postdoctoral Fellow}{Imperial College London, UK}{2025 -- Present}
+\textit{CASREx: cable-driven soft exosuit for upper-arm rehabilitation} (Horizon Europe grant 101205678, EUR 276,187.92).
+\begin{itemize}
+  \item Lead an independent project from grant proposal to hardware: control, learning, simulation and human trials.
+  \item Developing an Isaac Sim digital twin for reinforcement-learning policy training and sim-to-real transfer.
+  \item Imitation learning with a safety filter (SFIL) for series-elastic cable arms under co-contraction; EMG-in-the-loop adaptive control.
+  \item Supervise two MEng placement students; co-supervise PhD candidate Chuanyun Ouyang (University of Auckland); mentor pre-college robotics student Bobomurod Fazliddinov for college applications.
+  \item GTA for Maths~2 (Dyson School); guest lecturer on robotics simulation and control (PyDrake).
+\end{itemize}
+
+\job{Senior Research Engineer -- Control Systems}{Center for Transformative Garment Production (TransGP), Hong Kong}{2024 -- 2025}
+Mentor: Prof. Kazuhiro Kosuge. Industry-partnered dual-arm fabric manipulation for garment manufacturing.
+\begin{itemize}
+  \item Led a multidisciplinary team on dual-arm fabric flattening, destacking and pre-sewing handling
+        (mesh perception $+$ imitation learning); mentored PhD students.
+  \item Built and validated robotic testbeds for industrial sewing and destacking workflows; translated
+        industrial requirements into research deliverables.
+  \item Results: IEEE IROS 2026 (RTFF flattening policy), IEEE RA-L 2025 (automated straight-line sewing),
+        IEEE T-ASE 2026 (fabric alignment via global-local weighted ICP), IEEE ICMA 2025 (fabric destacking).
+  \item Concurrently Visiting Research Associate, Dept.\ of EEE, Hong Kong University.
+\end{itemize}
+
+\job{Postdoctoral Fellow}{The Chinese University of Hong Kong}{2021 -- 2024}
+Supervisor: Prof. Darwin Lau. Modeling and control of cable-driven robots.
+\begin{itemize}
+  \item Kinematic/dynamic modeling of cable--object interference and wrapping; validated in simulation and hardware (Mech.\ Mach.\ Theory 2025).
+  \item Iterative-learning-based reactive control for redundant multilink/hybrid cable robots (IEEE T-CST 2023).
+  \item Designed a cable-driven growing vine robot for ceiling inspection; co-authored two ITF grants; mentored students.
+  \item Visiting Postdoc, LS2N, \'Ecole Centrale de Nantes (Oct 2021 -- Jan 2022): iterative-learning control experiments.
+\end{itemize}
+
+\job{Research Assistant / Graduate Teaching Assistant}{The University of Auckland, New Zealand}{2017 -- 2020}
+\begin{itemize}
+  \item Industry-funded stent-testing research (BvW Holding, NZD 39,000) on a robotic soft esophagus; taught four undergraduate courses.
+\end{itemize}
+
+\job{Lecturer (Assistant Professor Grade-1)}{Galgotias University, India}{2013 -- 2016}
+
+\section*{Education}
+\textbf{Ph.D., Mechatronics Engineering}, The University of Auckland (2016--2021).
+\textit{Robotic Soft Esophagus: Design, Modelling, and Control.} Cited in \textit{Nature Communications} (2026).\\
+\textbf{M.Tech, Systems and Control}, IIT Roorkee (2011--2013), GPA 8.4/10. \quad
+\textbf{B.Tech, Electronics and Communication Eng.}, NERIST (2004--2010), GPA 9.1/10.
+
+\section*{Selected Publications}
+\small
+\begin{itemize}[itemsep=0.15em]
+  \pub{\textbf{D.~Bhattacharya}*, K.~Tang*, et al., ``RTFF: Random-to-Target Fabric Flattening Policy Using Dual-Arm Manipulator,'' \textit{IEEE/RSJ IROS}, 2026. (*equal)}
+  \pub{W.~Wang, \textbf{D.~Bhattacharya}, et al., ``Robotic Fabric Alignment System for Sewing Using Global-Local Weighted ICP,'' \textit{IEEE T-ASE}, 2026 (accepted).}
+  \pub{B.~Jin*, A.~Kobayashi*, \textbf{D.~Bhattacharya}, et al., ``Automated Straight-line Sewing of Stretchable Fabrics with Different Lengths,'' \textit{IEEE RA-L}, 2025.}
+  \pub{\textbf{D.~Bhattacharya}, T.~K.~Cheung, Y.~Wang, D.~Lau, ``Kinematic and Dynamic Modeling of Cable-Object Interference and Wrapping in Complex Geometrical-Shaped CDPRs,'' \textit{Mech.\ Mach.\ Theory}, 214, 2025.}
+  \pub{\textbf{D.~Bhattacharya}, et al., ``Tri-Space Operational Control of Redundant Multilink and Hybrid CDPRs Using an Iterative-Learning-based Reactive Approach,'' \textit{IEEE T-CST}, 2023.}
+  \pub{\textbf{D.~Bhattacharya}, L.~K.~Cheng, W.~Xu, ``Nonlinear Model Predictive Control of a Robotic Soft Esophagus,'' \textit{IEEE T-IE}, 2021.}
+  \pub{\textbf{D.~Bhattacharya}, et al., ``RoSE: A Robotic Soft Esophagus for Endoprosthetic Stent Testing,'' \textit{Soft Robotics}, 2021.}
+  \pub{\textbf{D.~Bhattacharya}, L.~K.~Cheng, W.~Xu, ``Sparse Machine Learning Discovery of Dynamic Differential Equation of an Esophageal Swallowing Robot,'' \textit{IEEE T-IE}, 67(6), 2020.}
+\end{itemize}
+\normalsize
+Full list (15+ journal and conference papers): \href{https://scholar.google.com/citations?user=4BBRfsMAAAAJ\&hl=en}{Google Scholar}; code and project websites: \href{https://bhattner143.github.io/dips/}{bhattner143.github.io/dips}
+
+\section*{Skills}
+\textbf{Learning and control:} imitation learning, reinforcement learning, sparse system identification, nonlinear MPC, iterative-learning control, mesh-based deep perception.\\
+\textbf{Software:} Python, PyTorch, C/C++, MATLAB/Simulink, ROS2, Isaac Sim, PyDrake, LeRobot, OpenSim, Git, Linux.\\
+\textbf{Hardware:} dual-arm manipulators, cable-driven actuation, NVIDIA Jetson, Raspberry Pi, myRIO, Arduino; CAD in SOLIDWORKS/Onshape.
+
+\section*{Grants, Awards and Service}
+\begin{itemize}
+  \item Marie Sk\l{}odowska-Curie Postdoctoral Fellowship, Horizon Europe (2025, EUR 276k); co-author on two Hong Kong ITF grants (2022, 2023); BvW Holding industry grant (2018, NZD 39k).
+  \item Selected, European Talent Academy 2026; nominee, ECRI Creating a Positive Research Environment Award (2026); Best Conference Paper, RiTA 2017.
+  \item Invited talks: Harvard University (2026), Northeastern University (2026), World Robotics Conference Beijing (2025). Presenter at IEEE IROS 2026, ICRA 2023/2024.
+  \item Reviewer: IEEE T-ASE, RA-L, ICRA; ASME J.\ Mechanisms and Robotics. IEEE member.
+\end{itemize}
+
+\end{document}
