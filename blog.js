@@ -562,9 +562,11 @@ flowchart TB
             <h3 class="blog-section-title">Looking Ahead — Munich &amp; Milan</h3>
             <p>Grateful to be part of a programme that brings together young researchers to build connections,
             strengthen professional skills, and lay the groundwork for future interdisciplinary projects.
-            The Munich session followed in June 2026 — see the
-            <a href="#" onclick="openBlogOverlay('eta-munich-2026'); return false;">Munich session blog post</a>.
-            Looking forward to the final retreat in <strong>Milan (PoliMi)</strong>.</p>
+            The journey continued with the
+            <a href="#" onclick="openBlogOverlay('eta-munich-2026'); return false;">Munich session</a>
+            in June 2026 and closed with the
+            <a href="#" onclick="openBlogOverlay('eta-milan-2026'); return false;">Milan retreat at PoliMi</a>
+            in October 2026.</p>
 
             <p style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e0e0e0; color: #888; font-size: 13px;">
             <em>Written by Dr. Dipankar Bhattacharya. Photos taken during the ETA 2026 London session.</em></p>
@@ -675,8 +677,10 @@ flowchart TB
             <h3 class="blog-section-title">Looking Ahead — Milan &amp; Beyond</h3>
             <p>Grateful to the organising team — Bettina Burger, Iris Figliolia, Inês P. Perpétuo, Judy Mielke,
             and Jennifer Borzomì — and to my cohort teammates for three intensive and rewarding days in Munich.
-            Next up: developing our research proposals, mentor meetings, partner visits across Europe, and the
-            final retreat in <strong>Milan (PoliMi)</strong>.</p>
+            The final retreat followed in
+            <a href="#" onclick="openBlogOverlay('eta-milan-2026'); return false;">Milan at Politecnico di Milano</a>
+            (October 2026) — see also the
+            <a href="#" onclick="openBlogOverlay('eta-london-2026'); return false;">London session</a>.</p>
 
             <p style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e0e0e0; color: #888; font-size: 13px;">
             <em>Written by Dr. Dipankar Bhattacharya. Photos taken during the ETA 2026 Munich session.</em></p>
@@ -694,6 +698,149 @@ flowchart TB
             'ETA/London/Munich/806f6585-bbf6-450e-8030-db65b37512e8.jpg',
             'ETA/London/Munich/IMG_8911.jpeg',
             'ETA/London/Munich/IMG_8904.jpeg'
+        ]
+    },
+
+    'eta-milan-2026': {
+        title: 'European Talent Academy 2026 — Milan Session, Politecnico di Milano',
+        date: 'October 6–8, 2026',
+        body: `
+            <p style="font-size:16px; color:#333; line-height:1.9;">
+            Three days in Milan for the final in-person retreat of the
+            <strong>European Talent Academy (ETA) 2026</strong> (October 6–8, 2026) at
+            <strong>Politecnico di Milano</strong> — Campus Leonardo.
+            After <a href="#" onclick="openBlogOverlay('eta-london-2026'); return false;">London</a>
+            and <a href="#" onclick="openBlogOverlay('eta-munich-2026'); return false;">Munich</a>,
+            this was the moment to turn cohort ideas into concrete research pitches, get mentor feedback,
+            and celebrate a collaboration that had grown into a real team.</p>
+
+            <div class="blog-event-details">
+                <span>📅 October 6–8, 2026</span>
+                <span>📍 PoliMi — EDUCAFÉ, Building 2, Campus Leonardo</span>
+                <span>🤝 SMART-MOLE cohort + RESONATE pitch</span>
+            </div>
+
+            <p>👉 <a href="https://www.imperial.ac.uk/admin-services/international-relations/european-talent-academy/" target="_blank">
+            Official ETA Programme Page</a></p>
+
+            <h3 class="blog-section-title">Arrival — Hotel Lombardia &amp; First Dinner</h3>
+            <p>We checked in at <strong>Hotel Lombardia</strong> (Viale Lombardia) near Città Studi, met at
+            Piazza Leonardo da Vinci, and opened the retreat with dinner at
+            <strong>Osteria dei Vecchi Sapori</strong> — a good reset before two dense days of pitches
+            and mentor sessions.</p>
+
+            <div class="blog-inline-images two-col">
+                <img src="ETA/Milan/photos/IMG_0720.jpeg" alt="Hotel Lombardia, Milan"
+                     onclick="openLightbox('eta-milan-2026', 3)" loading="lazy">
+                <img src="ETA/Milan/photos/IMG_0732.jpeg" alt="Osteria dei Vecchi Sapori, Milan"
+                     onclick="openLightbox('eta-milan-2026', 4)" loading="lazy">
+            </div>
+            <p class="blog-caption">Hotel Lombardia and dinner at Osteria dei Vecchi Sapori on arrival evening.</p>
+
+            <div class="blog-inline-images two-col">
+                <img src="ETA/Milan/photos/IMG_0734.jpeg" alt="Italian antipasti dinner, Milan"
+                     onclick="openLightbox('eta-milan-2026', 5)" loading="lazy">
+                <img src="ETA/Milan/photos/IMG_0736.jpeg" alt="Antipasti boards at dinner"
+                     onclick="openLightbox('eta-milan-2026', 6)" loading="lazy">
+            </div>
+            <p class="blog-caption">Antipasti and conversation — the informal start of the Milan retreat.</p>
+
+            <h3 class="blog-section-title">Day 1 — Impact, Group Work &amp; PoliMi Group Photo</h3>
+            <p>Sessions ran in <strong>EDUCAFÉ</strong> (Building 2, Campus Leonardo): impact and dissemination,
+            then a brief introduction to proposal pitches and focused <strong>group work</strong>.
+            Midday we paused for the official cohort photograph on the steps of Politecnico di Milano —
+            a nice full-circle image of Imperial, TUM, and PoliMi early-career researchers together.</p>
+
+            <div class="blog-inline-images">
+                <img src="ETA/Milan/Group-Photos/PHOTO-2026-10-07-11-58-04.jpg" alt="ETA 2026 Milan cohort at Politecnico di Milano"
+                     onclick="openLightbox('eta-milan-2026', 0)" loading="lazy">
+            </div>
+            <p class="blog-caption">The ETA 2026 Milan cohort on the steps of Politecnico di Milano (Campus Leonardo).</p>
+
+            <div class="blog-inline-images">
+                <img src="ETA/Milan/photos/IMG_0749.jpeg" alt="Workshop mural at PoliMi EDUCAFÉ"
+                     onclick="openLightbox('eta-milan-2026', 7)" loading="lazy">
+            </div>
+            <p class="blog-caption">Workshop space at EDUCAFÉ — design-for-learning mural on the wall behind our sessions.</p>
+
+            <h3 class="blog-section-title">SMART-MOLE — Our Cohort Pitch</h3>
+            <p>The highlight for me was pitching <strong>SMART-MOLE</strong>:
+            <em>Soil-monitoring Mobile Autonomous Robot for Targeted Management Of post-fire Landslides
+            and Ecosystem restoration</em>. The idea is a field-ready sensing and locomotion platform
+            that maps burn scars and unstable slopes, supports targeted infiltration, and enables
+            revegetation — framed toward Horizon Europe
+            <code>HORIZON-CL6-2027-01-BIODIV-03</code> (technical innovation to protect and restore ecosystems).</p>
+            <p>What made Milan special was the <strong>cohort</strong> itself. Over London and Munich we had
+            already found each other; by Milan SMART-MOLE felt like a real scientific core:</p>
+            <ul>
+                <li><strong>Angela Casarella</strong> (Imperial) — soil mechanics</li>
+                <li><strong>Simone Mentasti</strong> (PoliMi / Imperial) — autonomy and sensing</li>
+                <li><strong>Dipankar Bhattacharya</strong> (Imperial) — vision and machine learning</li>
+                <li><strong>Nicolò Botteghi</strong> (PoliMi) — digital twin and control</li>
+                <li><strong>Sandra Rojas-Botero</strong> (TUM) — restoration ecology</li>
+            </ul>
+            <p>Standing together for the pitch — with the post-fire landscape on the screen behind us —
+            was the clearest sign that ETA had done its job: not just networking, but a team with a shared
+            technical story and a path toward Connect Fund / Horizon consortium work.</p>
+
+            <div class="blog-inline-images">
+                <img src="ETA/Milan/photos-selected/90d13b60-eb3b-46b7-98df-75485504070b-Topaz-Sharpen-Strong-Denoise.jpg" alt="SMART-MOLE proposal pitch at ETA Milan 2026"
+                     onclick="openLightbox('eta-milan-2026', 1)" loading="lazy">
+            </div>
+            <p class="blog-caption">SMART-MOLE pitch — the cohort presenting together at PoliMi EDUCAFÉ.</p>
+
+            <h3 class="blog-section-title">RESONATE — A Second Pitch</h3>
+            <p>I also co-presented <strong>RESONATE</strong>
+            (<em>(Recommending Evidence-based Soundscape interventions for noise-sensitive urban territories)</em>
+            with <strong>Simone Perottoni</strong> (PoliMi) and <strong>Sandra Rojas-Botero</strong> (TUM):
+            an AI neighbourhood acoustic twin that moves from “where is it loud?” to ranked, place-specific
+            interventions around schools, hospitals, and care homes. A shorter complementary pitch to SMART-MOLE —
+            same ETA spirit of cross-university problem framing, different urban challenge.</p>
+
+            <div class="blog-inline-images">
+                <img src="ETA/Milan/photos-selected/672ff1b4-1796-4c0f-8264-99a60aebab38-Topaz-Sharpen-Strong-Denoise.jpg" alt="RESONATE proposal pitch at ETA Milan 2026"
+                     onclick="openLightbox('eta-milan-2026', 2)" loading="lazy">
+            </div>
+            <p class="blog-caption">RESONATE pitch — acoustic-twin interventions for noise-sensitive urban sites.</p>
+
+            <h3 class="blog-section-title">Day 2 — Mentor Feedback &amp; Wrap-Up</h3>
+            <p>The final morning was devoted to <strong>research proposal pitches with mentors’ feedback</strong>,
+            then lunch, wrap-up, and next steps. Hearing external mentors push on impact, partners, and
+            timeline was exactly what the SMART-MOLE plan needed before the autumn Connect Fund and
+            consortium visits.</p>
+
+            <div class="blog-inline-images two-col">
+                <img src="ETA/Milan/photos/IMG_0753.jpeg" alt="Dinner with the ETA Milan cohort"
+                     onclick="openLightbox('eta-milan-2026', 8)" loading="lazy">
+                <img src="ETA/Milan/photos/IMG_0751.jpeg" alt="Evening in Milan after ETA sessions"
+                     onclick="openLightbox('eta-milan-2026', 9)" loading="lazy">
+            </div>
+            <p class="blog-caption">Evenings in Milan with the cohort — dinner and a walk through the city.</p>
+
+            <h3 class="blog-section-title">Closing the ETA Trilogy</h3>
+            <p>London opened the network, Munich trained the grant muscle, and Milan locked in the teams.
+            Grateful to the organisers across Imperial, TUM, and PoliMi, to the mentors who challenged our
+            pitches, and especially to the <strong>SMART-MOLE</strong> cohort for turning a programme
+            acquaintance into a collaboration I want to keep building.
+            Full series:
+            <a href="#" onclick="openBlogOverlay('eta-london-2026'); return false;">London</a> ·
+            <a href="#" onclick="openBlogOverlay('eta-munich-2026'); return false;">Munich</a> ·
+            Milan.</p>
+
+            <p style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e0e0e0; color: #888; font-size: 13px;">
+            <em>Written by Dr. Dipankar Bhattacharya. Photos taken during the ETA 2026 Milan session at Politecnico di Milano.</em></p>
+        `,
+        photos: [
+            'ETA/Milan/Group-Photos/PHOTO-2026-10-07-11-58-04.jpg',
+            'ETA/Milan/photos-selected/90d13b60-eb3b-46b7-98df-75485504070b-Topaz-Sharpen-Strong-Denoise.jpg',
+            'ETA/Milan/photos-selected/672ff1b4-1796-4c0f-8264-99a60aebab38-Topaz-Sharpen-Strong-Denoise.jpg',
+            'ETA/Milan/photos/IMG_0720.jpeg',
+            'ETA/Milan/photos/IMG_0732.jpeg',
+            'ETA/Milan/photos/IMG_0734.jpeg',
+            'ETA/Milan/photos/IMG_0736.jpeg',
+            'ETA/Milan/photos/IMG_0749.jpeg',
+            'ETA/Milan/photos/IMG_0753.jpeg',
+            'ETA/Milan/photos/IMG_0751.jpeg'
         ]
     },
 

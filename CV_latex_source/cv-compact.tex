@@ -1,0 +1,124 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Compact academic CV --- same content as cv-simple.tex, denser layout.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[9pt,a4paper]{extarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[p,osf,swashQ]{cochineal}
+\usepackage[medium,bold]{cabin}
+\usepackage[varqu,varl,scale=0.88]{zi4}
+
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=1.35cm,top=1.2cm,bottom=1.2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyphenat}
+\usepackage[hyphens]{url}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\definecolor{accent}{HTML}{1B365D}
+\definecolor{charcoal}{HTML}{222222}
+
+\hypersetup{colorlinks=true,allcolors=accent,breaklinks=true}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+\setstretch{0.95}
+
+%%% Bibliography
+\usepackage[backend=biber,style=numeric,sorting=none,defernumbers=true,maxbibnames=99,giveninits=true,uniquename=init]{biblatex}
+\addbibresource{own-bib.bib}
+
+\newcommand{\myname}[2]{\def\@mylastname{#1}\def\@myfirstname{#2}}
+\makeatletter
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ test {\ifdefstrequal{\namepartfamily}{\@mylastname}}
+               and
+               test {\ifdefstrequal{\namepartgiven}{\@myfirstname}}}
+    {\textbf{#1}}{#1}}
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ test {\ifdefstrequal{\namepartfamily}{\@mylastname}}
+               and
+               test {\ifdefstrequal{\namepartgiven}{\@myfirstname}}}
+    {\textbf{#1}}{#1}}
+\makeatother
+\myname{Bhattacharya}{D.}
+
+\defbibheading{subbibliography}{\par\vspace{0.25em}\textbf{\normalsize\color{accent} #1}\par\vspace{0.1em}}
+\defbibfilter{booksandchapters}{type=book or type=incollection}
+\setlength{\bibitemsep}{0.15em}
+\setlength{\bibnamesep}{0pt}
+
+%%% Section formatting --- compact
+\titleformat{\section}{\large\bfseries\sffamily\color{accent}}{}{0pt}{}[\vspace{-0.25em}\rule{\linewidth}{0.6pt}]
+\titlespacing*{\section}{0pt}{0.9em}{0.35em}
+
+\newcommand{\btit}[1]{\textbf{\textit{#1}}}
+\newcommand{\makerubric}[1]{\input{#1}}
+\newcommand{\makerubrichead}[1]{\section*{#1}}
+
+\usepackage{enumitem}
+% Keep date labels on one line (wider left column) and enough itemsep so
+% wrapped labels cannot collide with the next entry.
+\newenvironment{rubric}[1]
+  {\section*{#1}%
+   \vspace{0.15em}%
+   \begin{description}[
+     leftmargin=3.05cm,
+     labelwidth=2.85cm,
+     labelsep=0.2cm,
+     style=multiline,
+     itemsep=0.45em,
+     parsep=0pt,
+     topsep=0.15em,
+     font=\normalfont\bfseries\sffamily\color{charcoal}%
+   ]}
+  {\end{description}\vspace{0.35em}}
+
+\makeatletter
+\newcommand{\entry}{\@ifstar\@entrystar\@entrystar}
+\newcommand{\@entrystar}[1][]{\item[\raggedright #1]\ignorespaces}
+\makeatother
+
+\newcommand{\subrubric}[1]{%
+  \item[]\par\vspace{0.35em}{\normalsize\bfseries\sffamily\color{accent}#1}\par\vspace{0.12em}}
+
+\newcommand{\noentry}[1]{}
+
+\begin{document}
+
+%%% Header
+\begin{center}
+  {\LARGE\bfseries\sffamily\color{accent} Dr. Dipankar Bhattacharya, Ph.D.}\\[0.25em]
+  {\bfseries \href{https://cordis.europa.eu/project/id/101205678}{Marie Sk\l{}odowska-Curie Fellow}}\\
+  {\small Dyson School of Design Engineering, Imperial College London, United Kingdom}\\[0.4em]
+  \footnotesize
+  \href{mailto:d.bhattacharya1@imperial.ac.uk}{d.bhattacharya1@imperial.ac.uk} $\,\cdot\,$
+  \href{mailto:dipankar22041988@gmail.com}{dipankar22041988@gmail.com} $\,\cdot\,$
+  +44 7448 647 225\\
+  \href{https://bhattner143.github.io/dips/}{bhattner143.github.io/dips} $\,\cdot\,$
+  \href{https://profiles.imperial.ac.uk/d.bhattacharya1/about}{Imperial Profile} $\,\cdot\,$
+  \href{https://www.linkedin.com/in/dipankar-bhattacharya-phd-imperial}{LinkedIn} $\,\cdot\,$
+  \href{https://orcid.org/0000-0002-4737-9818}{ORCID} $\,\cdot\,$
+  Room 302, Dyson Bldg, SW7 2DB, London
+\end{center}
+
+\vspace{0.25em}
+
+\input{research}
+\makerubric{education}
+\makerubric{employment}
+\makerubric{teaching}
+\input{publications}
+\makerubric{citations}
+\makerubric{grants}
+\makerubric{academic}
+\makerubric{skills}
+
+\end{document}
