@@ -1,0 +1,8 @@
+# Large camera originals / drafts — site uses web/ only
+*.MOV
+*.docx
+/IMG_*.jpeg
+/IMG_*.JPG
+/IMG_*.mp4
+/ffe71294*.jpg
+/final.png

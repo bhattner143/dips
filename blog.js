@@ -701,6 +701,115 @@ flowchart TB
         ]
     },
 
+    'imperial-lates-robots-2026': {
+        title: 'Imperial Lates: Robots — What My Robot Taught Me About Being Human',
+        date: 'October 29, 2026',
+        body: `
+            <p style="font-size:16px; color:#333; line-height:1.9;">
+            What has building a robot taught you about being human?
+            That was the question we sat with at <strong>Imperial Lates: Robots</strong> last Thursday —
+            and it stayed with me.</p>
+
+            <div class="blog-event-details">
+                <span>📅 Thursday 29 October 2026</span>
+                <span>🕕 18:00–21:00</span>
+                <span>📍 Imperial College London · Exhibition Road</span>
+                <span>🎟 Free public engagement · 18+</span>
+            </div>
+
+            <p>👉 <a href="https://www.imperial.ac.uk/be-inspired/lates/" target="_blank">
+            Official Imperial Lates page</a></p>
+
+            <div class="blog-inline-images">
+                <img src="imperial_lates/web/IMG_1050.jpg" alt="Imperial Lates Robots entrance boards on Exhibition Road"
+                     onclick="openLightbox('imperial-lates-robots-2026', 3)" loading="lazy">
+            </div>
+            <p class="blog-caption">Evening on Exhibition Road — Imperial Lates: Robots sandwich boards at the Main Entrance.</p>
+
+            <h3 class="blog-section-title">Booth #4 — Building intelligence into the body</h3>
+            <p>Earlier in the evening, Morph Lab (Dyson School of Design Engineering) ran
+            <strong>booth #4</strong> in the City &amp; Guilds Building foyer.
+            Visitors tried our hands-on <strong>ball-and-cup challenge</strong>: tune your arm to keep the ball
+            steady when a surprise “brake” hits — plus goat-hoof robotic feet demos from the Morph Lab kit.
+            Watching people retune their arms in real time was the same idea as the panel, lived rather than lectured.</p>
+
+            <div class="blog-inline-images">
+                <img src="imperial_lates/web/IMG_9001.jpg" alt="Morph Lab booth at Imperial Lates — ball-and-cup demo crowd"
+                     onclick="openLightbox('imperial-lates-robots-2026', 2)" loading="lazy">
+            </div>
+            <p class="blog-caption">Booth #4 — hands-on energy around the ball-and-cup table in the City &amp; Guilds foyer.</p>
+
+            <div class="blog-inline-images two-col">
+                <img src="imperial_lates/web/IMG_8998.jpg" alt="Morph Lab stand detail at Imperial Lates"
+                     onclick="openLightbox('imperial-lates-robots-2026', 7)" loading="lazy">
+                <img src="imperial_lates/web/IMG_9006.jpg" alt="Visitors at the Morph Lab Imperial Lates booth"
+                     onclick="openLightbox('imperial-lates-robots-2026', 5)" loading="lazy">
+            </div>
+            <p class="blog-caption">Stand details and visitors exploring Morph Lab demos.</p>
+
+            <div class="blog-inline-images">
+                <video controls playsinline preload="metadata" poster="imperial_lates/web/IMG_9001.jpg">
+                    <source src="imperial_lates/web/IMG_9004.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="blog-caption">Short clip from the Morph Lab booth during Imperial Lates: Robots.</p>
+
+            <h3 class="blog-section-title">Panel — What my robot taught me about being human</h3>
+            <p>I was invited to speak on the evening panel. At 20:00 in Lecture Theatre 200 I joined
+            <strong>Prof. Thrishantha Nanayakkara</strong> and <strong>Chris Kalogroulis</strong>
+            from Morph Lab for <em>What My Robot Taught Me About Being Human</em>,
+            hosted by <strong>Rachel Wheeley</strong>.</p>
+            <p>We talked about intelligence beyond the brain: how much of what we call “us” lives in the body,
+            in movement, and in our coupling with the environment. Thrish brought themes from
+            <em>Ghost Circuits</em>. Chris spoke about morphological intelligence through goat-hoof robotic feet.
+            I shared how learning a new movement — like riding a bicycle — often begins with stiffness, and how a
+            wearable robot might act less like a machine that moves for you, and more like a physical coach that
+            helps you learn, then fades away.</p>
+
+            <div class="blog-inline-images">
+                <img src="imperial_lates/web/IMG_9018.jpg" alt="Panel What my robot taught me about being human — Imperial Lates"
+                     onclick="openLightbox('imperial-lates-robots-2026', 0)" loading="lazy">
+            </div>
+            <p class="blog-caption">Panel in LT200: Rachel Wheeley with Thrishantha Nanayakkara, Dipankar Bhattacharya, and Chris Kalogroulis (Morph Lab).</p>
+
+            <div class="blog-inline-images two-col">
+                <img src="imperial_lates/web/IMG_9013.jpg" alt="Closer view of the Imperial Lates robots panel"
+                     onclick="openLightbox('imperial-lates-robots-2026', 1)" loading="lazy">
+                <img src="imperial_lates/web/IMG_9015.jpg" alt="Imperial Lates panel discussion in LT200"
+                     onclick="openLightbox('imperial-lates-robots-2026', 6)" loading="lazy">
+            </div>
+            <p class="blog-caption">On stage — Ghost Circuits, morphological intelligence, and robots that coach rather than replace.</p>
+
+            <h3 class="blog-section-title">Thanks</h3>
+            <p>Imperial Lates is free public engagement at its best — curious adults, sharp questions, and research
+            that becomes a conversation. Huge thanks to <strong>James Romero</strong>, <strong>Mimmi Mårtensson</strong>
+            and the Societal Engagement team, Rachel for hosting, Thrish and Chris, and everyone who stopped by the
+            stand or asked a question in the theatre.</p>
+            <p>If you came — thank you. If you missed it — follow
+            <a href="https://www.imperial.ac.uk/be-inspired/lates/" target="_blank">#ImperialLates</a> for the next one.</p>
+
+            <div class="blog-inline-images">
+                <img src="imperial_lates/web/IMG_8995.jpg" alt="Imperial Lates Robots atmosphere"
+                     onclick="openLightbox('imperial-lates-robots-2026', 4)" loading="lazy">
+            </div>
+            <p class="blog-caption">Atmosphere from the evening — robots, demos, and conversations across campus.</p>
+
+            <p style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e0e0e0; color: #888; font-size: 13px;">
+            <em>Written by Dr. Dipankar Bhattacharya. Photos and video from Imperial Lates: Robots, 29 October 2026.</em></p>
+        `,
+        photos: [
+            'imperial_lates/web/IMG_9018.jpg',
+            'imperial_lates/web/IMG_9013.jpg',
+            'imperial_lates/web/IMG_9001.jpg',
+            'imperial_lates/web/IMG_1050.jpg',
+            'imperial_lates/web/IMG_8995.jpg',
+            'imperial_lates/web/IMG_9006.jpg',
+            'imperial_lates/web/IMG_9015.jpg',
+            'imperial_lates/web/IMG_8998.jpg'
+        ]
+    },
+
     'eta-milan-2026': {
         title: 'European Talent Academy 2026 — Milan Session, Politecnico di Milano',
         date: 'October 6–8, 2026',
@@ -1128,10 +1237,11 @@ flowchart TB
             the conference's broad technical and networking programme.</p>
 
             <h3 class="blog-section-title">2. My Poster Presentation</h3>
-            <p>I presented a poster at ICRA 2023, sharing my doctoral research on cable-driven parallel
-            robots and related soft-robotics work developed during my time at the University of Auckland
-            and CUHK. The poster session was a great opportunity to discuss the work with researchers
-            working on related problems in manipulation, modelling, and control.</p>
+            <p>I presented the poster <em>Kinematic Modeling of Cable Wrapping in Complex Geometrical
+            Shaped Cable-Driven Parallel Robots</em> (with Y.&nbsp;Wang, T.&nbsp;K.&nbsp;Cheung, and D.&nbsp;Lau),
+            sharing cable-wrapping kinematics work developed at CUHK. The poster session was a great
+            opportunity to discuss the work with researchers working on related problems in manipulation,
+            modelling, and control.</p>
 
             <div class="blog-inline-images">
                 <img src="Images_ICRA_London/IMG_5463.jpg" alt="ICRA London 2023 — Conference Highlights"
