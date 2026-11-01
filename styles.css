@@ -437,23 +437,26 @@ body {
     box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
 
-/* Blog Lightbox */
+/* Blog Lightbox — above blog overlay */
 .blog-lightbox {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.95);
-    z-index: 10001;
+    background: #000;
+    z-index: 100000;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .blog-lightbox img {
-    max-width: 90%;
-    max-height: 90vh;
+    max-width: 96%;
+    max-height: 94vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
     border-radius: 8px;
 }
 

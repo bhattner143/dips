@@ -1270,7 +1270,12 @@ let currentLightboxIndex = 0;
 
 function openBlogOverlay(postId) {
     const post = blogPosts[postId];
-    if (!post) return;
+    if (!post) {
+        console.error('Blog post not found:', postId);
+        return;
+    }
+
+    closeLightbox();
 
     const body = document.getElementById('blog-overlay-body');
 
@@ -1279,7 +1284,7 @@ function openBlogOverlay(postId) {
         galleryHtml = '<h3 style="margin-top: 28px; margin-bottom: 12px; color: #333;">📸 Photos (' + post.photos.length + ')</h3>';
         galleryHtml += '<div class="blog-gallery">';
         post.photos.forEach(function(src, i) {
-            galleryHtml += '<img src="' + src + '" alt="Photo ' + (i + 1) + '" onclick="openLightbox(\'' + postId + '\', ' + i + ')" loading="lazy">';
+            galleryHtml += '<img src="' + src + '" alt="Photo ' + (i + 1) + '" onclick="openLightbox(\'' + postId + '\', ' + i + '); event.stopPropagation();" loading="lazy">';
         });
         galleryHtml += '</div>';
     }
@@ -1289,6 +1294,14 @@ function openBlogOverlay(postId) {
         '<div class="blog-post-meta">📅 ' + post.date + '</div>' +
         '<div class="blog-post-body">' + post.body + '</div>' +
         galleryHtml;
+
+    // Ensure inline body images also stop propagation when opening lightbox
+    body.querySelectorAll('.blog-post-body img[onclick*="openLightbox"]').forEach(function(img) {
+        var existing = img.getAttribute('onclick') || '';
+        if (existing.indexOf('stopPropagation') === -1) {
+            img.setAttribute('onclick', existing.replace(/;?\s*$/, '') + '; event.stopPropagation();');
+        }
+    });
 
     document.getElementById('blog-overlay').style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -1300,13 +1313,17 @@ function openBlogOverlay(postId) {
 }
 
 function closeBlogOverlay() {
+    closeLightbox();
     document.getElementById('blog-overlay').style.display = 'none';
     document.body.style.overflow = '';
 }
 
 function openLightbox(postId, index) {
     const post = blogPosts[postId];
-    if (!post || !post.photos) return;
+    if (!post || !post.photos) {
+        console.error('Lightbox photos not found:', postId);
+        return;
+    }
 
     currentLightboxPhotos = post.photos;
     currentLightboxIndex = index;
@@ -1321,10 +1338,10 @@ function showLightbox() {
     const lb = document.createElement('div');
     lb.className = 'blog-lightbox';
     lb.innerHTML =
-        '<button class="blog-lightbox-close" onclick="closeLightbox()">&times;</button>' +
-        '<button class="blog-lightbox-nav blog-lightbox-prev" onclick="lightboxPrev()">&#8249;</button>' +
-        '<img src="' + currentLightboxPhotos[currentLightboxIndex] + '" alt="Photo">' +
-        '<button class="blog-lightbox-nav blog-lightbox-next" onclick="lightboxNext()">&#8250;</button>';
+        '<button class="blog-lightbox-close" onclick="event.stopPropagation(); closeLightbox()">&times;</button>' +
+        '<button class="blog-lightbox-nav blog-lightbox-prev" onclick="event.stopPropagation(); lightboxPrev()">&#8249;</button>' +
+        '<img src="' + currentLightboxPhotos[currentLightboxIndex] + '" alt="Photo" onclick="event.stopPropagation()">' +
+        '<button class="blog-lightbox-nav blog-lightbox-next" onclick="event.stopPropagation(); lightboxNext()">&#8250;</button>';
 
     lb.addEventListener('click', function(e) {
         if (e.target === lb) closeLightbox();
